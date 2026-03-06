@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Массаж лица — REHAB.YOU</title>
+<meta name="description" content="Убирает отёки, прорабатывает мимические мышцы. Результат виден с первого раза. Rehab.You — массажный клуб с медицинским подходом. Два центра в Москве.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#000; --white:#fff; --orange:#F49933;
+  --gray:#636F80; --light:#F7F7F7; --text:#1A1A1A;
+  --muted:#888; --border:#E5E5E5;
+  --font-display:'Unbounded',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--white);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 48px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-back{
+  font-size:11px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--text);text-decoration:none;
+  display:flex;align-items:center;gap:8px;transition:color 0.2s;
+}
+.nav-back:hover{color:var(--orange);}
+.nav-cta{
+  background:var(--black);color:var(--white);
+  padding:10px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--orange);}
+
+/* HERO */
+.service-hero{
+  padding-top:72px;min-height:60vh;
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.hero-img{
+  overflow:hidden;min-height:480px;
+}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.hero-content{
+  padding:72px 64px;display:flex;flex-direction:column;justify-content:center;
+  background:var(--black);color:var(--white);
+}
+.hero-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:0.28em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:2px;background:var(--orange);}
+.hero-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,48px);
+  font-weight:900;text-transform:uppercase;line-height:1.0;
+  letter-spacing:-0.01em;margin-bottom:24px;
+}
+.hero-desc{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.55);margin-bottom:36px;}
+.hero-meta{
+  display:flex;gap:40px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);margin-top:auto;
+}
+.meta-item{}
+.meta-val{font-size:28px;font-weight:900;font-family:var(--font-display);color:var(--white);}
+.meta-val em{color:var(--orange);font-style:normal;}
+.meta-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+.btn-primary{
+  display:inline-block;background:var(--orange);color:var(--black);
+  padding:16px 36px;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s,transform 0.15s;
+  border:none;cursor:pointer;
+}
+.btn-primary:hover{background:#ff8c00;transform:translateY(-2px);}
+
+/* BODY */
+.service-body-section{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+}
+.service-text{
+  padding:80px 72px;
+}
+.service-text h2{
+  font-family:var(--font-display);font-size:22px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:28px;
+}
+.service-text p{font-size:15px;line-height:1.8;color:#555;margin-bottom:18px;}
+.service-benefits{
+  padding:80px 72px;background:var(--light);
+}
+.service-benefits h3{
+  font-family:var(--font-display);font-size:13px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.2em;color:var(--orange);margin-bottom:32px;
+}
+.service-benefits ul{list-style:none;border-top:1px solid var(--border);}
+.service-benefits li{
+  padding:18px 0;border-bottom:1px solid var(--border);
+  font-size:14px;font-weight:600;color:var(--text);
+  display:flex;align-items:center;gap:14px;
+}
+.service-benefits li::before{
+  content:'';width:20px;height:2px;background:var(--orange);flex-shrink:0;
+}
+
+/* CTA */
+.service-cta{
+  padding:100px 72px;background:var(--black);color:var(--white);text-align:center;
+}
+.service-cta h2{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,36px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+}
+.service-cta p{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:40px;}
+
+/* FOOTER */
+footer{
+  background:var(--black);padding:48px 72px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.footer-logo img{height:28px;width:auto;filter:invert(1);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);}
+.footer-links{display:flex;gap:32px;list-style:none;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--orange);}
+
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .service-hero{grid-template-columns:1fr;}
+  .hero-img{min-height:280px;}
+  .hero-content{padding:48px 32px;}
+  .service-body-section{grid-template-columns:1fr;}
+  .service-text,.service-benefits{padding:56px 32px;}
+  .service-cta{padding:72px 32px;}
+  footer{flex-direction:column;gap:24px;padding:40px 32px;text-align:center;}
+  .footer-links{flex-wrap:wrap;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Все услуги
+  </a>
+  <a href="/" class="nav-logo"><img src="/img/logo-black.png" alt="REHAB.YOU"></a>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+</nav>
+
+<div class="service-hero">
+  <div class="hero-img">
+    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg" alt="Массаж лица">
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Услуга</div>
+    <h1 class="hero-title">Массаж лица</h1>
+    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-val">7 400 <em>₽</em></div>
+        <div class="meta-label">Стоимость</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">60</div>
+        <div class="meta-label">минут</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">2</div>
+        <div class="meta-label">Центра</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="service-body-section">
+  <div class="service-text">
+    <h2>О процедуре</h2>
+    
+<p>Массаж лица — одна из самых недооценённых процедур. Мимические мышцы работают постоянно: эмоции, стресс, экраны. Они накапливают напряжение так же, как и мышцы спины.</p>
+<p>Мастер работает с мышечным каркасом лица, лимфатическими узлами и точками напряжения. Уходят отёки, восстанавливается тонус, выравнивается овал. Результат виден уже после первого сеанса.</p>
+<p>Без инъекций. Без аппаратов. Руками — но с медицинским пониманием того, что происходит с тканями.</p>
+
+  </div>
+  <div class="service-benefits">
+    <h3>Что даёт</h3>
+    <ul>
+      <li>Устранение отёков</li>
+<li>Восстановление тонуса мышц лица</li>
+<li>Выравнивание овала лица</li>
+<li>Результат с первого сеанса</li>
+    </ul>
+  </div>
+</div>
+
+<div class="service-cta">
+  <h2>Готов начать?</h2>
+  <p>Запись онлайн — выбираешь мастера, центр и удобное время.</p>
+  <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
+</div>
+
+<footer>
+  <a href="/"><div class="footer-logo"><img src="/img/logo-black.png" alt="REHAB.YOU" style="filter:invert(1)"></div></a>
+  <ul class="footer-links">
+    <li><a href="/#services">Услуги</a></li>
+    <li><a href="/#team">Мастера</a></li>
+    <li><a href="/#locations">Адреса</a></li>
+    <li><a href="tel:+79255404060">+7 (925) 540-40-60</a></li>
+  </ul>
+  <div class="footer-copy">© 2024 REHAB.YOU</div>
+</footer>
+
+</body>
+</html>
