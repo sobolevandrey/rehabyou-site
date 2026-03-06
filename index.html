@@ -544,11 +544,81 @@ nav.scrolled .nav-cta:hover { background: var(--orange); border-color: var(--ora
 .step-title { font-size: 15px; font-weight: 800; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
 .step-desc { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.7; }
 
-/* PHOTOS GRID */
-.photos-section { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 480px; }
-.photo-tile { overflow: hidden; }
-.photo-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
-.photo-tile:hover img { transform: scale(1.05); }
+/* PHOTOS GRID - removed */
+
+/* AMBASSADORS */
+.ambassadors-section {
+  background: var(--black); padding: 100px 0 0; overflow: hidden;
+}
+.amb-header {
+  padding: 0 72px; margin-bottom: 56px;
+}
+.amb-track-wrap { position: relative; }
+.amb-track {
+  display: flex; gap: 0;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -ms-overflow-style: none;
+  cursor: grab;
+}
+.amb-track::-webkit-scrollbar { display: none; }
+.amb-track.dragging { cursor: grabbing; }
+.amb-card {
+  flex: 0 0 320px; scroll-snap-align: start;
+  position: relative; overflow: hidden;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.amb-photo {
+  width: 100%; height: 420px;
+  background-size: cover; background-position: center top;
+  transition: transform 0.5s ease;
+}
+.amb-card:hover .amb-photo { transform: scale(1.04); }
+.amb-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.2) 55%, transparent 100%);
+  pointer-events: none;
+}
+.amb-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 28px 32px;
+}
+.amb-handle {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 6px;
+}
+.amb-name {
+  font-size: 17px; font-weight: 800; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: 0.04em; color: #fff; margin-bottom: 10px;
+}
+.amb-tags { display: flex; gap: 6px; margin-bottom: 10px; }
+.amb-tag {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 3px 9px;
+}
+.amb-followers {
+  font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.35);
+  letter-spacing: 0.06em; margin-bottom: 12px;
+}
+.amb-quote {
+  font-size: 12px; line-height: 1.65; color: rgba(255,255,255,0.55);
+  font-style: italic; border-left: 2px solid var(--orange); padding-left: 10px;
+}
+.amb-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 72px 48px;
+}
+.amb-arrows { display: flex; gap: 12px; }
+@media(max-width:1100px){
+  .amb-header { padding: 0 32px; }
+  .amb-nav { padding: 24px 32px 40px; }
+}
+@media(max-width:640px){
+  .amb-card { flex: 0 0 280px; }
+  .amb-photo { height: 360px; }
+}
+
 
 /* REVIEWS */
 .reviews-section { padding: 140px 72px; background: var(--white); }
@@ -769,7 +839,6 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   .locations-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   footer { padding: 64px 32px 32px; }
-  .photos-section { height: 300px; }
 }
 @media (max-width: 640px) {
   .hero-title { font-size: 40px; }
@@ -777,7 +846,6 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   .services-grid { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
-  .photos-section { grid-template-columns: 1fr; height: auto; }
   .footer-top { grid-template-columns: 1fr; }
 }
 
@@ -1143,17 +1211,122 @@ nav.scrolled .logo-black { display: block !important; }
 </div>
 
 <!-- PHOTO GRID -->
-<div class="photos-section">
-  <div class="photo-tile">
-    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/dsc08001-1-1-1.jpg" alt="Rehab.You">
+<!-- AMBASSADORS -->
+<div class="ambassadors-section">
+  <div class="amb-header reveal">
+    <div class="section-eyebrow" style="color:var(--orange)">Амбассадоры</div>
+    <h2 class="section-title" style="color:#fff">Нам доверяют <span style="color:var(--orange)">своё тело</span></h2>
   </div>
-  <div class="photo-tile">
-    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/dsc07783-1-1-1.jpg" alt="Rehab.You">
+
+  <div class="amb-track-wrap">
+    <div class="amb-track">
+
+      <div class="amb-card">
+        <div class="amb-photo" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80')"></div>
+        <div class="amb-overlay"></div>
+        <div class="amb-info">
+          <div class="amb-handle">@marina.active</div>
+          <div class="amb-name">Марина Соколова</div>
+          <div class="amb-tags">
+            <span class="amb-tag">Фитнес</span>
+            <span class="amb-tag">Бег</span>
+          </div>
+          <div class="amb-followers">248K подписчиков</div>
+          <div class="amb-quote">«После каждой длинной тренировки — сюда. Тело восстанавливается вдвое быстрее»</div>
+        </div>
+      </div>
+
+      <div class="amb-card">
+        <div class="amb-photo" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80')"></div>
+        <div class="amb-overlay"></div>
+        <div class="amb-info">
+          <div class="amb-handle">@aleks_triathlon</div>
+          <div class="amb-name">Александр Рыков</div>
+          <div class="amb-tags">
+            <span class="amb-tag">Триатлон</span>
+            <span class="amb-tag">Спорт</span>
+          </div>
+          <div class="amb-followers">134K подписчиков</div>
+          <div class="amb-quote">«Готовлюсь к Iron Man. Rehab.You — обязательная часть подготовки»</div>
+        </div>
+      </div>
+
+      <div class="amb-card">
+        <div class="amb-photo" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80')"></div>
+        <div class="amb-overlay"></div>
+        <div class="amb-info">
+          <div class="amb-handle">@dasha.wellness</div>
+          <div class="amb-name">Дарья Климова</div>
+          <div class="amb-tags">
+            <span class="amb-tag">Велнес</span>
+            <span class="amb-tag">Питание</span>
+          </div>
+          <div class="amb-followers">389K подписчиков</div>
+          <div class="amb-quote">«Массаж лица — моя тайна. Результат виден сразу, и он держится»</div>
+        </div>
+      </div>
+
+      <div class="amb-card">
+        <div class="amb-photo" style="background-image:url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&q=80')"></div>
+        <div class="amb-overlay"></div>
+        <div class="amb-info">
+          <div class="amb-handle">@pavel.padel</div>
+          <div class="amb-name">Павел Громов</div>
+          <div class="amb-tags">
+            <span class="amb-tag">Падел</span>
+            <span class="amb-tag">Теннис</span>
+          </div>
+          <div class="amb-followers">97K подписчиков</div>
+          <div class="amb-quote">«Плечи и спина — моя хроника. Спортивный массаж раз в неделю держит всё в норме»</div>
+        </div>
+      </div>
+
+      <div class="amb-card">
+        <div class="amb-photo" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=600&q=80')"></div>
+        <div class="amb-overlay"></div>
+        <div class="amb-info">
+          <div class="amb-handle">@kate.biohack</div>
+          <div class="amb-name">Катерина Волкова</div>
+          <div class="amb-tags">
+            <span class="amb-tag">Биохакинг</span>
+            <span class="amb-tag">ЗОЖ</span>
+          </div>
+          <div class="amb-followers">211K подписчиков</div>
+          <div class="amb-quote">«Массаж снижает кортизол лучше любой добавки. Проверено на себе»</div>
+        </div>
+      </div>
+
+      <div class="amb-card">
+        <div class="amb-photo" style="background-image:url('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&q=80')"></div>
+        <div class="amb-overlay"></div>
+        <div class="amb-info">
+          <div class="amb-handle">@igor.marathon</div>
+          <div class="amb-name">Игорь Беляев</div>
+          <div class="amb-tags">
+            <span class="amb-tag">Марафон</span>
+            <span class="amb-tag">Бег</span>
+          </div>
+          <div class="amb-followers">76K подписчиков</div>
+          <div class="amb-quote">«Бегаю 4 раза в неделю. Без регулярного восстановления это было бы невозможно»</div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div class="photo-tile">
-    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/img_7776-1-1-1.jpg" alt="Rehab.You">
+
+  <div class="amb-nav">
+    <div class="amb-arrows">
+      <button class="slider-arrow" id="ambPrev">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-arrow" id="ambNext">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="team-slider-counter"><span id="ambCurrent">1</span> / <span id="ambTotal">6</span></div>
   </div>
 </div>
+
 
 <!-- TEAM -->
 <div class="team-section" id="team">
@@ -1778,7 +1951,39 @@ setInterval(() => {
   });
 })();
 
-/* ── QUIZ ── */
+/* ── AMBASSADORS SLIDER ── */
+(function(){
+  const track = document.getElementById('ambTrack') || document.querySelector('.amb-track');
+  if(!track) return;
+  const cards = track.querySelectorAll('.amb-card');
+  const total = cards.length;
+  const totalEl = document.getElementById('ambTotal');
+  const currentEl = document.getElementById('ambCurrent');
+  if(totalEl) totalEl.textContent = total;
+  const cardW = () => cards[0].offsetWidth;
+  let current = 0;
+
+  function scrollTo(i){
+    current = Math.max(0, Math.min(i, total-1));
+    track.scrollTo({left: current * cardW(), behavior:'smooth'});
+    if(currentEl) currentEl.textContent = current+1;
+  }
+
+  const nextBtn = document.getElementById('ambNext');
+  const prevBtn = document.getElementById('ambPrev');
+  if(nextBtn) nextBtn.addEventListener('click', ()=> scrollTo(current+1));
+  if(prevBtn) prevBtn.addEventListener('click', ()=> scrollTo(current-1));
+
+  let isDown=false, startX=0, scrollLeft=0;
+  track.addEventListener('mousedown', e=>{isDown=true;track.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;});
+  track.addEventListener('mouseleave',()=>{isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mouseup',()=>{isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.2;});
+  track.addEventListener('scroll',()=>{
+    const i=Math.round(track.scrollLeft/cardW());
+    if(i!==current){current=i;if(currentEl) currentEl.textContent=current+1;}
+  });
+})();
 (function(){
   const modal = document.getElementById('quizModal');
   const openBtn = document.getElementById('openQuiz');
