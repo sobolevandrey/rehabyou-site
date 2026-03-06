@@ -835,11 +835,7 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   animation:hbarGrow 1.2s cubic-bezier(.16,1,.3,1) .2s both;
 }
 @keyframes hbarGrow{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1);transform-origin:top}}
-.hero-v2-cut {
-  position:absolute; bottom:-2px; left:-5%; right:-5%;
-  height:120px; background:var(--black); z-index:3;
-  clip-path:polygon(0 60%,100% 0%,100% 100%,0% 100%);
-}
+
 @keyframes htitleUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 .hero-v2-content {
   position:absolute; left:64px; top:22%; transform:translateY(0);
@@ -894,7 +890,6 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   .hero-v2-right{display:none;}
   .hero-v2-stats{left:24px;gap:20px;}
   .hvs-num{font-size:22px;}
-  .hero-v2-cut{height:60px;}
 }
 
 
@@ -948,7 +943,6 @@ nav.scrolled .logo-black { display: block !important; }
   </div>
   <div class="hero-v2-overlay"></div>
   <div class="hero-v2-bar"></div>
-  <div class="hero-v2-cut"></div>
 
   <div class="hero-v2-content">
     <div class="hero-v2-eyebrow">Массажный салон · Москва</div>
