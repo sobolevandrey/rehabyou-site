@@ -1,0 +1,25 @@
+name: Deploy to Reg.ru via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: server266.hosting.reg.ru
+          username: u3440160
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /www/rehabyou.site/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
