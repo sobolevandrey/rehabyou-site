@@ -276,27 +276,195 @@ nav.scrolled .nav-cta:hover { background: var(--orange); border-color: var(--ora
 }
 .service-card:hover::after { transform: scaleX(1); }
 
-/* TEAM */
-.team-section { padding: 140px 72px; background: var(--light); }
-.team-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 72px;
+/* TEAM SLIDER */
+.team-section { padding: 140px 0 0; background: var(--black); color: var(--white); overflow: hidden; }
+.team-section .section-header { padding: 0 72px; margin-bottom: 56px; }
+.team-section .section-eyebrow::before { background: var(--orange); }
+.team-section .section-title { color: var(--white); }
+
+/* Slider track */
+.team-slider-wrap { position: relative; }
+.team-slider-track {
+  display: flex; gap: 0;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -ms-overflow-style: none;
+  cursor: grab;
 }
-.team-card { background: var(--white); overflow: hidden; }
+.team-slider-track::-webkit-scrollbar { display: none; }
+.team-slider-track.dragging { cursor: grabbing; }
+
+/* Each card */
+.team-card {
+  flex: 0 0 320px; scroll-snap-align: start;
+  position: relative; overflow: hidden; background: #111;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
 .team-photo {
-  width: 100%; height: 300px; background-size: cover;
-  background-position: center top; transition: transform 0.4s;
+  width: 100%; height: 400px; background-size: cover;
+  background-position: center top;
+  transition: transform 0.5s ease;
 }
-.team-card:hover .team-photo { transform: scale(1.03); }
-.team-info { padding: 28px 32px; }
-.team-name { font-size: 17px; font-weight: 800; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-.team-spec { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+.team-card:hover .team-photo { transform: scale(1.04); }
+
+/* Dark gradient over photo */
+.team-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Info over image */
+.team-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 28px 32px;
+}
+.team-name {
+  font-size: 16px; font-weight: 800; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px;
+}
+.team-spec-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.spec-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 10px; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+}
+.spec-tag svg { flex-shrink: 0; opacity: 0.7; }
 .team-btn {
-  display: inline-block; background: var(--black); color: var(--white);
-  padding: 10px 22px; font-size: 11px; font-weight: 700;
+  display: inline-block; background: var(--orange); color: var(--black);
+  padding: 9px 20px; font-size: 10px; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
   transition: background 0.2s;
 }
-.team-btn:hover { background: var(--orange); }
+.team-btn:hover { background: #ff8c00; }
+
+/* Slider nav */
+.team-slider-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 72px 48px;
+}
+.team-slider-arrows { display: flex; gap: 12px; }
+.slider-arrow {
+  width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2);
+  background: transparent; color: #fff; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.slider-arrow:hover { background: var(--orange); border-color: var(--orange); }
+.team-slider-counter {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+}
+.team-slider-counter span { color: var(--orange); }
+
+/* QUIZ BLOCK */
+.team-quiz {
+  background: var(--orange); padding: 64px 72px;
+  display: flex; align-items: center; justify-content: space-between; gap: 48px;
+}
+.quiz-left {}
+.quiz-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: rgba(0,0,0,0.5); margin-bottom: 12px;
+}
+.quiz-title {
+  font-size: clamp(20px, 2vw, 28px); font-weight: 900;
+  font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: -0.01em; line-height: 1.05; color: var(--black);
+}
+.quiz-sub { font-size: 14px; color: rgba(0,0,0,0.6); margin-top: 10px; line-height: 1.6; }
+.quiz-btn {
+  display: inline-block; background: var(--black); color: var(--white);
+  padding: 16px 36px; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  border: none; cursor: pointer; white-space: nowrap;
+  transition: background 0.2s, transform 0.15s; flex-shrink: 0;
+}
+.quiz-btn:hover { background: #222; transform: translateY(-2px); }
+
+/* QUIZ MODAL */
+.quiz-modal {
+  position: fixed; inset: 0; z-index: 1001;
+  background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.quiz-modal.open { opacity: 1; pointer-events: all; }
+.quiz-box {
+  background: var(--white); max-width: 540px; width: 100%;
+  position: relative; transform: translateY(20px); transition: transform 0.3s;
+}
+.quiz-modal.open .quiz-box { transform: translateY(0); }
+.quiz-close {
+  position: absolute; top: 16px; right: 16px;
+  background: none; border: none; font-size: 22px; cursor: pointer; color: var(--muted);
+}
+.quiz-progress {
+  height: 3px; background: var(--border);
+  position: relative; overflow: hidden;
+}
+.quiz-progress-bar {
+  height: 100%; background: var(--orange);
+  transition: width 0.4s ease;
+}
+.quiz-content { padding: 48px 48px 40px; }
+.quiz-step { display: none; }
+.quiz-step.active { display: block; }
+.quiz-step-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+}
+.quiz-question {
+  font-size: 20px; font-weight: 800; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.1; margin-bottom: 28px;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.quiz-option {
+  padding: 14px 20px; border: 1px solid var(--border); cursor: pointer;
+  font-size: 14px; font-weight: 500; color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+  display: flex; align-items: center; gap: 12px;
+}
+.quiz-option:hover { border-color: var(--orange); background: #fff8f0; }
+.quiz-option.selected { border-color: var(--orange); background: #fff8f0; }
+.quiz-option-icon { font-size: 18px; }
+.quiz-result { display: none; padding: 48px 48px 40px; }
+.quiz-result.active { display: block; }
+.quiz-result-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+}
+.quiz-result-title {
+  font-size: 22px; font-weight: 900; font-family: var(--font-display);
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.quiz-result-spec {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 24px;
+}
+.quiz-result-reason {
+  font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 32px;
+  border-left: 3px solid var(--orange); padding-left: 16px;
+}
+.quiz-result-btn {
+  display: block; width: 100%; padding: 16px; background: var(--black); color: var(--white);
+  border: none; font-family: var(--font-body); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+  text-decoration: none; text-align: center; transition: background 0.2s;
+}
+.quiz-result-btn:hover { background: var(--orange); }
+
+@media (max-width: 1100px) {
+  .team-section .section-header { padding: 0 32px; }
+  .team-slider-nav { padding: 24px 32px 40px; }
+  .team-quiz { padding: 48px 32px; flex-direction: column; align-items: flex-start; gap: 24px; }
+  .quiz-content { padding: 32px 28px 28px; }
+  .quiz-result { padding: 32px 28px 28px; }
+}
+@media (max-width: 640px) {
+  .team-card { flex: 0 0 280px; }
+  .team-photo { height: 340px; }
+}
 
 /* PACKAGES */
 .packages-section { padding: 140px 72px; background: var(--white); }
@@ -578,14 +746,13 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   .about-photo-wrap { aspect-ratio: 16/7; }
   section, .about-section, .services-section, .packages-section,
   .process-section, .reviews-section, .locations-section,
-  .cta-section, .faq-section, .team-section { padding: 80px 32px; }
+  .cta-section, .faq-section { padding: 80px 32px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .packages-grid { grid-template-columns: 1fr; max-width: 480px; }
   .process-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
   .process-grid::before { display: none; }
   .reviews-grid { grid-template-columns: 1fr 1fr; }
   .locations-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   footer { padding: 64px 32px 32px; }
   .photos-section { height: 300px; }
@@ -595,7 +762,6 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   .hero-stats { flex-wrap: wrap; gap: 28px; }
   .services-grid { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .photos-section { grid-template-columns: 1fr; height: auto; }
   .footer-top { grid-template-columns: 1fr; }
@@ -972,72 +1138,168 @@ nav.scrolled .logo-black { display: block !important; }
 <div class="team-section" id="team">
   <div class="section-header reveal">
     <div class="section-eyebrow">Команда</div>
-    <h2 class="section-title">Твой <span class="orange">мастер</span></h2>
-    <p class="section-subtitle" style="max-width:520px;margin-top:16px;color:#666;font-size:15px;line-height:1.7">Запишись к конкретному человеку — он запомнит всё с первого раза.</p>
+    <h2 class="section-title" style="color:#fff">Твой <span class="orange">мастер</span></h2>
+    <p class="section-subtitle" style="max-width:520px;margin-top:16px;color:rgba(255,255,255,0.45);font-size:15px;line-height:1.7">Запишись к конкретному человеку — он запомнит всё с первого раза.</p>
   </div>
-  <div class="team-grid reveal">
-    
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png')"></div>
-      <div class="team-info">
-        <div class="team-name">Егор Зайковский</div>
-        <div class="team-spec">Спортивный массаж</div>
-        <div class="team-bio">Работает со спортсменами и любителями активного образа жизни. Знает, что значит готовиться к старту.</div>
-        <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m1805072" target="_blank" class="team-btn">Записаться</a>
+
+  <div class="team-slider-wrap">
+    <div class="team-slider-track" id="teamTrack">
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Егор Зайковский</div>
+          <div class="team-spec-tags">
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span>
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Восстановление</span>
+          </div>
+          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m1805072" target="_blank" class="team-btn">Записаться</a>
+        </div>
       </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png')"></div>
-      <div class="team-info">
-        <div class="team-name">Арина Порфирьева</div>
-        <div class="team-spec">Классический, расслабляющий</div>
-        <div class="team-bio">Специализируется на восстановлении после хронических нагрузок и глубоком расслаблении.</div>
-        <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m2352358" target="_blank" class="team-btn">Записаться</a>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Арина Порфирьева</div>
+          <div class="team-spec-tags">
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Расслабление</span>
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Классика</span>
+          </div>
+          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m2352358" target="_blank" class="team-btn">Записаться</a>
+        </div>
       </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/mark-mazur.png')"></div>
-      <div class="team-info">
-        <div class="team-name">Марк Мазур</div>
-        <div class="team-spec">Лечебный, спортивный</div>
-        <div class="team-bio">Работает с последствиями травм и хронических перегрузок. Системный подход к каждому клиенту.</div>
-        <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m3401476" target="_blank" class="team-btn">Записаться</a>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/mark-mazur.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Марк Мазур</div>
+          <div class="team-spec-tags">
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Лечебный</span>
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span>
+          </div>
+          <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m3401476" target="_blank" class="team-btn">Записаться</a>
+        </div>
       </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/02/nbvjattd-scaled.jpg')"></div>
-      <div class="team-info">
-        <div class="team-name">Кирилл Тимофеев</div>
-        <div class="team-spec">Спортивный, антицеллюлитный</div>
-        <div class="team-bio">Интенсивная работа с телом. Для тех, кто хочет видеть результат и не боится процесса.</div>
-        <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3729069" target="_blank" class="team-btn">Записаться</a>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/02/nbvjattd-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Кирилл Тимофеев</div>
+          <div class="team-spec-tags">
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span>
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Антицеллюлит</span>
+          </div>
+          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3729069" target="_blank" class="team-btn">Записаться</a>
+        </div>
       </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc07203-scaled.jpg')"></div>
-      <div class="team-info">
-        <div class="team-name">Степан Тулынин</div>
-        <div class="team-spec">Классический, лечебный</div>
-        <div class="team-bio">Мягкий, но глубокий. Работает с офисными перегрузками и психосоматическим напряжением.</div>
-        <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581654" target="_blank" class="team-btn">Записаться</a>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc07203-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Степан Тулынин</div>
+          <div class="team-spec-tags">
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Классика</span>
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Лечебный</span>
+          </div>
+          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581654" target="_blank" class="team-btn">Записаться</a>
+        </div>
       </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg')"></div>
-      <div class="team-info">
-        <div class="team-name">Павел Репин</div>
-        <div class="team-spec">Спортивный, реабилитация</div>
-        <div class="team-bio">Специализируется на реабилитации после травм и восстановлении спортсменов.</div>
-        <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581687" target="_blank" class="team-btn">Записаться</a>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Павел Репин</div>
+          <div class="team-spec-tags">
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span>
+            <span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Реабилитация</span>
+          </div>
+          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581687" target="_blank" class="team-btn">Записаться</a>
+        </div>
       </div>
+
     </div>
   </div>
-  <div style="text-align:center;margin-top:48px">
-    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">
-      Выбрать мастера и записаться
-    </a>
+
+  <div class="team-slider-nav">
+    <div class="team-slider-arrows">
+      <button class="slider-arrow" id="teamPrev" aria-label="Назад">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-arrow" id="teamNext" aria-label="Вперёд">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="team-slider-counter"><span id="teamCurrent">1</span> / <span id="teamTotal">6</span></div>
+  </div>
+
+  <!-- QUIZ CTA -->
+  <div class="team-quiz">
+    <div class="quiz-left">
+      <div class="quiz-label">Не знаешь с чего начать?</div>
+      <div class="quiz-title">Подберём мастера<br>под твой запрос</div>
+      <div class="quiz-sub">Ответь на 3 вопроса — скажем, кто из команды подойдёт именно тебе.</div>
+    </div>
+    <button class="quiz-btn" id="openQuiz">Пройти подбор →</button>
   </div>
 </div>
+
+<!-- QUIZ MODAL -->
+<div class="quiz-modal" id="quizModal">
+  <div class="quiz-box">
+    <button class="quiz-close" id="closeQuiz">✕</button>
+    <div class="quiz-progress"><div class="quiz-progress-bar" id="quizBar" style="width:33%"></div></div>
+
+    <div class="quiz-content" id="quizContent">
+
+      <div class="quiz-step active" data-step="1">
+        <div class="quiz-step-label">Вопрос 1 из 3</div>
+        <div class="quiz-question">Какая у тебя основная цель?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-q="1" data-val="sport"><span class="quiz-option-icon">⚡</span> Восстановление после тренировок и спорт</div>
+          <div class="quiz-option" data-q="1" data-val="pain"><span class="quiz-option-icon">🎯</span> Убрать боль в спине, шее или плечах</div>
+          <div class="quiz-option" data-q="1" data-val="relax"><span class="quiz-option-icon">🌊</span> Расслабиться, снять стресс и напряжение</div>
+          <div class="quiz-option" data-q="1" data-val="rehab"><span class="quiz-option-icon">🔧</span> Реабилитация после травмы или операции</div>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-step-label">Вопрос 2 из 3</div>
+        <div class="quiz-question">Как часто ты тренируешься?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-q="2" data-val="daily"><span class="quiz-option-icon">🏆</span> Каждый день или через день</div>
+          <div class="quiz-option" data-q="2" data-val="regular"><span class="quiz-option-icon">💪</span> 2–4 раза в неделю</div>
+          <div class="quiz-option" data-q="2" data-val="rare"><span class="quiz-option-icon">🚶</span> Редко или совсем не тренируюсь</div>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <div class="quiz-step-label">Вопрос 3 из 3</div>
+        <div class="quiz-question">Какой формат работы тебе ближе?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-q="3" data-val="deep"><span class="quiz-option-icon">🔥</span> Интенсивно, глубоко — хочу результат</div>
+          <div class="quiz-option" data-q="3" data-val="gentle"><span class="quiz-option-icon">✨</span> Мягко, бережно — без боли</div>
+          <div class="quiz-option" data-q="3" data-val="any"><span class="quiz-option-icon">🎲</span> Не важно, доверяю специалисту</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+      <div class="quiz-result-label">Твой мастер</div>
+      <div class="quiz-result-title" id="resultName"></div>
+      <div class="quiz-result-spec" id="resultSpec"></div>
+      <div class="quiz-result-reason" id="resultReason"></div>
+      <a href="#" target="_blank" class="quiz-result-btn" id="resultBtn">Записаться к этому мастеру</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- PACKAGES -->
 <div class="packages-section" id="packages">
@@ -1462,6 +1724,129 @@ setInterval(() => {
     dots[idx].classList.add('active');
   };
   setInterval(()=>goToSlide((idx+1)%slides.length),5000);
+})();
+
+/* ── TEAM SLIDER ── */
+(function(){
+  const track = document.getElementById('teamTrack');
+  if(!track) return;
+  const cards = track.querySelectorAll('.team-card');
+  const total = cards.length;
+  document.getElementById('teamTotal').textContent = total;
+  const cardW = () => cards[0].offsetWidth;
+  let current = 0;
+
+  function scrollTo(i){
+    current = Math.max(0, Math.min(i, total-1));
+    track.scrollTo({left: current * cardW(), behavior:'smooth'});
+    document.getElementById('teamCurrent').textContent = current+1;
+  }
+
+  document.getElementById('teamNext').addEventListener('click', ()=> scrollTo(current+1));
+  document.getElementById('teamPrev').addEventListener('click', ()=> scrollTo(current-1));
+
+  // Drag scroll
+  let isDown=false, startX=0, scrollLeft=0;
+  track.addEventListener('mousedown', e=>{isDown=true; track.classList.add('dragging'); startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft;});
+  track.addEventListener('mouseleave',()=>{isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mouseup',()=>{isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.2;});
+  track.addEventListener('scroll',()=>{
+    const i=Math.round(track.scrollLeft/cardW());
+    if(i!==current){current=i;document.getElementById('teamCurrent').textContent=current+1;}
+  });
+})();
+
+/* ── QUIZ ── */
+(function(){
+  const modal = document.getElementById('quizModal');
+  const openBtn = document.getElementById('openQuiz');
+  const closeBtn = document.getElementById('closeQuiz');
+  const bar = document.getElementById('quizBar');
+  const content = document.getElementById('quizContent');
+  const result = document.getElementById('quizResult');
+  if(!modal) return;
+
+  const answers = {};
+
+  const masters = [
+    {name:'Егор Зайковский', spec:'Спортивный массаж', url:'https://b643828.yclients.com/company/193162/personal/menu?o=m1805072',
+     tags:['sport','daily','deep','regular']},
+    {name:'Марк Мазур', spec:'Лечебный, спортивный', url:'https://b643828.yclients.com/company/1067623/personal/menu?o=m3401476',
+     tags:['pain','rehab','daily','deep','regular']},
+    {name:'Кирилл Тимофеев', spec:'Спортивный, антицеллюлитный', url:'https://b643828.yclients.com/company/193162/personal/menu?o=m3729069',
+     tags:['sport','regular','daily','deep']},
+    {name:'Арина Порфирьева', spec:'Классический, расслабляющий', url:'https://b643828.yclients.com/company/193162/personal/menu?o=m2352358',
+     tags:['relax','rare','gentle','any']},
+    {name:'Степан Тулынин', spec:'Классический, лечебный', url:'https://b643828.yclients.com/company/193162/personal/menu?o=m4581654',
+     tags:['pain','relax','gentle','any','rare']},
+    {name:'Павел Репин', spec:'Спортивный, реабилитация', url:'https://b643828.yclients.com/company/193162/personal/menu?o=m4581687',
+     tags:['rehab','sport','deep','regular']},
+  ];
+
+  const reasons = {
+    'Егор Зайковский': 'Работает со спортсменами и активными людьми. Понимает тело в нагрузке и умеет готовить к старту — твой формат.',
+    'Марк Мазур': 'Системный подход, работа с болью и последствиями перегрузок. Он разберётся в твоей ситуации и выстроит протокол.',
+    'Кирилл Тимофеев': 'Интенсивная, результативная работа с телом. Для тех, кто хочет видеть изменения — он именно такой.',
+    'Арина Порфирьева': 'Специализируется на глубоком расслаблении и восстановлении после хронического стресса. Мягко, но эффективно.',
+    'Степан Тулынин': 'Мягкий, но глубокий — работает с напряжением, которое копится месяцами. Идеально под твой запрос.',
+    'Павел Репин': 'Специалист по реабилитации и восстановлению. Работает точечно, системно, с пониманием твоей истории.',
+  };
+
+  openBtn.addEventListener('click', ()=>{ modal.classList.add('open'); document.body.style.overflow='hidden'; });
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
+
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+    setTimeout(()=>{ resetQuiz(); }, 400);
+  }
+
+  function resetQuiz(){
+    Object.keys(answers).forEach(k=>delete answers[k]);
+    content.style.display='block';
+    result.classList.remove('active');
+    content.querySelectorAll('.quiz-step').forEach((s,i)=>{ s.classList.toggle('active',i===0); });
+    content.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
+    bar.style.width='33%';
+  }
+
+  content.addEventListener('click', e=>{
+    const opt = e.target.closest('.quiz-option');
+    if(!opt) return;
+    const q = opt.dataset.q;
+    const val = opt.dataset.val;
+    answers[q] = val;
+    content.querySelectorAll(`[data-q="${q}"]`).forEach(o=>o.classList.remove('selected'));
+    opt.classList.add('selected');
+    const step = parseInt(q);
+    setTimeout(()=>{
+      if(step < 3){
+        content.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+        content.querySelector(`[data-step="${step+1}"]`).classList.add('active');
+        bar.style.width = (step+1)/3*100+'%';
+      } else {
+        showResult();
+      }
+    }, 350);
+  });
+
+  function showResult(){
+    bar.style.width='100%';
+    const vals = Object.values(answers);
+    let best = masters[0], bestScore = -1;
+    masters.forEach(m=>{
+      const score = vals.filter(v=>m.tags.includes(v)).length;
+      if(score>bestScore){ bestScore=score; best=m; }
+    });
+    content.style.display='none';
+    document.getElementById('resultName').textContent = best.name;
+    document.getElementById('resultSpec').textContent = best.spec;
+    document.getElementById('resultReason').textContent = reasons[best.name] || '';
+    document.getElementById('resultBtn').href = best.url;
+    result.classList.add('active');
+  }
 })();
 
 </script>
