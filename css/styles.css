@@ -321,7 +321,7 @@ nav.scrolled .nav-cta:hover { background: var(--orange); border-color: var(--ora
   font-size: 16px; font-weight: 800; font-family: var(--font-display);
   text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px;
 }
-.team-spec-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.team-spec-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .spec-tag {
   display: inline-flex; align-items: center; gap: 5px;
   background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
@@ -329,13 +329,28 @@ nav.scrolled .nav-cta:hover { background: var(--orange); border-color: var(--ora
   letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7);
 }
 .spec-tag svg { flex-shrink: 0; opacity: 0.7; }
+
+/* TEAM BTNS — записаться + подробнее */
+.team-btns {
+  display: flex; align-items: center; gap: 12px;
+}
 .team-btn {
   display: inline-block; background: var(--orange); color: var(--black);
   padding: 9px 20px; font-size: 10px; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.2s; white-space: nowrap;
 }
 .team-btn:hover { background: #ff8c00; }
+.team-btn-more {
+  display: inline-block;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; text-decoration: none;
+  color: rgba(255,255,255,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s; white-space: nowrap;
+}
+.team-btn-more:hover { color: var(--orange); border-color: var(--orange); }
 
 .team-slider-nav {
   display: flex; align-items: center; justify-content: space-between;
