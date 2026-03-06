@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Егор Зайковский — Мастер Rehab.You</title>
+<meta name="description" content="Специалист по спортивному массажу и восстановлению после физических нагрузок. Работает с бегунами, триатлетами, кроссфитерами и всеми, кто тренируется серьёзно.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#000;--white:#fff;--orange:#F49933;--text:#1A1A1A;--muted:#888;--light:#F7F7F7;--border:#E5E5E5;--font-display:'Unbounded',sans-serif;--font-body:'Inter',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--white);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo img{height:28px;width:auto;display:block;}
+.nav-back{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);text-decoration:none;transition:color 0.2s;}
+.nav-back svg{transition:transform 0.2s;}
+.nav-back:hover{color:var(--orange);}
+.nav-back:hover svg{transform:translateX(-3px);}
+.nav-cta{background:var(--black);color:var(--white);padding:10px 28px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--orange);}
+.master-hero{padding-top:72px;background:var(--black);display:grid;grid-template-columns:480px 1fr;min-height:580px;}
+.master-photo-wrap{position:relative;overflow:hidden;}
+.master-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:0.85;}
+.master-hero-content{padding:72px 80px;display:flex;flex-direction:column;justify-content:center;}
+.master-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;}
+.master-name{font-family:var(--font-display);font-size:clamp(32px,3.5vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:0.95;color:var(--white);margin-bottom:20px;}
+.master-spec{font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:28px;}
+.master-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;}
+.m-tag{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:5px 14px;}
+.master-meta{display:flex;gap:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);}
+.meta-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:6px;}
+.meta-val{font-size:15px;font-weight:700;color:var(--white);}
+.hero-cta{display:inline-block;background:var(--orange);color:var(--black);padding:16px 36px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.2s,transform 0.15s;align-self:flex-start;margin-bottom:32px;}
+.hero-cta:hover{background:#e08820;transform:translateY(-2px);}
+.master-body{padding:100px 72px;}
+.body-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.bs-label{font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.bs-label::before{content:'';width:24px;height:2px;background:var(--orange);}
+.bs-title{font-family:var(--font-display);font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.05;margin-bottom:24px;}
+.bs-text{font-size:15px;line-height:1.8;color:#555;}
+.bs-text+.bs-text{margin-top:16px;}
+.specialties-list{list-style:none;border-top:1px solid var(--border);}
+.specialties-list li{padding:14px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:500;display:flex;align-items:center;gap:12px;}
+.specialties-list li::before{content:'';width:20px;height:2px;background:var(--orange);flex-shrink:0;}
+.quote-block{margin-top:40px;padding:28px 32px;background:var(--light);border-left:3px solid var(--orange);}
+.quote-text{font-size:16px;line-height:1.7;font-style:italic;color:var(--text);}
+.quote-author{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:12px;}
+.master-cta-section{background:var(--black);padding:100px 72px;text-align:center;}
+.mcs-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;}
+.mcs-title{font-family:var(--font-display);font-size:clamp(24px,2.5vw,36px);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:var(--white);margin-bottom:16px;}
+.mcs-sub{font-size:14px;color:rgba(255,255,255,0.35);max-width:380px;margin:0 auto 40px;line-height:1.7;}
+.mcs-btn{display:inline-block;background:var(--orange);color:var(--black);padding:18px 48px;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.mcs-btn:hover{background:#e08820;transform:translateY(-2px);}
+footer{background:#0a0a0a;padding:48px 72px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-logo img{height:24px;filter:invert(1);opacity:0.4;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.06em;transition:color 0.2s;}
+.footer-links a:hover{color:var(--orange);}
+@media(max-width:1000px){.master-hero{grid-template-columns:1fr;}.master-photo-wrap{height:400px;}.master-hero-content{padding:48px 32px;}.master-body{padding:64px 32px;}.body-grid{grid-template-columns:1fr;gap:48px;}.master-cta-section{padding:64px 32px;}nav{padding:0 24px;}footer{padding:32px 24px;flex-direction:column;gap:20px;text-align:center;}.footer-links{justify-content:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Назад</a>
+  <a href="/" class="nav-logo"><img src="/img/logo-black.png" alt="Rehab.You"></a>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+</nav>
+<div class="master-hero">
+  <div class="master-photo-wrap">
+    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png" alt="Егор Зайковский" class="master-photo">
+  </div>
+  <div class="master-hero-content">
+    <div class="master-eyebrow">Мастер Rehab.You · Сухаревская</div>
+    <h1 class="master-name">Егор Зайковский</h1>
+    <div class="master-spec">Спортивный массаж · Восстановление</div>
+    <div class="master-tags"><span class="m-tag">Спорт</span><span class="m-tag">Восстановление</span></div>
+    <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m1805072" target="_blank" class="hero-cta">Записаться к Егору</a>
+    <div class="master-meta">
+      <div class="meta-item"><div class="meta-label">Опыт</div><div class="meta-val">5 лет</div></div>
+      <div class="meta-item"><div class="meta-label">Центр</div><div class="meta-val">Сухаревская</div></div>
+    </div>
+  </div>
+</div>
+<div class="master-body">
+  <div class="body-grid">
+    <div class="body-section">
+      <div class="bs-label">О мастере</div>
+      <h2 class="bs-title">Подход и философия</h2>
+      <p class="bs-text">Специалист по спортивному массажу и восстановлению после физических нагрузок. Работает с бегунами, триатлетами, кроссфитерами и всеми, кто тренируется серьёзно.</p>
+      <p class="bs-text">Каждый сеанс начинается с короткого разговора о том, как тело чувствует себя сейчас. Егор ведёт карточку клиента и выстраивает работу в логике тренировочного цикла — не просто «размять», а подготовить или восстановить.</p>
+      <div class="quote-block">
+        <div class="quote-text">«Тело после тренировки — это не усталость, это материал для роста. Моя задача — помочь ему использовать этот материал правильно.»</div>
+        <div class="quote-author">— Егор Зайковский</div>
+      </div>
+    </div>
+    <div class="body-section">
+      <div class="bs-label">Специализация</div>
+      <h2 class="bs-title">С чем работает</h2>
+      <ul class="specialties-list">
+        <li>Спортивный массаж</li>
+        <li>Восстановление после нагрузок</li>
+        <li>Работа с перегрузками</li>
+        <li>Подготовка к соревнованиям</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="master-cta-section">
+  <div class="mcs-eyebrow">Запись</div>
+  <h2 class="mcs-title">Записаться к Егору</h2>
+  <p class="mcs-sub">Он запомнит всё с первого раза — и следующий сеанс продолжит предыдущий.</p>
+  <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m1805072" target="_blank" class="mcs-btn">Выбрать время</a>
+</div>
+<footer>
+  <a href="/" class="footer-logo"><img src="/img/logo-black.png" alt="Rehab.You"></a>
+  <div class="footer-copy">© 2024 Rehab.You</div>
+  <div class="footer-links"><a href="/#team">Все мастера</a><a href="/#services">Услуги</a><a href="/#locations">Адреса</a></div>
+</footer>
+</body>
+</html>
