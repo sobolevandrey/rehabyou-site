@@ -676,7 +676,7 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
 }
 @keyframes htitleUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 .hero-v2-content {
-  position:absolute; left:64px; top:50%; transform:translateY(-50%);
+  position:absolute; left:64px; top:40%; transform:translateY(-50%);
   z-index:4; display:flex; flex-direction:column;
   animation:htitleUp 1s cubic-bezier(.16,1,.3,1) .3s both;
   max-width:720px;
@@ -705,10 +705,10 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
   text-align:left; max-width:340px;
   animation:htitleUp 1s ease .7s both;
 }
-.hero-v2-eyebrow { font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
-.hero-v2-desc { font-size:14px; line-height:1.8; color:rgba(245,244,240,.6); margin-bottom:24px; }
+.hero-v2-eyebrow { font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
+.hero-v2-desc { font-size:16px; line-height:1.8; color:rgba(245,244,240,.6); margin-bottom:24px; }
 .hero-v2-btn {
-  display:inline-block; padding:14px 32px;
+  display:inline-block; padding:12px 26px;
   background:var(--orange); color:var(--black);
   font-family:'Barlow Condensed',sans-serif;
   font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
@@ -752,6 +752,7 @@ footer { background: var(--black); padding: 80px 72px 40px; color: var(--white);
 .logo-black { display: none; height: 32px; width: auto; }
 nav.scrolled .logo-white { display: none; }
 nav.scrolled .logo-black { display: block; }
+.nav-logo img { font-size: 0; }
 </style>
 <!-- cache-bust: 2026-03-04-v15 -->
 </head>
@@ -759,7 +760,8 @@ nav.scrolled .logo-black { display: block; }
 
 <nav>
   <a href="#" class="nav-logo">
-    <img class="logo-white" src="img/logo-white.png" alt="REHAB.YOU"><img class="logo-black" src="img/logo-black.png" alt="REHAB.YOU">
+    <img class="logo-white" src="img/logo-white.png" alt="REHAB.YOU">
+    <img class="logo-black" src="img/logo-black.png" alt="REHAB.YOU">
   </a>
   <ul class="nav-links">
     <li><a href="#about">О нас</a></li>
