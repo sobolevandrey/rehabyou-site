@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Массаж лица — REHAB.YOU</title>
-<meta name="description" content="Убирает отёки, прорабатывает мимические мышцы. Результат виден с первого раза. Rehab.You — массажный клуб с медицинским подходом. Два центра в Москве.">
+<title>Массаж лица — Rehab.You</title>
+<meta name="description" content="Уберём отёки, подтянем овал и вернём сияние за 1 сеанс. Классический и буккальный массаж лица в Москве. От 6900 ₽.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black:#000; --white:#fff; --orange:#F49933;
-  --gray:#636F80; --light:#F7F7F7; --text:#1A1A1A;
-  --muted:#888; --border:#E5E5E5;
+  --black:#000;--white:#fff;--orange:#F49933;
+  --gray:#636F80;--light:#F7F7F7;--text:#1A1A1A;
+  --muted:#888;--border:#E5E5E5;
   --font-display:'Unbounded',sans-serif;
   --font-body:'Inter',sans-serif;
 }
@@ -43,12 +43,12 @@ nav{
 .nav-cta:hover{background:var(--orange);}
 
 /* HERO */
-.service-hero{
-  padding-top:72px;min-height:60vh;
+.hero{
+  padding-top:72px;min-height:85vh;
   display:grid;grid-template-columns:1fr 1fr;
 }
 .hero-img{
-  overflow:hidden;min-height:480px;
+  overflow:hidden;position:relative;
 }
 .hero-img img{
   width:100%;height:100%;object-fit:cover;display:block;
@@ -64,89 +64,280 @@ nav{
 }
 .hero-eyebrow::before{content:'';width:32px;height:2px;background:var(--orange);}
 .hero-title{
-  font-family:var(--font-display);font-size:clamp(28px,3vw,48px);
-  font-weight:900;text-transform:uppercase;line-height:1.0;
-  letter-spacing:-0.01em;margin-bottom:24px;
+  font-family:var(--font-display);font-size:clamp(30px,3.5vw,56px);
+  font-weight:900;text-transform:uppercase;line-height:0.95;
+  letter-spacing:-0.02em;margin-bottom:20px;
 }
-.hero-desc{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.55);margin-bottom:36px;}
-.hero-meta{
-  display:flex;gap:40px;padding-top:32px;
-  border-top:1px solid rgba(255,255,255,0.1);margin-top:auto;
+.hero-subtitle{
+  font-size:16px;line-height:1.7;color:rgba(255,255,255,0.6);margin-bottom:36px;
+  max-width:420px;
 }
-.meta-item{}
-.meta-val{font-size:28px;font-weight:900;font-family:var(--font-display);color:var(--white);}
-.meta-val em{color:var(--orange);font-style:normal;}
-.meta-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+.hero-bullets{
+  list-style:none;margin-bottom:40px;display:flex;flex-direction:column;gap:10px;
+}
+.hero-bullets li{
+  font-size:13px;color:rgba(255,255,255,0.75);
+  display:flex;align-items:center;gap:10px;
+}
+.hero-bullets li::before{content:'';width:16px;height:1px;background:var(--orange);flex-shrink:0;}
 .btn-primary{
   display:inline-block;background:var(--orange);color:var(--black);
   padding:16px 36px;font-size:12px;font-weight:700;
   letter-spacing:0.15em;text-transform:uppercase;
   text-decoration:none;transition:background 0.2s,transform 0.15s;
-  border:none;cursor:pointer;
+  align-self:flex-start;
 }
 .btn-primary:hover{background:#ff8c00;transform:translateY(-2px);}
-
-/* BODY */
-.service-body-section{
-  display:grid;grid-template-columns:1fr 1fr;gap:0;
+.btn-secondary{
+  display:inline-block;border:1.5px solid rgba(255,255,255,0.25);color:var(--white);
+  padding:14px 32px;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:all 0.2s;
 }
-.service-text{
+.btn-secondary:hover{border-color:var(--orange);color:var(--orange);}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-meta{
+  display:flex;gap:40px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);margin-top:auto;
+}
+.meta-val{font-size:28px;font-weight:900;font-family:var(--font-display);color:var(--white);}
+.meta-val em{color:var(--orange);font-style:normal;}
+.meta-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+/* WHO IS IT FOR */
+.section{padding:96px 72px;}
+.section-label{
+  font-size:11px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-label::before{content:'';width:32px;height:2px;background:var(--orange);}
+.section-title{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,38px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:1.0;margin-bottom:56px;
+}
+.section-bg{background:var(--light);}
+.section-dark{background:var(--black);color:var(--white);}
+
+.who-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border);border:1px solid var(--border);
+}
+.who-item{
+  background:var(--white);padding:32px 36px;
+  display:flex;align-items:flex-start;gap:20px;
+}
+.who-num{
+  font-family:var(--font-display);font-size:13px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:2px;
+}
+.who-text{font-size:15px;line-height:1.6;color:var(--text);}
+
+/* PROCESS */
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--border);
+}
+.process-step{
+  padding:40px 36px;border-right:1px solid var(--border);position:relative;
+}
+.process-step:last-child{border-right:none;}
+.step-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.step-time{
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.step-title{
+  font-family:var(--font-display);font-size:14px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:12px;
+}
+.step-desc{font-size:13px;line-height:1.7;color:#555;}
+
+/* EFFECTS */
+.effects-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.effect-item{
+  padding:48px 48px;border-right:1px solid rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.effect-item:nth-child(2n){border-right:none;}
+.effect-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.effect-title{
+  font-family:var(--font-display);font-size:15px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:10px;color:var(--white);
+}
+.effect-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45);}
+
+/* TYPES */
+.types-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);
+}
+.type-card{
+  background:var(--white);padding:48px;
+}
+.type-badge{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--orange);
+  border:1px solid var(--orange);padding:4px 12px;margin-bottom:24px;
+}
+.type-title{
+  font-family:var(--font-display);font-size:20px;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+}
+.type-desc{font-size:14px;line-height:1.8;color:#555;margin-bottom:28px;}
+.type-includes{margin-bottom:28px;}
+.type-includes-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.type-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.type-includes li{
+  font-size:13px;color:var(--text);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.type-includes li::before{content:'';width:16px;height:1px;background:var(--orange);flex-shrink:0;margin-top:10px;}
+.type-price{
+  display:flex;align-items:baseline;gap:16px;
+  padding-top:28px;border-top:1px solid var(--border);margin-bottom:24px;
+}
+.price-main{
+  font-family:var(--font-display);font-size:28px;font-weight:900;
+}
+.price-pack{font-size:13px;color:var(--muted);}
+.price-pack strong{color:var(--text);}
+.price-discount{
+  font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);background:rgba(244,153,51,0.1);padding:4px 10px;
+}
+.type-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-book{
+  display:inline-block;background:var(--black);color:var(--white);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;
+}
+.btn-book:hover{background:var(--orange);}
+
+/* MASTERS */
+.masters-strip{
   padding:80px 72px;
 }
-.service-text h2{
-  font-family:var(--font-display);font-size:22px;font-weight:800;
-  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:28px;
+.masters-scroll{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
+  margin-top:48px;
 }
-.service-text p{font-size:15px;line-height:1.8;color:#555;margin-bottom:18px;}
-.service-benefits{
-  padding:80px 72px;background:var(--light);
+.master-card{
+  display:block;text-decoration:none;color:var(--text);
+  position:relative;overflow:hidden;
 }
-.service-benefits h3{
-  font-family:var(--font-display);font-size:13px;font-weight:700;
-  text-transform:uppercase;letter-spacing:0.2em;color:var(--orange);margin-bottom:32px;
+.master-photo{
+  width:100%;aspect-ratio:3/4;object-fit:cover;display:block;
+  filter:grayscale(20%);transition:filter 0.3s,transform 0.3s;
 }
-.service-benefits ul{list-style:none;border-top:1px solid var(--border);}
-.service-benefits li{
-  padding:18px 0;border-bottom:1px solid var(--border);
-  font-size:14px;font-weight:600;color:var(--text);
-  display:flex;align-items:center;gap:14px;
+.master-card:hover .master-photo{filter:grayscale(0%);transform:scale(1.03);}
+.master-info{
+  padding:12px 0 0;
 }
-.service-benefits li::before{
-  content:'';width:20px;height:2px;background:var(--orange);flex-shrink:0;
+.master-card-name{font-size:12px;font-weight:700;margin-bottom:2px;}
+.master-card-cta{
+  display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);font-weight:700;text-decoration:none;margin-top:6px;
 }
 
-/* CTA */
-.service-cta{
-  padding:100px 72px;background:var(--black);color:var(--white);text-align:center;
+/* CTA BAND */
+.cta-band{
+  padding:100px 72px;background:var(--black);color:var(--white);
+  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
 }
-.service-cta h2{
-  font-family:var(--font-display);font-size:clamp(22px,2.5vw,36px);
-  font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+.cta-band-title{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,38px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.0;
 }
-.service-cta p{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:40px;}
+.cta-band-title em{color:var(--orange);font-style:normal;}
+.cta-band-sub{font-size:14px;color:rgba(255,255,255,0.4);margin-top:12px;}
+.cta-band-right{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.cta-price-row{text-align:right;}
+.cta-price-new{font-family:var(--font-display);font-size:32px;font-weight:900;color:var(--orange);}
+.cta-price-old{font-size:14px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-top:2px;}
+
+/* FAQ */
+.faq-list{margin-top:48px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  padding:24px 0;font-size:15px;font-weight:600;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:20px;user-select:none;
+}
+.faq-q:hover{color:var(--orange);}
+.faq-icon{
+  width:24px;height:24px;flex-shrink:0;
+  border:1.5px solid var(--border);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;transition:all 0.2s;
+}
+.faq-item.open .faq-icon{background:var(--orange);border-color:var(--orange);color:var(--white);}
+.faq-a{
+  display:none;padding:0 0 24px;font-size:14px;line-height:1.8;color:#555;
+  max-width:700px;
+}
+.faq-item.open .faq-a{display:block;}
 
 /* FOOTER */
 footer{
-  background:var(--black);padding:48px 72px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-top:1px solid rgba(255,255,255,0.07);
+  background:var(--black);padding:56px 72px 40px;
 }
-.footer-logo img{height:28px;width:auto;filter:invert(1);}
+.footer-top{
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07);
+  margin-bottom:32px;
+}
+.footer-logo img{height:28px;width:auto;margin-bottom:20px;}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;}
+.footer-col-title{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);margin-bottom:16px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-col a:hover{color:var(--orange);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
 .footer-copy{font-size:12px;color:rgba(255,255,255,0.2);}
-.footer-links{display:flex;gap:32px;list-style:none;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--orange);}
 
+@media(max-width:1100px){
+  .masters-scroll{grid-template-columns:repeat(4,1fr);}
+  .process-steps{grid-template-columns:repeat(2,1fr);}
+  .process-step{border-right:none;border-bottom:1px solid var(--border);}
+}
 @media(max-width:900px){
   nav{padding:0 24px;}
-  .service-hero{grid-template-columns:1fr;}
-  .hero-img{min-height:280px;}
+  .hero{grid-template-columns:1fr;}
+  .hero-img{min-height:300px;}
   .hero-content{padding:48px 32px;}
-  .service-body-section{grid-template-columns:1fr;}
-  .service-text,.service-benefits{padding:56px 32px;}
-  .service-cta{padding:72px 32px;}
-  footer{flex-direction:column;gap:24px;padding:40px 32px;text-align:center;}
-  .footer-links{flex-wrap:wrap;justify-content:center;}
+  .section{padding:64px 32px;}
+  .who-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .effects-grid{grid-template-columns:1fr;}
+  .effect-item{border-right:none;}
+  .types-grid{grid-template-columns:1fr;}
+  .masters-scroll{grid-template-columns:repeat(3,1fr);}
+  .cta-band{grid-template-columns:1fr;gap:32px;}
+  .cta-band-right{align-items:flex-start;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
+  footer{padding:48px 32px 32px;}
+}
+@media(max-width:600px){
+  .masters-scroll{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
 }
 </style>
 </head>
@@ -161,67 +352,360 @@ footer{
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
 </nav>
 
-<div class="service-hero">
+<!-- HERO -->
+<div class="hero">
   <div class="hero-img">
-    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg" alt="Массаж лица">
+    <img src="https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg" alt="Массаж лица Rehab.You">
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Услуга</div>
-    <h1 class="hero-title">Массаж лица</h1>
-    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
+    <div class="hero-eyebrow">Массаж лица</div>
+    <h1 class="hero-title">Скулы чётче.<br>Отёки ушли.<br>За 60 минут.</h1>
+    <p class="hero-subtitle">Уберём отёки, подтянем овал и вернём сияние за 1 сеанс — без уколов, без аппаратов.</p>
+    <ul class="hero-bullets">
+      <li>Скулы чётче, овал подтянут</li>
+      <li>Мешки и тёмные круги уходят за 60 минут</li>
+      <li>Эффект как после дорогой косметологии — без игл</li>
+    </ul>
+    <div class="hero-btns">
+      <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться</a>
+      <a href="#types" class="btn-secondary">Выбрать формат</a>
+    </div>
     <div class="hero-meta">
       <div class="meta-item">
-        <div class="meta-val">7 400 <em>₽</em></div>
+        <div class="meta-val">от 6 900 <em>₽</em></div>
         <div class="meta-label">Стоимость</div>
       </div>
       <div class="meta-item">
-        <div class="meta-val">60</div>
+        <div class="meta-val">60–70</div>
         <div class="meta-label">минут</div>
       </div>
       <div class="meta-item">
-        <div class="meta-val">2</div>
-        <div class="meta-label">Центра</div>
+        <div class="meta-val">1<em>й</em></div>
+        <div class="meta-label">сеанс = эффект</div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="service-body-section">
-  <div class="service-text">
-    <h2>О процедуре</h2>
-    
-<p>Массаж лица — одна из самых недооценённых процедур. Мимические мышцы работают постоянно: эмоции, стресс, экраны. Они накапливают напряжение так же, как и мышцы спины.</p>
-<p>Мастер работает с мышечным каркасом лица, лимфатическими узлами и точками напряжения. Уходят отёки, восстанавливается тонус, выравнивается овал. Результат виден уже после первого сеанса.</p>
-<p>Без инъекций. Без аппаратов. Руками — но с медицинским пониманием того, что происходит с тканями.</p>
-
-  </div>
-  <div class="service-benefits">
-    <h3>Что даёт</h3>
-    <ul>
-      <li>Устранение отёков</li>
-<li>Восстановление тонуса мышц лица</li>
-<li>Выравнивание овала лица</li>
-<li>Результат с первого сеанса</li>
-    </ul>
+<!-- КОМУ ПОДХОДИТ -->
+<div class="section">
+  <div class="section-label">Кому подходит</div>
+  <h2 class="section-title">Узнаёте себя?</h2>
+  <div class="who-grid">
+    <div class="who-item">
+      <div class="who-num">01</div>
+      <div class="who-text">Замечаете отёки по утрам и уставший вид к вечеру — даже после нормального сна</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">02</div>
+      <div class="who-text">Хотите подтянуть овал без инъекций и ботокса — сохраняя естественность</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">03</div>
+      <div class="who-text">Уже тратите на уход за кожей, но хочется ощутимого и видимого результата</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">04</div>
+      <div class="who-text">Кожа начала терять тонус после 25+ — и вы хотите это изменить без операций</div>
+    </div>
   </div>
 </div>
 
-<div class="service-cta">
-  <h2>Готов начать?</h2>
-  <p>Запись онлайн — выбираешь мастера, центр и удобное время.</p>
-  <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
+<!-- КАК ПРОХОДИТ -->
+<div class="section section-bg">
+  <div class="section-label">Процесс</div>
+  <h2 class="section-title">Как проходит<br>массаж</h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-time">5 мин</div>
+      <div class="step-title">Консультация</div>
+      <div class="step-desc">Разбираем состояние кожи и подбираем технику под ваши задачи: лифтинг, уменьшение отёков, проработка мимических мышц.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-time">10 мин</div>
+      <div class="step-title">Подготовка</div>
+      <div class="step-desc">Демакияж, тонизирование, нанесение масла. Кожа готова к работе — ничего лишнего не нужно приносить с собой.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-time">40 мин</div>
+      <div class="step-title">Массаж</div>
+      <div class="step-desc">Глубокая проработка всех зон лица и шеи. Вы почувствуете, как уходит напряжение — уже в процессе.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-time">15 мин</div>
+      <div class="step-title">Маска и финал</div>
+      <div class="step-desc">Успокаивающая маска и рекомендации по домашнему уходу — чтобы эффект держался как можно дольше.</div>
+    </div>
+  </div>
 </div>
 
+<!-- ЭФФЕКТ -->
+<div class="section section-dark">
+  <div class="section-label">Результат</div>
+  <h2 class="section-title" style="color:var(--white);">Эффект от<br>массажа лица</h2>
+  <div class="effects-grid">
+    <div class="effect-item">
+      <div class="effect-num">01</div>
+      <div class="effect-title">Подтяжка овала</div>
+      <div class="effect-desc">Чёткие скулы и контур — без филлеров и пластики. Мышечный каркас работает как естественный лифтинг.</div>
+    </div>
+    <div class="effect-item">
+      <div class="effect-num">02</div>
+      <div class="effect-title">Здоровый цвет и сияние</div>
+      <div class="effect-desc">Выглядите отдохнувшей даже после тяжёлой недели. Микроциркуляция восстановлена — кожа светится изнутри.</div>
+    </div>
+    <div class="effect-item">
+      <div class="effect-num">03</div>
+      <div class="effect-title">Уменьшение отёков</div>
+      <div class="effect-desc">Утренние отёки и мешки под глазами уходят после первого сеанса. Лимфоотток налажен, жидкость больше не задерживается.</div>
+    </div>
+    <div class="effect-item">
+      <div class="effect-num">04</div>
+      <div class="effect-title">Гладкость кожи</div>
+      <div class="effect-desc">Разглаживание мимических морщин без ботокса и игл. Мышцы расслаблены — кожа следует за ними.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ТИПЫ -->
+<div class="section" id="types">
+  <div class="section-label">Форматы</div>
+  <h2 class="section-title">Выберите<br>свой массаж</h2>
+  <div class="types-grid">
+    <!-- Классический -->
+    <div class="type-card">
+      <div class="type-badge">Классический</div>
+      <div class="type-title">Классический<br>массаж лица</div>
+      <div class="type-desc">Мягкая ручная техника для расслабления мышц, снятия отёчности и улучшения цвета кожи. Стимулирует микроциркуляцию, возвращает тонус и свежесть, помогает разгладить мелкие морщины.</div>
+      <div class="type-includes">
+        <div class="type-includes-label">Что входит</div>
+        <ul>
+          <li>Консультация специалиста, анализ состояния кожи</li>
+          <li>Подготовка: демакияж, тонизирование, масло</li>
+          <li>Массаж лица и шеи — 40 минут</li>
+          <li>Завершающая успокаивающая маска</li>
+        </ul>
+      </div>
+      <div class="type-price">
+        <div>
+          <div class="price-main">6 900 ₽</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">1 сеанс · 60 мин</div>
+        </div>
+        <div class="price-discount">−15% на 5 сеансов</div>
+      </div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:24px;">Абонемент на 5 сеансов: <strong style="color:var(--text);">29 900 ₽</strong> вместо 34 500 ₽</div>
+      <div class="type-btns">
+        <a href="https://n1276048.yclients.com" target="_blank" class="btn-book">Записаться</a>
+      </div>
+    </div>
+    <!-- Буккальный -->
+    <div class="type-card" style="background:var(--black);color:var(--white);">
+      <div class="type-badge">Буккальный</div>
+      <div class="type-title" style="color:var(--white);">Буккальный<br>массаж лица</div>
+      <div class="type-desc" style="color:rgba(255,255,255,0.55);">Глубокая проработка мышц через полость рта и снаружи. Моделирует овал лица, снимает зажимы, уменьшает носогубные складки и даёт выраженный лифтинг-эффект без инъекций.</div>
+      <div class="type-includes">
+        <div class="type-includes-label" style="color:rgba(255,255,255,0.35);">Что входит</div>
+        <ul style="color:rgba(255,255,255,0.7);">
+          <li>Консультация специалиста, анализ состояния кожи</li>
+          <li>Подготовка: демакияж, тонизирование, масло</li>
+          <li>Массаж лица и шеи — 40 минут</li>
+          <li>Завершающая успокаивающая маска</li>
+        </ul>
+      </div>
+      <div class="type-price" style="border-color:rgba(255,255,255,0.1);">
+        <div>
+          <div class="price-main" style="color:var(--white);">6 900 ₽</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">1 сеанс · 60 мин</div>
+        </div>
+        <div class="price-discount">−15% на 5 сеансов</div>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Абонемент на 5 сеансов: <strong style="color:rgba(255,255,255,0.8);">29 900 ₽</strong> вместо 34 500 ₽</div>
+      <div class="type-btns">
+        <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- МАСТЕРА -->
+<div class="masters-strip section-bg">
+  <div style="padding:0 0 0 0;">
+    <div class="section-label" style="padding:80px 72px 0;">Специалисты</div>
+    <h2 class="section-title" style="padding:16px 72px 0;">Мастера<br>Rehab.You</h2>
+  </div>
+  <div style="padding:0 72px 80px;">
+    <div class="masters-scroll">
+      <a href="/masters/topal-vera/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp" alt="Топал Вера">
+        <div class="master-info">
+          <div class="master-card-name">Топал Вера</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/belozer-natalya/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2026/01/belozer-natalya.webp" alt="Белозер Наталья">
+        <div class="master-info">
+          <div class="master-card-name">Белозер Наталья</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/arina-porfireva/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png" alt="Арина Порфирьева">
+        <div class="master-info">
+          <div class="master-card-name">Арина Порфирьева</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/evgeniya-minina/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/evgeniya-minina.png" alt="Евгения Минина">
+        <div class="master-info">
+          <div class="master-card-name">Евгения Минина</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/elizaveta-smolyaninova/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/elizaveta-smolyaninova.png" alt="Елизавета Смольянинова">
+        <div class="master-info">
+          <div class="master-card-name">Елизавета Смольянинова</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/sofya-katelkina/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2025/01/sofya.jpg" alt="Софья Кателкина">
+        <div class="master-info">
+          <div class="master-card-name">Софья Кателкина</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+    </div>
+    <div style="margin-top:32px;text-align:center;">
+      <a href="/#team" style="font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text);text-decoration:none;border-bottom:1.5px solid var(--orange);padding-bottom:4px;">Все мастера →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div>
+    <div class="cta-band-title">Преобразите кожу<br>за <em>один сеанс</em></div>
+    <div class="cta-band-sub">Видимый лифтинг, уменьшение отёчности и сияние кожи — без инъекций</div>
+  </div>
+  <div class="cta-band-right">
+    <div class="cta-price-row">
+      <div class="cta-price-new">от 6 900 ₽</div>
+      <div class="cta-price-old">7 900 ₽</div>
+    </div>
+    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Ответы на частые<br>вопросы</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Сколько сеансов нужно для заметного результата?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Результат заметен уже после первого сеанса — овал подтянут, отёки уменьшились. Для устойчивого эффекта рекомендуем курс от 5 сеансов с периодичностью 1–2 раза в неделю.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        В чём разница между классическим и буккальным массажем?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Классический — работа снаружи: расслабление, тонус, свежесть. Буккальный — глубокая проработка жевательных мышц через полость рта. Буккальный даёт более выраженный лифтинг-эффект и работает с носогубными складками.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Нужно ли приходить без макияжа?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Нет, всё необходимое для подготовки есть на месте. Мастер сделает демакияж в рамках процедуры — это входит в стоимость и занимает 10 минут из сеанса.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Есть ли противопоказания?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Массаж не рекомендуется при воспалениях кожи, угревой сыпи в острой стадии, герпесе, недавних инъекциях (ботокс, филлеры) — нужно выдержать паузу. Обо всём расскажет мастер на консультации перед сеансом.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Как часто можно делать массаж лица?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Для курсового эффекта — 1–2 раза в неделю. Для поддержания — 1–2 раза в месяц. Мастер подберёт оптимальную частоту на консультации исходя из состояния кожи.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Есть ли у вас парковка?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">В филиале на Сухаревской — бесплатная парковка. Предупредите нас за 5 минут до приезда, откроем ворота. В филиале на Парке Культуры — платная городская парковка.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <a href="/"><div class="footer-logo"><img src="/img/logo-black.png" alt="REHAB.YOU" style="filter:invert(1)"></div></a>
-  <ul class="footer-links">
-    <li><a href="/#services">Услуги</a></li>
-    <li><a href="/#team">Мастера</a></li>
-    <li><a href="/#locations">Адреса</a></li>
-    <li><a href="tel:+79255404060">+7 (925) 540-40-60</a></li>
-  </ul>
-  <div class="footer-copy">© 2024 REHAB.YOU</div>
+  <div class="footer-top">
+    <div>
+      <a href="/"><img src="/img/logo-white.png" alt="REHAB.YOU" class="footer-logo" style="height:28px;width:auto;margin-bottom:20px;display:block;filter:invert(0);"></a>
+      <div class="footer-tagline">Массаж и реабилитация<br>в Москве. Два центра.</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Услуги</div>
+      <ul>
+        <li><a href="/massage/classic/">Классический массаж</a></li>
+        <li><a href="/massage/sport/">Спортивный массаж</a></li>
+        <li><a href="/massage/relax/">Расслабляющий массаж</a></li>
+        <li><a href="/massage/face/">Массаж лица</a></li>
+        <li><a href="/massage/4hands/">Массаж 4 руки</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Адреса</div>
+      <ul>
+        <li><a href="/#locations">ул. Мещанская, 7 (Сухаревская)</a></li>
+        <li><a href="/#locations">Мансуровский пер., 10 (Парк Культуры)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <ul>
+        <li><a href="tel:+79255404060">+7 (925) 540-40-60</a></li>
+        <li><a href="https://n1276048.yclients.com" target="_blank">Записаться онлайн</a></li>
+        <li><a href="/#team">Мастера</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Rehab.You. Все права защищены.</div>
+  </div>
 </footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const icon = el.querySelector('.faq-icon');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-icon').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    icon.textContent = '−';
+  }
+}
+</script>
 
 </body>
 </html>
