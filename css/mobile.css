@@ -1,0 +1,302 @@
+/* =============================================
+   MOBILE.CSS — дополнительная мобильная адаптация
+   Подключается после styles.css и master.css
+   ============================================= */
+
+/* ---- HAMBURGER NAV ---- */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s, background 0.3s;
+}
+nav.scrolled .nav-hamburger span { background: var(--black); }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.nav-mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.nav-mobile-menu a {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 7vw, 40px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  width: 80%;
+  text-align: center;
+  transition: color 0.2s;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover { color: var(--orange); }
+.nav-mobile-cta {
+  margin-top: 32px;
+  background: var(--orange) !important;
+  color: var(--black) !important;
+  font-size: 14px !important;
+  padding: 16px 40px !important;
+  border-bottom: none !important;
+  width: auto !important;
+}
+
+@media (max-width: 1100px) {
+  .nav-hamburger { display: flex; }
+  .nav-mobile-menu { display: flex; }
+}
+
+/* ---- HERO ---- */
+@media (max-width: 768px) {
+  .hero-v2-content {
+    left: 24px;
+    right: 24px;
+    top: auto;
+    bottom: 140px;
+    max-width: 100%;
+    animation: none;
+  }
+  .hero-v2-title-inline {
+    font-size: clamp(36px, 11vw, 56px);
+  }
+  .hero-v2-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hvs-num { font-size: 22px; }
+  .hero-v2-right {
+    left: 24px;
+    right: 24px;
+    bottom: 56px;
+    max-width: 100%;
+  }
+  .hero-v2-desc { font-size: 13px; }
+  .hero-v2-dots { right: 24px; bottom: 24px; }
+  .hero-v2-bar { display: none; }
+}
+
+/* ---- MANIFESTO STRIP ---- */
+@media (max-width: 768px) {
+  .manifesto-item { padding: 20px 28px; }
+  .manifesto-text { font-size: 11px; }
+  .sv2-item { font-size: 11px; padding: 0 24px; }
+}
+
+/* ---- ABOUT ---- */
+@media (max-width: 768px) {
+  .about-section { padding: 64px 24px; }
+  .about-grid { gap: 40px; }
+  .about-photo-wrap { aspect-ratio: 4/3; }
+  .about-photo-badge { padding: 16px 20px; }
+  .about-photo-badge-text { font-size: 11px; }
+  .about-title { font-size: 22px; }
+  .about-body { font-size: 14px; }
+  .about-founder { flex-direction: column; gap: 8px; }
+  .hero-stats { gap: 20px; }
+  .stat-num { font-size: 26px; }
+}
+
+/* ---- SERVICES ---- */
+@media (max-width: 768px) {
+  .services-section { padding: 64px 24px; }
+  .services-grid { grid-template-columns: 1fr; gap: 0; }
+  .service-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .service-photo { height: 180px; }
+  .service-body { padding: 24px 24px 28px; }
+  .service-name { font-size: 16px; }
+  .service-price { font-size: 22px; }
+  .service-arrow { bottom: 24px; right: 24px; }
+}
+
+/* ---- TEAM SLIDER ---- */
+@media (max-width: 768px) {
+  .team-section { padding-top: 64px; }
+  .team-section .section-header { padding: 0 24px; margin-bottom: 32px; }
+  .team-card { flex: 0 0 260px; }
+  .team-photo { height: 320px; }
+  .team-name { font-size: 14px; }
+  .team-slider-nav { padding: 20px 24px 32px; }
+  .team-quiz { padding: 40px 24px; gap: 20px; }
+  .quiz-title { font-size: 18px; }
+}
+
+/* ---- PACKAGES ---- */
+@media (max-width: 768px) {
+  .packages-section { padding: 64px 24px; }
+  .packages-grid { margin-top: 40px; gap: 16px; }
+  .package-card { padding: 32px 24px; }
+  .package-price { font-size: 36px; }
+  .package-name { font-size: 20px; }
+}
+
+/* ---- PROCESS ---- */
+@media (max-width: 768px) {
+  .process-section { padding: 64px 24px; }
+  .process-grid { margin-top: 40px; grid-template-columns: 1fr; gap: 32px; }
+  .process-step { padding: 0; }
+  .step-num { width: 44px; height: 44px; font-size: 12px; }
+  .step-title { font-size: 14px; }
+}
+
+/* ---- AMBASSADORS ---- */
+@media (max-width: 768px) {
+  .ambassadors-section { padding-top: 64px; }
+  .amb-header { padding: 0 24px; margin-bottom: 32px; }
+  .amb-card { flex: 0 0 260px; }
+  .amb-photo { height: 340px; }
+  .amb-nav { padding: 20px 24px 32px; }
+}
+
+/* ---- REVIEWS ---- */
+@media (max-width: 768px) {
+  .reviews-section { padding: 64px 24px; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+  .review-card { padding: 24px; }
+  .review-text { font-size: 13px; }
+}
+
+/* ---- LOCATIONS ---- */
+@media (max-width: 768px) {
+  .locations-section { padding: 64px 24px; }
+  .locations-grid { gap: 16px; margin-top: 40px; }
+  .location-photo { height: 200px; }
+  .location-body { padding: 28px 24px; }
+  .location-name { font-size: 20px; }
+}
+
+/* ---- CTA ---- */
+@media (max-width: 768px) {
+  .cta-section { padding: 80px 24px; }
+  .cta-form { flex-direction: column; gap: 0; }
+  .cta-input { border-right: 1px solid rgba(255,255,255,0.1); border-bottom: none; }
+  .cta-submit { padding: 16px; width: 100%; }
+  .cta-title { font-size: 22px; }
+}
+
+/* ---- FAQ ---- */
+@media (max-width: 768px) {
+  .faq-section { padding: 64px 24px; }
+  .faq-list { margin-top: 40px; }
+  .faq-q { font-size: 14px; padding: 20px 0; }
+}
+
+/* ---- FOOTER ---- */
+@media (max-width: 768px) {
+  footer { padding: 56px 24px 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; padding-bottom: 40px; }
+  .footer-phone { font-size: 17px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ---- SECTION HEADERS MOBILE ---- */
+@media (max-width: 768px) {
+  .section-title { font-size: 22px; }
+  .section-header { margin-bottom: 40px; }
+}
+
+/* ---- STICKY CTA ---- */
+@media (max-width: 640px) {
+  .sticky-cta { bottom: 16px; right: 16px; left: 16px; }
+  .sticky-btn { width: 100%; justify-content: center; }
+}
+
+/* ---- TELEGRAM POPUP ---- */
+@media (max-width: 480px) {
+  .tg-popup {
+    width: calc(100vw - 16px);
+    bottom: 8px;
+    right: 8px;
+    left: 8px;
+  }
+  .tg-popup-photo { width: 90px; }
+  .tg-popup-title { font-size: 13px; }
+  .tg-popup-text { font-size: 11px; }
+}
+
+/* ---- QUIZ MODAL ---- */
+@media (max-width: 540px) {
+  .quiz-box { margin: 12px; }
+  .quiz-content { padding: 28px 20px 24px; }
+  .quiz-result { padding: 28px 20px 24px; }
+  .quiz-question { font-size: 17px; }
+  .quiz-option { padding: 12px 14px; font-size: 13px; }
+}
+
+/* ---- MODAL ---- */
+@media (max-width: 540px) {
+  .modal-box { padding: 36px 24px; }
+  .modal-title { font-size: 20px; }
+}
+
+/* ---- FACE MASSAGE PAGE ---- */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero-face {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  .hero-face-photo {
+    height: 55vw;
+    min-height: 240px;
+    order: -1;
+  }
+  .hero-face-content {
+    padding: 40px 24px 48px !important;
+  }
+
+  /* Who section */
+  .who-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .who-section { padding: 56px 24px !important; }
+  .who-right { max-width: 100% !important; }
+
+  /* Effects section */
+  .effects-section {
+    grid-template-columns: 1fr !important;
+  }
+  .effects-left { padding: 48px 24px !important; }
+  .effects-right { min-height: 360px; }
+
+  /* Types */
+  .types-new-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .type-new-inner { padding: 32px 24px !important; }
+  .type-new-overlay { min-height: 400px !important; padding: 32px 24px 40px !important; }
+
+  /* Masters strip */
+  .masters-strip-track { gap: 8px !important; }
+}
