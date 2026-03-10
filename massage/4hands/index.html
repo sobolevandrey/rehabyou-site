@@ -27,7 +27,7 @@
 
 /* ===== HERO ===== */
 .svc-hero {
-  display:grid; grid-template-columns:2fr 3fr; min-height:100vh; padding-top:72px;
+  display:grid; grid-template-columns:2fr 3fr; min-height:100vh; margin-top:72px;
 }
 .svc-hero-left {
   background:var(--white); display:flex; flex-direction:column; justify-content:center;
@@ -62,7 +62,7 @@
 }
 .hero-meta { display:flex; gap:0; margin-bottom:36px; border-top:1px solid var(--border); }
 .hero-meta-item {
-  padding:14px 0; border-bottom:1px solid var(--border);
+  padding:14px 16px 14px 0; border-bottom:1px solid var(--border);
   flex:1; font-size:13px; font-weight:700; color:var(--text);
   border-right:1px solid var(--border);
 }
@@ -292,12 +292,12 @@
 .cta-band-btn:hover { background:#222; }
 
 /* ===== FAQ ===== */
-.svc-faq { padding:120px 72px; background:var(--white); }
-.svc-faq .faq-list { margin-top:64px; border-top:1px solid var(--border); }
+.svc-faq { padding:80px 72px; background:var(--white); }
+.svc-faq .faq-list { margin-top:40px; border-top:1px solid var(--border); }
 
 /* ===== MOBILE ===== */
 @media(max-width:1024px) {
-  .svc-hero { grid-template-columns:1fr; padding-top:72px; }
+  .svc-hero { grid-template-columns:1fr; margin-top:72px; }
   .svc-hero-left { padding:60px 32px 48px; }
   .svc-hero-right { min-height:320px; }
   .who-section { padding:72px 32px; }
@@ -589,7 +589,7 @@
 
 <!-- FAQ -->
 <section class="svc-faq">
-  <div class="section-eyebrow">Вопросы</div>
+  <div class="section-eyebrow" style="margin-bottom:12px">Вопросы</div>
   <h2 class="section-title">ЧАСТЫЕ<br><span style="color:var(--orange)">ВОПРОСЫ</span></h2>
   <div class="faq-list"><div class="faq-item">
         <div class="faq-q">Это не неловко — два человека сразу?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
