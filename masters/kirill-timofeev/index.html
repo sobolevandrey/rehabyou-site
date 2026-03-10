@@ -16,24 +16,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кирилл Тимофеев — мастер Rehab.You</title>
-<meta name="description" content="Кирилл Тимофеев — специалист по спортивному и антицеллюлитному массажу. Rehab.You, Москва.">
+<meta name="description" content="Кирилл Тимофеев — мастер антицеллюлитного и спортивного массажа. Rehab.You, Москва.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/styles.css">
 <link rel="stylesheet" href="../../css/master.css">
+<link rel="stylesheet" href="../../css/mobile.css">
 <style>
-
-
-
 /* === DESKTOP WIDE PHOTO === */
 @media (min-width: 1024px) {
-  .master-hero-photo {
-    background-image: url('/img/Team/%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%20%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%28wide%29.jpg') !important;
-    background-position: center center !important;
-    background-size: cover !important;
+  .master-hero-photo { display: none; }
+  .master-hero {
+    background-image: url('/img/Team/%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%20%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%28wide%29.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
   }
+  body { background: #fff; }
+  .master-body { background: #ffffff; position: relative; z-index: 1; }
+  nav { background: transparent; }
+  nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); }
+}
+@media (max-width: 1023px) {
+  .master-hero-photo { display: block; }
+  .master-body { background: #ffffff; }
 }
 /* === END DESKTOP WIDE PHOTO === */
+
 /* === SVG SPEC ICON === */
 .master-spec-icon {
   width: 40px;
