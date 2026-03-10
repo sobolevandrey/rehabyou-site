@@ -545,14 +545,15 @@ footer{
 }
 .type-new-overlay{
   position:relative;z-index:1;
-  padding:48px 48px;height:100%;
-  background:linear-gradient(to top, rgba(0,0,0,0.92) 50%, rgba(0,0,0,0.3) 100%);
+  height:100%;
   display:flex;flex-direction:column;justify-content:flex-end;
   min-height:560px;
 }
-.type-new-overlay .type-new-price{
-  color:var(--white);border-color:rgba(255,255,255,0.2);
+.type-new-overlay-inner{
+  background:var(--black);
+  padding:32px 48px 48px;
 }
+
 @media(max-width:1000px){
   .types-new-grid{grid-template-columns:1fr;}
   .type-new-card{border-right:none;border-bottom:1px solid var(--border);}
@@ -784,12 +785,14 @@ footer{
     <div class="type-new-card type-new-photo">
       <img src="/img/7 vertical.jpg" alt="Абонемент Rehab.You">
       <div class="type-new-overlay">
-        <div class="type-new-badge type-new-badge-light">−15%</div>
-        <div class="type-new-title">Абонемент<br>5 сеансов</div>
-        <div class="type-new-desc type-new-desc-light">Скидка 15% при покупке курса от 5 сеансов. Действует на оба формата.</div>
-        <div class="type-new-price">29 900 ₽</div>
-        <div class="type-new-price-sub type-new-price-sub-light">вместо 34 500 ₽ · экономия 4 600 ₽</div>
-        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn type-new-btn-orange">Купить абонемент</a>
+        <div class="type-new-overlay-inner">
+          <div class="type-new-badge type-new-badge-light">−15%</div>
+          <div class="type-new-title" style="color:var(--white);">Абонемент<br>5 сеансов</div>
+          <div class="type-new-desc type-new-desc-light">Скидка 15% при покупке курса от 5 сеансов. Действует на оба формата.</div>
+          <div class="type-new-price" style="color:var(--white);border-color:rgba(255,255,255,0.15);">29 900 ₽</div>
+          <div class="type-new-price-sub type-new-price-sub-light">вместо 34 500 ₽ · экономия 4 600 ₽</div>
+          <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn type-new-btn-orange">Купить абонемент</a>
+        </div>
       </div>
     </div>
 
