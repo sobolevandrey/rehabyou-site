@@ -407,11 +407,12 @@ footer{
 .who-photo-label{
   position:absolute;bottom:0;left:0;right:0;
   background:var(--black);
-  padding:16px 20px;
+  padding:16px 24px;
   display:flex;align-items:center;
+  overflow:hidden;
 }
 .who-photo-label img{
-  height:22px;width:auto;display:block;
+  height:28px;width:auto;display:block;max-width:160px;object-fit:contain;
 }
 @media(max-width:1000px){
   .who-inner{grid-template-columns:1fr;gap:40px;}
@@ -467,7 +468,7 @@ footer{
   </div>
 </div>
 
-<!-- КОМУ ПОДХОДИТ -->
+<!-- ТОЛЬКО ДЛЯ ВАС -->
 <div class="who-section">
   <div class="who-inner">
     <!-- Геометрия: оранжевый угол -->
@@ -476,7 +477,7 @@ footer{
 
     <!-- Текстовая колонка -->
     <div class="who-left">
-      <div class="section-label">Кому подходит</div>
+      <div class="section-label">Только для вас</div>
       <h2 class="who-title">Кому<br>подходит</h2>
       <div class="who-list">
         <div class="who-item">
@@ -503,10 +504,7 @@ footer{
       <img src="/img/3 vertical.jpg" alt="Массаж лица Rehab.You">
       <!-- Чёрный акцентный блок поверх угла фото -->
       <div class="who-photo-label">
-        <svg height="20" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="16" font-family="'Unbounded', sans-serif" font-weight="900" font-size="14" fill="white" letter-spacing="1">REHAB.</text>
-          <text x="72" y="16" font-family="'Unbounded', sans-serif" font-weight="900" font-size="14" fill="#F49933" letter-spacing="1">YOU</text>
-        </svg>
+        <img src="/img/logo-white.png" alt="Rehab.You">
       </div>
     </div>
   </div>
