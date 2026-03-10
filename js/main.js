@@ -10,16 +10,19 @@ const obs = new IntersectionObserver(entries => {
 }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
 revealEls.forEach(el => obs.observe(el));
 
-// Sticky CTA
-const sticky = document.getElementById('stickyCta');
-const heroSection = document.querySelector('.hero-v2');
-window.addEventListener('scroll', () => {
-  if(heroSection && heroSection.getBoundingClientRect().bottom < 0) {
-    sticky.classList.add('visible');
-  } else {
-    sticky.classList.remove('visible');
-  }
-});
+// Sticky CTA — only on pages that have both #stickyCta and .hero-v2
+(function(){
+  const sticky = document.getElementById('stickyCta');
+  const heroSection = document.querySelector('.hero-v2');
+  if(!sticky || !heroSection) return;
+  window.addEventListener('scroll', () => {
+    if(heroSection.getBoundingClientRect().bottom < 0) {
+      sticky.classList.add('visible');
+    } else {
+      sticky.classList.remove('visible');
+    }
+  });
+})();
 
 // FAQ
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -33,6 +36,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 // Nav scroll effect
 (function(){
   const nav = document.querySelector('nav');
+  if(!nav) return;
   function updateNav() {
     if (window.scrollY > 20) { nav.classList.add('scrolled'); }
     else { nav.classList.remove('scrolled'); }
@@ -43,17 +47,18 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 // Hero slider v2
 (function(){
-  let idx=0;
-  const slides=document.querySelectorAll('.hero-slide');
-  const dots=document.querySelectorAll('.hvd');
-  window.goToSlide=function(n){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hvd');
+  if(!slides.length) return;
+  let idx = 0;
+  window.goToSlide = function(n){
     slides[idx].classList.remove('active');
-    dots[idx].classList.remove('active');
-    idx=n;
+    if(dots[idx]) dots[idx].classList.remove('active');
+    idx = n;
     slides[idx].classList.add('active');
-    dots[idx].classList.add('active');
+    if(dots[idx]) dots[idx].classList.add('active');
   };
-  setInterval(()=>goToSlide((idx+1)%slides.length),5000);
+  setInterval(() => goToSlide((idx+1) % slides.length), 5000);
 })();
 
 // Team slider
@@ -62,18 +67,22 @@ document.querySelectorAll('.faq-item').forEach(item => {
   if(!track) return;
   const cards = track.querySelectorAll('.team-card');
   const total = cards.length;
-  document.getElementById('teamTotal').textContent = total;
+  const totalEl = document.getElementById('teamTotal');
+  const currentEl = document.getElementById('teamCurrent');
+  if(totalEl) totalEl.textContent = total;
   const cardW = () => cards[0].offsetWidth;
   let current = 0;
 
   function scrollTo(i){
     current = Math.max(0, Math.min(i, total-1));
     track.scrollTo({left: current * cardW(), behavior:'smooth'});
-    document.getElementById('teamCurrent').textContent = current+1;
+    if(currentEl) currentEl.textContent = current+1;
   }
 
-  document.getElementById('teamNext').addEventListener('click', ()=> scrollTo(current+1));
-  document.getElementById('teamPrev').addEventListener('click', ()=> scrollTo(current-1));
+  const nextBtn = document.getElementById('teamNext');
+  const prevBtn = document.getElementById('teamPrev');
+  if(nextBtn) nextBtn.addEventListener('click', () => scrollTo(current+1));
+  if(prevBtn) prevBtn.addEventListener('click', () => scrollTo(current-1));
 
   let isDown=false, startX=0, scrollLeft=0;
   track.addEventListener('mousedown', e=>{isDown=true; track.classList.add('dragging'); startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft;});
@@ -82,7 +91,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   track.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.2;});
   track.addEventListener('scroll',()=>{
     const i=Math.round(track.scrollLeft/cardW());
-    if(i!==current){current=i;document.getElementById('teamCurrent').textContent=current+1;}
+    if(i!==current){current=i;if(currentEl) currentEl.textContent=current+1;}
   });
 })();
 
@@ -106,8 +115,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
   const nextBtn = document.getElementById('ambNext');
   const prevBtn = document.getElementById('ambPrev');
-  if(nextBtn) nextBtn.addEventListener('click', ()=> scrollTo(current+1));
-  if(prevBtn) prevBtn.addEventListener('click', ()=> scrollTo(current-1));
+  if(nextBtn) nextBtn.addEventListener('click', () => scrollTo(current+1));
+  if(prevBtn) prevBtn.addEventListener('click', () => scrollTo(current-1));
 
   let isDown=false, startX=0, scrollLeft=0;
   track.addEventListener('mousedown', e=>{isDown=true;track.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;});
@@ -128,7 +137,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   const bar = document.getElementById('quizBar');
   const content = document.getElementById('quizContent');
   const result = document.getElementById('quizResult');
-  if(!modal) return;
+  if(!modal || !openBtn) return;
 
   const answers = {};
 
@@ -157,7 +166,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   };
 
   openBtn.addEventListener('click', ()=>{ modal.classList.add('open'); document.body.style.overflow='hidden'; });
-  closeBtn.addEventListener('click', closeQuizModal);
+  if(closeBtn) closeBtn.addEventListener('click', closeQuizModal);
   modal.addEventListener('click', e=>{ if(e.target===modal) closeQuizModal(); });
 
   function closeQuizModal(){
@@ -168,14 +177,14 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
   function resetQuiz(){
     Object.keys(answers).forEach(k=>delete answers[k]);
-    content.style.display='block';
-    result.classList.remove('active');
-    content.querySelectorAll('.quiz-step').forEach((s,i)=>{ s.classList.toggle('active',i===0); });
-    content.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
-    bar.style.width='33%';
+    if(content) content.style.display='block';
+    if(result) result.classList.remove('active');
+    if(content) content.querySelectorAll('.quiz-step').forEach((s,i)=>{ s.classList.toggle('active',i===0); });
+    if(content) content.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
+    if(bar) bar.style.width='33%';
   }
 
-  content.addEventListener('click', e=>{
+  if(content) content.addEventListener('click', e=>{
     const opt = e.target.closest('.quiz-option');
     if(!opt) return;
     const q = opt.dataset.q;
@@ -188,7 +197,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
       if(step < 3){
         content.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
         content.querySelector(`[data-step="${step+1}"]`).classList.add('active');
-        bar.style.width = (step+1)/3*100+'%';
+        if(bar) bar.style.width = (step+1)/3*100+'%';
       } else {
         showResult();
       }
@@ -196,19 +205,23 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 
   function showResult(){
-    bar.style.width='100%';
+    if(bar) bar.style.width='100%';
     const vals = Object.values(answers);
     let best = masters[0], bestScore = -1;
     masters.forEach(m=>{
       const score = vals.filter(v=>m.tags.includes(v)).length;
       if(score>bestScore){ bestScore=score; best=m; }
     });
-    content.style.display='none';
-    document.getElementById('resultName').textContent = best.name;
-    document.getElementById('resultSpec').textContent = best.spec;
-    document.getElementById('resultReason').textContent = reasons[best.name] || '';
-    document.getElementById('resultBtn').href = best.url;
-    result.classList.add('active');
+    if(content) content.style.display='none';
+    const nameEl = document.getElementById('resultName');
+    const specEl = document.getElementById('resultSpec');
+    const reasonEl = document.getElementById('resultReason');
+    const btnEl = document.getElementById('resultBtn');
+    if(nameEl) nameEl.textContent = best.name;
+    if(specEl) specEl.textContent = best.spec;
+    if(reasonEl) reasonEl.textContent = reasons[best.name] || '';
+    if(btnEl) btnEl.href = best.url;
+    if(result) result.classList.add('active');
   }
 })();
 
@@ -219,7 +232,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   if(!popup) return;
   if(sessionStorage.getItem('tgPopupClosed')) return;
   setTimeout(()=>{ popup.classList.add('visible'); }, 3000);
-  closeBtn.addEventListener('click', ()=>{
+  if(closeBtn) closeBtn.addEventListener('click', ()=>{
     popup.classList.remove('visible');
     sessionStorage.setItem('tgPopupClosed', '1');
   });
