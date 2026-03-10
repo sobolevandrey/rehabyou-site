@@ -652,6 +652,32 @@ nav {
   .masters-section .team-card { flex: 0 0 260px; }
 }
 /* === END MASTERS SLIDER === */
+
+/* === OTHER SERVICES SECTION === */
+.other-services-section {
+  background: var(--black);
+  padding: 0;
+}
+.other-services-header {
+  padding: 80px 72px 48px;
+}
+.other-services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.07);
+}
+@media(max-width:1100px){
+  .other-services-section .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media(max-width:900px){
+  .other-services-header { padding: 56px 24px 32px; }
+  .other-services-section .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width:500px){
+  .other-services-section .services-grid { grid-template-columns: 1fr; }
+}
+/* === END OTHER SERVICES SECTION === */
 </style>
 <link rel="stylesheet" href="/css/mobile.css">
 </head>
@@ -1101,6 +1127,79 @@ nav {
       <div class="cta-price-old">5 500 ₽</div>
     </div>
     <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
+  </div>
+</div>
+
+<!-- ДРУГИЕ УСЛУГИ -->
+<div class="other-services-section">
+  <div class="other-services-header">
+    <div class="section-label" style="color:var(--orange);">Каталог</div>
+    <h2 class="section-title" style="color:#fff;">Другие<br>услуги</h2>
+  </div>
+  <div class="services-grid">
+    <a href="/massage/classic/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg" alt="Классический" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">Классический</div>
+        <div class="service-desc">Когда нужно привести тело в порядок и держать его в тонусе. Регулярная база для тех, кто следит за собой.</div>
+        <div class="service-price">6 900 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="/massage/sport/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/sport.jpeg" alt="Спортивный" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">Спортивный</div>
+        <div class="service-desc">Хит клуба. После зала, перед стартом, в середине цикла. Для тех, кто тренируется и хочет тренироваться дольше.</div>
+        <div class="service-price">6 900 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="/massage/anticell/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/acz.jpeg" alt="Антицеллюлитный" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">Антицеллюлитный</div>
+        <div class="service-desc">Видимый результат курсом. Для тех, кто хочет видеть разницу в зеркале — и видит её.</div>
+        <div class="service-price">7 400 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="/massage/face/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg" alt="Массаж лица" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">Массаж лица</div>
+        <div class="service-desc">Убирает отёки, прорабатывает мимические мышцы. Результат виден с первого раза.</div>
+        <div class="service-price">7 400 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="/massage/4hands/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/4-ruki.jpeg" alt="В четыре руки" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">В четыре руки</div>
+        <div class="service-desc">Два мастера, один сеанс — тело не успевает напрягаться в ожидании следующего движения. Самый глубокий формат.</div>
+        <div class="service-price">13 800 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="/massage/stones/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2025/03/funkczionalnaya-scaled.jpg" alt="Массаж + камни" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">Массаж + камни</div>
+        <div class="service-desc">Тепло проникает туда, куда руки доходят не сразу. Для хронически зажатых мышц и тех, кто мёрзнет.</div>
+        <div class="service-price">7 700 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="/massage/angiopharm/" class="service-card">
+      <img src="https://rehabyou.ru/wp-content/uploads/2025/04/zhp02726-scaled.jpg" alt="Rehab.You × Angiopharm" class="service-photo">
+      <div class="service-body">
+        <div class="service-name">Rehab.You × Angiopharm</div>
+        <div class="service-desc">Коллаборация с Angiopharm. Протокол для тех, кто привык работать на результат — и в зале, и в восстановлении.</div>
+        <div class="service-price">13 100 <span>₽</span></div>
+      </div>
+      <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
   </div>
 </div>
 
