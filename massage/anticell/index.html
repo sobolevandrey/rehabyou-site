@@ -572,6 +572,101 @@ nav {
   .nav-links { display:none; }
 }
 /* === END NAV FIXED === */
+
+/* === MASTERS SLIDER === */
+.masters-section {
+  background: #111;
+  padding: 0;
+}
+.masters-section-header {
+  padding: 80px 72px 48px;
+}
+.masters-section .team-slider-wrap {
+  position: relative;
+}
+.masters-section .team-slider-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+.masters-section .team-slider-track::-webkit-scrollbar { display: none; }
+.masters-section .team-slider-track.dragging { cursor: grabbing; }
+.masters-section .team-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.masters-section .team-photo {
+  width: 100%; height: 400px;
+  background-size: cover; background-position: center top;
+  transition: transform 0.5s ease;
+}
+.masters-section .team-card:hover .team-photo { transform: scale(1.04); }
+.masters-section .team-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  pointer-events: none;
+}
+.masters-section .team-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 28px 32px;
+}
+.masters-section .team-name {
+  font-size: 16px; font-weight: 800; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px;
+}
+.masters-section .team-spec-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.masters-section .spec-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 10px; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+}
+.masters-section .spec-tag svg { flex-shrink: 0; opacity: 0.7; }
+.masters-section .team-btns { display: flex; align-items: center; gap: 12px; }
+.masters-section .team-btn {
+  display: inline-block; background: var(--orange); color: var(--black);
+  padding: 9px 20px; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s; white-space: nowrap;
+}
+.masters-section .team-btn:hover { background: #ff8c00; }
+.masters-section .team-btn-more {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  color: rgba(255,255,255,0.55); border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; white-space: nowrap;
+}
+.masters-section .team-btn-more:hover { color: var(--orange); border-color: var(--orange); }
+.masters-section .team-slider-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 72px 48px;
+}
+.masters-section .team-slider-arrows { display: flex; gap: 12px; }
+.masters-section .slider-arrow {
+  width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2);
+  background: transparent; color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.masters-section .slider-arrow:hover { background: var(--orange); border-color: var(--orange); }
+.masters-section .team-slider-counter {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+}
+.masters-section .team-slider-counter span { color: rgba(255,255,255,0.7); }
+@media(max-width:900px){
+  .masters-section-header { padding: 56px 24px 32px; }
+  .masters-section .team-slider-nav { padding: 24px 24px 40px; }
+  .masters-section .team-card { flex: 0 0 260px; }
+}
+/* === END MASTERS SLIDER === */
 </style>
 <link rel="stylesheet" href="/css/mobile.css">
 </head>
@@ -823,59 +918,81 @@ nav {
   </div>
 
 <!-- МАСТЕРА -->
-<div class="masters-strip section-bg">
-  <div style="padding:0 0 0 0;">
-    <div class="section-label" style="padding:80px 72px 0;">Специалисты</div>
-    <h2 class="section-title" style="padding:16px 72px 0;">Мастера<br>Rehab.You</h2>
+<div class="masters-section">
+  <div class="masters-section-header">
+    <div class="section-label" style="color:var(--orange);">Специалисты</div>
+    <h2 class="section-title" style="color:#fff;">Мастера<br>Rehab.You</h2>
   </div>
-  <div style="padding:0 72px 80px;">
-    <div class="masters-scroll">
-      <a href="/masters/topal-vera/" class="master-card">
-        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp" alt="Топал Вера">
-        <div class="master-info">
-          <div class="master-card-name">Топал Вера</div>
-          <div class="master-card-cta">Записаться →</div>
+  <div class="team-slider-wrap">
+    <div class="team-slider-track" id="mastersTrack">
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/02/nbvjattd-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Кирилл Тимофеев</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Антицеллюлит</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3729069" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/kirill-timofeev/" class="team-btn-more">Подробнее</a>
+          </div>
         </div>
-      </a>
-      <a href="/masters/belozer-natalya/" class="master-card">
-        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2026/01/belozer-natalya.webp" alt="Белозер Наталья">
-        <div class="master-info">
-          <div class="master-card-name">Белозер Наталья</div>
-          <div class="master-card-cta">Записаться →</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Павел Репин</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Реабилитация</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581687" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/pavel-repin/" class="team-btn-more">Подробнее</a>
+          </div>
         </div>
-      </a>
-      <a href="/masters/kirill-timofeev/" class="master-card">
-        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2025/01/nbvjattd-scaled.jpg" alt="Кирилл Тимофеев">
-        <div class="master-info">
-          <div class="master-card-name">Кирилл Тимофеев</div>
-          <div class="master-card-cta">Записаться →</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Топал Вера</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>Триггерные точки</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4923885" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/topal-vera/" class="team-btn-more">Подробнее</a>
+          </div>
         </div>
-      </a>
-      <a href="/masters/elizaveta-smolyaninova/" class="master-card">
-        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/elizaveta-smolyaninova.png" alt="Елизавета Смольянинова">
-        <div class="master-info">
-          <div class="master-card-name">Елизавета Смольянинова</div>
-          <div class="master-card-cta">Записаться →</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00017-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Дмитрий Иванчинков</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>Глубокая проработка</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4567419" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/dmitrij-ivanchinkov/" class="team-btn-more">Подробнее</a>
+          </div>
         </div>
-      </a>
-      <a href="/masters/evgeniya-minina/" class="master-card">
-        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/evgeniya-minina.png" alt="Евгения Минина">
-        <div class="master-info">
-          <div class="master-card-name">Евгения Минина</div>
-          <div class="master-card-cta">Записаться →</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/07/img_4207-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Алла Несена</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Кинезиология</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>ШВЗ</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m4091547" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/alla-nesena/" class="team-btn-more">Подробнее</a>
+          </div>
         </div>
-      </a>
-      <a href="/masters/arina-porfireva/" class="master-card">
-        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png" alt="Арина Порфирьева">
-        <div class="master-info">
-          <div class="master-card-name">Арина Порфирьева</div>
-          <div class="master-card-cta">Записаться →</div>
-        </div>
-      </a>
+      </div>
     </div>
-    <div style="margin-top:32px;text-align:center;">
-      <a href="/#team" style="font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text);text-decoration:none;border-bottom:1.5px solid var(--orange);padding-bottom:4px;">Все мастера →</a>
+  </div>
+  <div class="team-slider-nav">
+    <div class="team-slider-arrows">
+      <button class="slider-arrow" id="mastersPrev" aria-label="Назад"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="slider-arrow" id="mastersNext" aria-label="Вперёд"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
     </div>
+    <div class="team-slider-counter"><span id="mastersCurrent">1</span> / <span id="mastersTotal">5</span></div>
   </div>
 </div>
 
@@ -1018,5 +1135,37 @@ if (hamburger && mobileMenu) {
 }
 </script>
 
+
+<script>
+(function(){{
+  var track = document.getElementById('mastersTrack');
+  var prev = document.getElementById('mastersPrev');
+  var next = document.getElementById('mastersNext');
+  var cur = document.getElementById('mastersCurrent');
+  var tot = document.getElementById('mastersTotal');
+  if (!track) return;
+  var cards = track.querySelectorAll('.team-card');
+  var total = cards.length;
+  if (tot) tot.textContent = total;
+  function getIdx() {{
+    var cardW = cards[0] ? cards[0].offsetWidth : 320;
+    return Math.round(track.scrollLeft / cardW) + 1;
+  }}
+  function updateCounter() {{ if (cur) cur.textContent = getIdx(); }}
+  track.addEventListener('scroll', updateCounter, {{passive:true}});
+  if (prev) prev.addEventListener('click', function() {{
+    track.scrollBy({{left: -320, behavior:'smooth'}});
+  }});
+  if (next) next.addEventListener('click', function() {{
+    track.scrollBy({{left: 320, behavior:'smooth'}});
+  }});
+  // drag
+  var isDown=false, startX, scrollLeft;
+  track.addEventListener('mousedown',function(e){{isDown=true;track.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;}});
+  track.addEventListener('mouseleave',function(){{isDown=false;track.classList.remove('dragging');}});
+  track.addEventListener('mouseup',function(){{isDown=false;track.classList.remove('dragging');}});
+  track.addEventListener('mousemove',function(e){{if(!isDown)return;e.preventDefault();var x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.5;}});
+}})();
+</script>
 </body>
 </html>
