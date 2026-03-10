@@ -21,6 +21,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/styles.css">
 <link rel="stylesheet" href="../../css/master.css">
+<style>
+/* Desktop wide background */
+@media (min-width: 1024px) {
+  body {
+    background-image: url('/img/5%20wide.jpeg');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+  .master-body {
+    background: rgba(255,255,255,0.94);
+  }
+  nav {
+    background: transparent;
+  }
+  nav.scrolled {
+    background: rgba(255,255,255,0.97);
+  }
+}
+
+/* SVG icon style */
+.master-spec-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 107, 0, 0.08);
+  border-radius: 0;
+}
+.master-spec-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #FF6B00;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+</style>
 </head>
 <body>
 <nav>
@@ -60,34 +101,47 @@
       <div class="master-section">
         <div class="master-section-label">О мастере</div>
         <p>Марк — один из самых системных специалистов в команде. Работает с болью как симптомом, а не просто снимает её на сеанс. Разбирается в причинах, строит протокол, отслеживает динамику.</p>
-        <p>Специализируется на лечебном и спортивном массаже. Работает с последствиями перегрузок, хроническими болями в спине и шее, постравматическим напряжением.</p>
+        <p>Специализируется на лечебном и спортивном массаже. Работает с последствиями перегрузок, хроническими болями в спине и шее, посттравматическим напряжением.</p>
         <p>Клиенты, которые «пробовали всё» — часто находят ответ именно у Марка.</p>
       </div>
 
       <div class="master-section">
         <div class="master-section-label">Специализация</div>
         <div class="master-specs">
+
           <div class="master-spec-item">
-            <div class="master-spec-icon">🎯</div>
+            <div class="master-spec-icon">
+              <!-- Мишень / точечная работа -->
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="#FF6B00" stroke="none"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+            </div>
             <div>
               <div class="master-spec-title">Лечебный массаж</div>
               <div class="master-spec-desc">Работа с конкретной проблемой: боль в спине, шее, суставах. Системный подход, а не временное облегчение.</div>
             </div>
           </div>
+
           <div class="master-spec-item">
-            <div class="master-spec-icon">⚡</div>
+            <div class="master-spec-icon">
+              <!-- Молния / энергия / спорт -->
+              <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
             <div>
               <div class="master-spec-title">Спортивный массаж</div>
               <div class="master-spec-desc">Восстановление после нагрузок, работа с мышечными зажимами и перегруженными зонами.</div>
             </div>
           </div>
+
           <div class="master-spec-item">
-            <div class="master-spec-icon">🔧</div>
+            <div class="master-spec-icon">
+              <!-- Инструмент / настройка -->
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
             <div>
               <div class="master-spec-title">Работа с хронической болью</div>
               <div class="master-spec-desc">Для тех, у кого «всегда что-то болит». Марк составляет программу, а не просто проводит сеанс.</div>
             </div>
           </div>
+
         </div>
       </div>
 
