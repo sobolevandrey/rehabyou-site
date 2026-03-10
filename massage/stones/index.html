@@ -16,352 +16,568 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Массаж горячими камнями — Rehab.You</title>
-<meta name="description" content="Массаж горячими камнями в Москве. Глубокое прогревание мышц, снятие хронического напряжения, медитативное расслабление.">
+<meta name="description" content="Массаж горячими камнями в Москве. Глубокое расслабление, прогрев мышц, медитативный эффект. От 6500 ₽.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/mobile.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== PAGE VARS ===== */
-:root { --black:#000;--white:#fff;--orange:#F49933;--light:#F7F7F7;--text:#1A1A1A;--muted:#888;--border:#E5E5E5; }
+:root {
+  --black:#000;--white:#fff;--orange:#F49933;
+  --gray:#636F80;--light:#F7F7F7;--text:#1A1A1A;
+  --muted:#888;--border:#E5E5E5;
+  --font-display:'Unbounded',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--white);color:var(--text);overflow-x:hidden;}
 
-/* ===== HERO ===== */
-.svc-hero {
-  display:grid; grid-template-columns:2fr 3fr; min-height:calc(100vh - 72px); margin-top:72px;
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 48px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
 }
-.svc-hero-left {
-  background:var(--white); display:flex; flex-direction:column; justify-content:center;
-  padding:64px 56px 72px 72px;
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-back{
+  font-size:11px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--text);text-decoration:none;
+  display:flex;align-items:center;gap:8px;transition:color 0.2s;
 }
-.svc-back {
-  display:inline-flex; align-items:center; gap:8px;
-  font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
-  color:var(--muted); text-decoration:none; margin-bottom:36px; transition:color 0.2s;
+.nav-back:hover{color:var(--orange);}
+.nav-cta{
+  background:var(--black);color:var(--white);
+  padding:10px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  border:none;cursor:pointer;text-decoration:none;display:inline-block;
+  transition:background 0.2s;
 }
-.svc-back:hover { color:var(--orange); }
-.svc-back svg { transition:transform 0.2s; }
-.svc-back:hover svg { transform:translateX(-3px); }
-.svc-eyebrow {
-  font-size:11px; font-weight:700; letter-spacing:0.28em; text-transform:uppercase;
-  color:var(--orange); margin-bottom:20px; display:flex; align-items:center; gap:12px;
+.nav-cta:hover{background:var(--orange);}
+
+/* HERO */
+.hero{
+  padding-top:72px;min-height:100vh;
+  display:grid;grid-template-columns:2fr 3fr;
 }
-.svc-eyebrow::before { content:''; width:32px; height:2px; background:var(--orange); }
-.svc-title {
-  font-family:'Unbounded',sans-serif; font-size:clamp(36px,3.6vw,58px);
-  font-weight:900; line-height:0.95; text-transform:uppercase;
-  letter-spacing:-0.01em; margin-bottom:28px;
+.hero-img{
+  overflow:hidden;position:relative;
 }
-.svc-title .ac { color:var(--orange); }
-.svc-sub {
-  font-size:15px; line-height:1.75; color:#555; max-width:400px; margin-bottom:28px;
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
 }
-.hero-bullets { display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
-.hero-bullet {
-  display:flex; align-items:center; gap:10px;
-  font-size:13px; font-weight:500; color:var(--text);
+.hero-content{
+  padding:80px 72px 80px 80px;display:flex;flex-direction:column;justify-content:center;
+  background:var(--black);color:var(--white);
 }
-.hero-meta { display:flex; gap:0; margin-bottom:36px; border-top:1px solid var(--border); }
-.hero-meta-item {
-  padding:14px 16px 14px 0; border-bottom:1px solid var(--border);
-  flex:1; font-size:13px; font-weight:700; color:var(--text);
-  border-right:1px solid var(--border);
+.hero-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:0.28em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
 }
-.hero-meta-item:last-child { border-right:none; padding-left:16px; }
-.hero-meta-item:first-child { border-right:1px solid var(--border); }
-.hero-meta-item span { display:block; }
-.svc-book-btn {
-  display:inline-block; background:var(--black); color:var(--white);
-  padding:18px 40px; font-size:12px; font-weight:700; letter-spacing:0.15em;
-  text-transform:uppercase; text-decoration:none; transition:background 0.2s;
+.hero-eyebrow::before{content:'';width:32px;height:2px;background:var(--orange);}
+.hero-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,52px);
+  font-weight:900;text-transform:uppercase;line-height:0.95;
+  letter-spacing:-0.02em;margin-bottom:20px;
+}
+.hero-subtitle{
+  font-size:16px;line-height:1.7;color:rgba(255,255,255,0.6);margin-bottom:36px;
+  max-width:480px;
+}
+.hero-bullets{
+  list-style:none;margin-bottom:40px;display:flex;flex-direction:column;gap:10px;
+}
+.hero-bullets li{
+  font-size:13px;color:rgba(255,255,255,0.75);
+  display:flex;align-items:center;gap:10px;
+}
+.hero-bullets li::before{content:'';width:16px;height:1px;background:var(--orange);flex-shrink:0;}
+.btn-primary{
+  display:inline-block;background:var(--orange);color:var(--black);
+  padding:16px 36px;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s,transform 0.15s;
   align-self:flex-start;
 }
-.svc-book-btn:hover { background:var(--orange); }
-.svc-hero-right {
-  position:relative; overflow:hidden; background:var(--black);
+.btn-primary:hover{background:#ff8c00;transform:translateY(-2px);}
+.btn-secondary{
+  display:inline-block;border:1.5px solid rgba(255,255,255,0.25);color:var(--white);
+  padding:14px 32px;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:all 0.2s;
 }
-.svc-hero-img {
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover; opacity:0.75;
+.btn-secondary:hover{border-color:var(--orange);color:var(--orange);}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-meta{
+  display:flex;gap:40px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);margin-top:auto;
+}
+.meta-val{font-size:28px;font-weight:900;font-family:var(--font-display);color:var(--white);}
+.meta-val em{color:var(--orange);font-style:normal;}
+.meta-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+/* WHO IS IT FOR */
+.section{padding:96px 72px;}
+.section-label{
+  font-size:11px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-label::before{content:'';width:32px;height:2px;background:var(--orange);}
+.section-title{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,38px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:1.0;margin-bottom:56px;
+}
+.section-bg{background:var(--light);}
+.section-dark{background:var(--black);color:var(--white);}
+
+.who-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border);border:1px solid var(--border);
+}
+.who-item{
+  background:var(--white);padding:32px 36px;
+  display:flex;align-items:flex-start;gap:20px;
+}
+.who-num{
+  font-family:var(--font-display);font-size:13px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:2px;
+}
+.who-text{font-size:15px;line-height:1.6;color:var(--text);}
+
+/* PROCESS */
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--border);
+}
+.process-step{
+  padding:40px 36px;border-right:1px solid var(--border);position:relative;
+}
+.process-step:last-child{border-right:none;}
+.step-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.step-time{
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.step-title{
+  font-family:var(--font-display);font-size:14px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:12px;
+}
+.step-desc{font-size:13px;line-height:1.7;color:#555;}
+
+/* EFFECTS */
+.effects-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.effect-item{
+  padding:48px 48px;border-right:1px solid rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.effect-item:nth-child(2n){border-right:none;}
+.effect-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.effect-title{
+  font-family:var(--font-display);font-size:15px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:10px;color:var(--white);
+}
+.effect-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45);}
+
+/* TYPES */
+.types-grid{
+  display:grid;grid-template-columns:2fr 3fr;gap:2px;background:var(--border);
+}
+.type-card{
+  background:var(--white);padding:48px;
+}
+.type-badge{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--orange);
+  border:1px solid var(--orange);padding:4px 12px;margin-bottom:24px;
+}
+.type-title{
+  font-family:var(--font-display);font-size:20px;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+}
+.type-desc{font-size:14px;line-height:1.8;color:#555;margin-bottom:28px;}
+.type-includes{margin-bottom:28px;}
+.type-includes-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.type-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.type-includes li{
+  font-size:13px;color:var(--text);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.type-includes li::before{content:'';width:16px;height:1px;background:var(--orange);flex-shrink:0;margin-top:10px;}
+.type-price{
+  display:flex;align-items:baseline;gap:16px;
+  padding-top:28px;border-top:1px solid var(--border);margin-bottom:24px;
+}
+.price-main{
+  font-family:var(--font-display);font-size:28px;font-weight:900;
+}
+.price-pack{font-size:13px;color:var(--muted);}
+.price-pack strong{color:var(--text);}
+.price-discount{
+  font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);background:rgba(244,153,51,0.1);padding:4px 10px;
+}
+.type-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-book{
+  display:inline-block;background:var(--black);color:var(--white);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;
+}
+.btn-book:hover{background:var(--orange);}
+
+/* MASTERS */
+.masters-strip{
+  padding:80px 72px;
+}
+.masters-scroll{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
+  margin-top:48px;
+}
+.master-card{
+  display:block;text-decoration:none;color:var(--text);
+  position:relative;overflow:hidden;
+}
+.master-photo{
+  width:100%;aspect-ratio:3/4;object-fit:cover;display:block;
+  filter:grayscale(20%);transition:filter 0.3s,transform 0.3s;
+}
+.master-card:hover .master-photo{filter:grayscale(0%);transform:scale(1.03);}
+.master-info{
+  padding:12px 0 0;
+}
+.master-card-name{font-size:12px;font-weight:700;margin-bottom:2px;}
+.master-card-cta{
+  display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);font-weight:700;text-decoration:none;margin-top:6px;
 }
 
-/* ===== WHO ===== */
-.who-section { background:var(--light); padding:120px 72px; }
-.who-inner { display:grid; grid-template-columns:1fr 360px; gap:80px; max-width:1100px; margin:0 auto; }
-.who-left { display:flex; flex-direction:column; justify-content:center; }
-.who-eyebrow {
-  font-size:11px; font-weight:700; letter-spacing:0.28em; text-transform:uppercase;
-  color:var(--orange); margin-bottom:16px; display:flex; align-items:center; gap:12px;
+/* CTA BAND */
+.cta-band{
+  padding:100px 72px;background:var(--black);color:var(--white);
+  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
 }
-.who-eyebrow::before { content:''; width:32px; height:2px; background:var(--orange); }
-.who-title {
-  font-family:'Unbounded',sans-serif; font-size:clamp(26px,2.8vw,42px);
-  font-weight:900; line-height:1.0; text-transform:uppercase;
-  letter-spacing:-0.01em; margin-bottom:48px;
+.cta-band-title{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,38px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.0;
 }
-.who-title .ac { color:var(--orange); }
-.who-items { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border); }
-.who-item {
-  display:flex; align-items:flex-start; gap:20px;
-  padding:20px 0; border-bottom:1px solid var(--border); transition:padding-left 0.2s;
+.cta-band-title em{color:var(--orange);font-style:normal;}
+.cta-band-sub{font-size:14px;color:rgba(255,255,255,0.4);margin-top:12px;}
+.cta-band-right{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.cta-price-row{text-align:right;}
+.cta-price-new{font-family:var(--font-display);font-size:32px;font-weight:900;color:var(--orange);}
+.cta-price-old{font-size:14px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-top:2px;}
+
+/* FAQ */
+.faq-list{margin-top:48px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  padding:24px 0;font-size:15px;font-weight:600;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:20px;user-select:none;
 }
-.who-item:hover { padding-left:6px; }
-.who-num {
-  font-size:11px; font-weight:700; color:var(--orange); min-width:24px; margin-top:2px; flex-shrink:0;
+.faq-q:hover{color:var(--orange);}
+.faq-icon{
+  width:24px;height:24px;flex-shrink:0;
+  border:1.5px solid var(--border);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;transition:all 0.2s;
 }
-.who-text { font-size:15px; color:#444; line-height:1.6; }
-.who-right { position:relative; overflow:visible; height:500px; }
-.who-photo {
-  width:100%; height:100%; object-fit:cover; object-position:center top;
+.faq-item.open .faq-icon{background:var(--orange);border-color:var(--orange);color:var(--white);}
+.faq-a{
+  display:none;padding:0 0 24px;font-size:14px;line-height:1.8;color:#555;
+  max-width:700px;
+}
+.faq-item.open .faq-a{display:block;}
+
+/* FOOTER */
+footer{
+  background:var(--black);padding:56px 72px 40px;
+}
+.footer-top{
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07);
+  margin-bottom:32px;
+}
+.footer-logo img{height:28px;width:auto;margin-bottom:20px;}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;}
+.footer-col-title{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);margin-bottom:16px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-col a:hover{color:var(--orange);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);}
+
+@media(max-width:1100px){
+  .masters-scroll{grid-template-columns:repeat(4,1fr);}
+  .process-steps{grid-template-columns:repeat(2,1fr);}
+  .process-step{border-right:none;border-bottom:1px solid var(--border);}
+}
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .hero{grid-template-columns:1fr;}
+  .hero-img{min-height:300px;}
+  .hero-content{padding:48px 32px;}
+  .section{padding:64px 32px;}
+  .who-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .effects-grid{grid-template-columns:1fr;}
+  .effect-item{border-right:none;}
+  .types-grid{grid-template-columns:1fr;}
+  .masters-scroll{grid-template-columns:repeat(3,1fr);}
+  .cta-band{grid-template-columns:1fr;gap:32px;}
+  .cta-band-right{align-items:flex-start;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
+  footer{padding:48px 32px 32px;}
+}
+@media(max-width:600px){
+  .masters-scroll{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+}
+
+/* WHO SECTION */
+.who-section{
+  background:var(--light);
+  padding:80px 72px;
+}
+.who-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 380px;gap:64px;
+  align-items:center;
+  position:relative;
+}
+/* Геометрия */
+.who-geo{position:absolute;pointer-events:none;}
+.who-geo-tl{
+  top:-32px;left:-32px;
+  width:80px;height:80px;
+  border-top:4px solid var(--orange);
+  border-left:4px solid var(--orange);
+}
+.who-geo-br{
+  bottom:-32px;right:-32px;
+  width:56px;height:56px;
+  background:var(--black);
+}
+/* Левая колонка */
+.who-left{}
+.who-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,44px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:0.95;margin-bottom:40px;
+}
+.who-title-accent{color:var(--orange);font-style:normal;}
+.who-list{border-top:1px solid var(--border);}
+.who-item{
+  padding:18px 0;border-bottom:1px solid #ddd);
+  display:flex;align-items:flex-start;gap:20px;
+  background:transparent;
+}
+.who-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:3px;letter-spacing:0.1em;
+}
+.who-text{font-size:14px;line-height:1.6;color:var(--text);}
+/* Правая колонка — фото */
+.who-right{
+  position:relative;
+  flex-shrink:0;
+  overflow:visible;
+  height:520px;
+}
+.who-right img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
   display:block;
 }
-.who-label {
-  position:absolute; bottom:0; left:0; right:0;
-  background:var(--black); padding:14px 20px; display:flex; align-items:center; gap:12px;
-  overflow:hidden;
+.who-photo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:var(--black);
+  padding:18px 24px;
+  display:flex;align-items:center;
 }
-.who-label img { height:22px; width:auto; filter:invert(1); }
-
-/* ===== PROCESS ===== */
-.proc-section { background:var(--black); padding:120px 72px; color:var(--white); }
-.proc-grid {
-  display:grid; grid-template-columns:repeat(4,1fr);
-  gap:0; margin-top:64px; position:relative;
+.who-photo-label img{
+  height:32px;width:auto;display:block;
 }
-.proc-grid::before {
-  content:''; position:absolute; top:26px; left:8%; right:8%;
-  height:1px; background:rgba(255,255,255,0.06); pointer-events:none;
-}
-.proc-step { padding:0 32px; }
-.proc-num {
-  width:52px; height:52px; border:1px solid rgba(255,255,255,0.12);
-  display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:900; color:var(--orange);
-  margin-bottom:24px; background:var(--black); position:relative; z-index:1;
-  font-family:'Unbounded',sans-serif;
-}
-.proc-time { font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--orange); margin-bottom:10px; }
-.proc-name { font-size:15px; font-weight:800; font-family:'Unbounded',sans-serif; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px; }
-.proc-desc { font-size:13px; color:rgba(255,255,255,0.38); line-height:1.7; }
-
-/* ===== EFFECTS ===== */
-.effects-section {
-  display:grid; grid-template-columns:3fr 2fr; min-height:80vh;
-}
-.effects-left {
-  background:var(--black); padding:100px 80px; color:var(--white);
-  display:flex; flex-direction:column; justify-content:center;
-}
-.effects-eyebrow {
-  font-size:11px; font-weight:700; letter-spacing:0.28em; text-transform:uppercase;
-  color:var(--orange); margin-bottom:16px; display:flex; align-items:center; gap:12px;
-}
-.effects-eyebrow::before { content:''; width:32px; height:2px; background:var(--orange); }
-.effects-title {
-  font-family:'Unbounded',sans-serif; font-size:clamp(26px,2.4vw,38px);
-  font-weight:900; line-height:1.0; text-transform:uppercase; margin-bottom:48px;
-}
-.effects-list { display:flex; flex-direction:column; gap:0; border-top:1px solid rgba(255,255,255,0.08); }
-.effect-item { padding:24px 0; border-bottom:1px solid rgba(255,255,255,0.08); transition:padding-left 0.2s; }
-.effect-item:hover { padding-left:6px; }
-.effect-name { font-size:15px; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-family:'Unbounded',sans-serif; }
-.effect-desc { font-size:13px; color:rgba(255,255,255,0.45); line-height:1.7; }
-.effects-book {
-  display:inline-block; margin-top:48px; background:var(--orange); color:var(--black);
-  padding:16px 36px; font-size:11px; font-weight:700; letter-spacing:0.15em;
-  text-transform:uppercase; text-decoration:none; transition:background 0.2s; align-self:flex-start;
-}
-.effects-book:hover { background:#ff8c00; }
-.effects-right { position:relative; overflow:hidden; background:var(--black); }
-.effects-img {
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover; opacity:0.7;
-}
-.effects-vline {
-  position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--orange); z-index:2;
+@media(max-width:1000px){
+  .who-inner{grid-template-columns:1fr;gap:40px;}
+  .who-right{max-width:320px;}
+  .who-section{padding:64px 32px;}
+  .who-geo-tl,.who-geo-br{display:none;}
 }
 
-/* ===== TYPES ===== */
-.types-section { background:var(--white); }
-.types-header {
-  padding:80px 72px 48px;
-  display:flex; justify-content:space-between; align-items:flex-end;
+/* EFFECTS SECTION */
+.effects-section{
+  display:grid;grid-template-columns:3fr 2fr;
+  background:var(--black);color:var(--white);
+  min-height:100vh;
 }
-.types-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--border); }
-.type-card {
-  border-right:1px solid var(--border); position:relative; overflow:hidden;
-  min-height:560px; display:flex; flex-direction:column;
+.effects-left{
+  padding:72px 64px;
+  display:flex;flex-direction:column;justify-content:center;
 }
-.type-card:last-child { border-right:none; }
-.type-inner { padding:52px 44px; display:flex; flex-direction:column; flex:1; }
-.type-num {
-  font-family:'Unbounded',sans-serif; font-size:48px; font-weight:900;
-  line-height:1; margin-bottom:20px;
+.effects-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,48px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:0.9;margin:16px 0 48px;color:var(--white);
 }
-.type-name { font-family:'Unbounded',sans-serif; font-size:18px; font-weight:900; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:14px; }
-.type-desc { font-size:13px; line-height:1.7; color:#777; margin-bottom:24px; }
-.type-feats { display:flex; flex-direction:column; gap:8px; margin-bottom:auto; padding-bottom:28px; }
-.type-feat {
-  display:flex; align-items:center; gap:8px;
-  font-size:12px; font-weight:500; color:#555;
+.effects-title em{color:var(--orange);font-style:normal;}
+.effects-list{border-top:1px solid rgba(255,255,255,0.1);}
+.effect-row{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.1);
 }
-.type-price { font-size:32px; font-weight:900; letter-spacing:-0.02em; margin-bottom:4px; }
-.type-meta { font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:20px; }
-.type-btn {
-  display:inline-block; padding:14px 28px; font-size:11px; font-weight:700;
-  letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;
-  border:none; cursor:pointer; align-self:flex-start; transition:background 0.2s,color 0.2s;
+.effect-row-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:3px;letter-spacing:0.1em;
 }
-.type-btn-white { background:var(--white); color:var(--black); }
-.type-btn-white:hover { background:var(--orange); color:var(--black); }
-.type-btn-black { background:var(--black); color:var(--white); }
-.type-btn-black:hover { background:var(--orange); }
-.type-btn-orange { background:var(--orange); color:var(--black); }
-.type-btn-orange:hover { background:#ff8c00; }
-.type-card-photo { background-size:cover; background-position:center; }
-.type-photo-overlay {
-  position:absolute; inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.15) 100%);
+.effect-row-title{
+  font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;
 }
-.type-inner-photo { position:relative; z-index:1; color:var(--white); }
-.type-inner-photo .type-name { color:var(--white); }
-.type-inner-photo .type-desc { color:rgba(255,255,255,0.6); }
-.type-inner-photo .type-feat { color:rgba(255,255,255,0.65); }
-.type-eyebrow {
-  font-size:10px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase;
-  color:var(--orange); margin-bottom:12px;
+.effect-row-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* Правая колонка */
+.effects-right{
+  position:relative;display:flex;align-items:stretch;
+}
+.effects-stripe{
+  width:8px;background:var(--orange);flex-shrink:0;
+}
+.effects-photo-wrap{
+  position:relative;flex:1;overflow:hidden;
+}
+.effects-photo-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
 }
 
-/* ===== MASTERS ===== */
-.masters-section { background:var(--black); padding:100px 0 0; overflow:hidden; display:flex; flex-direction:column; }
-.masters-header { padding:0 72px; margin-bottom:48px; }
-.masters-track {
-  display:flex; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory;
-  scrollbar-width:none; -ms-overflow-style:none; cursor:grab;
-}
-.masters-track::-webkit-scrollbar { display:none; }
-.ms-card {
-  flex:0 0 300px; scroll-snap-align:start; position:relative;
-  overflow:hidden; border-right:1px solid rgba(255,255,255,0.06);
-  text-decoration:none; display:block;
-}
-.ms-photo { width:100%; height:360px; background-size:cover; background-position:center top; transition:transform 0.5s; }
-.ms-card:hover .ms-photo { transform:scale(1.04); }
-.ms-info {
-  position:absolute; bottom:0; left:0; right:0;
-  padding:20px 24px 28px;
-  background:linear-gradient(to top,rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.2) 80%,transparent 100%);
-}
-.ms-name {
-  font-family:'Unbounded',sans-serif; font-size:14px; font-weight:900;
-  text-transform:uppercase; letter-spacing:0.04em; color:#fff; margin-bottom:12px; line-height:1.2;
-}
-.ms-btn {
-  display:inline-block; background:var(--orange); color:var(--black);
-  padding:8px 18px; font-size:10px; font-weight:700; letter-spacing:0.12em;
-  text-transform:uppercase; text-decoration:none; transition:background 0.2s;
-}
-.ms-btn:hover { background:#ff8c00; }
-.masters-nav { display:flex; align-items:center; justify-content:space-between; padding:28px 72px 48px; }
-.masters-arrows { display:flex; gap:12px; }
-.ms-arrow {
-  width:44px; height:44px; border:1px solid rgba(255,255,255,0.2);
-  background:transparent; color:#fff; cursor:pointer;
-  display:flex; align-items:center; justify-content:center; transition:background 0.2s,border-color 0.2s;
-}
-.ms-arrow:hover { background:var(--orange); border-color:var(--orange); }
-.ms-counter { font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.3); }
-.ms-counter span { color:var(--orange); }
-
-/* ===== CTA BAND ===== */
-.cta-band {
-  background:var(--orange); padding:72px 72px;
-  display:flex; align-items:center; justify-content:space-between; gap:48px;
-}
-.cta-band-title {
-  font-family:'Unbounded',sans-serif; font-size:clamp(22px,2.4vw,34px);
-  font-weight:900; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.05; color:var(--black);
-}
-.cta-band-sub { font-size:14px; color:rgba(0,0,0,0.55); margin-top:8px; }
-.cta-band-right { display:flex; align-items:center; gap:24px; flex-shrink:0; }
-.cta-band-price { font-size:28px; font-weight:900; color:var(--black); }
-.cta-band-btn {
-  display:inline-block; background:var(--black); color:var(--white);
-  padding:16px 36px; font-size:11px; font-weight:700; letter-spacing:0.15em;
-  text-transform:uppercase; text-decoration:none; transition:background 0.2s;
-}
-.cta-band-btn:hover { background:#222; }
-
-/* ===== FAQ ===== */
-.svc-faq { padding:80px 72px; background:var(--white); }
-.svc-faq .faq-list { margin-top:40px; border-top:1px solid var(--border); }
-
-/* ===== MOBILE ===== */
-@media(max-width:1024px) {
-  .svc-hero { grid-template-columns:1fr; margin-top:72px; min-height:calc(100vh - 72px); }
-  .svc-hero-left { padding:60px 32px 48px; }
-  .svc-hero-right { min-height:320px; }
-  .who-section { padding:72px 32px; }
-  .who-inner { grid-template-columns:1fr; gap:40px; }
-  .who-right { height:300px; }
-  .proc-section { padding:72px 32px; }
-  .proc-grid { grid-template-columns:1fr 1fr; gap:40px; }
-  .proc-grid::before { display:none; }
-  .proc-step { padding:0; }
-  .effects-section { grid-template-columns:1fr; }
-  .effects-left { padding:72px 32px; }
-  .effects-right { min-height:300px; }
-  .types-header { padding:56px 32px 32px; flex-direction:column; align-items:flex-start; gap:20px; }
-  .types-grid { grid-template-columns:1fr; }
-  .type-card { border-right:none; border-bottom:1px solid var(--border); min-height:auto; }
-  .type-inner { padding:36px 28px; }
-  .masters-header { padding:0 32px; }
-  .masters-nav { padding:20px 32px 36px; }
-  .cta-band { padding:48px 32px; flex-direction:column; align-items:flex-start; gap:24px; }
-  .svc-faq { padding:72px 32px; }
-}
-@media(max-width:640px) {
-  .svc-hero-left { padding:48px 20px 40px; }
-  .svc-title { font-size:32px; }
-  .proc-grid { grid-template-columns:1fr; }
-  .who-section { padding:56px 20px; }
-  .effects-left { padding:56px 20px; }
-  .svc-faq { padding:56px 20px; }
-  .cta-band { padding:40px 20px; }
-  .ms-card { flex:0 0 260px; }
-  .ms-photo { height:320px; }
+@media(max-width:900px){
+  .effects-section{grid-template-columns:1fr;}
+  .effects-left{padding:56px 32px;}
+  .effects-right{min-height:400px;}
+  .effects-badge{top:24px;left:24px;}
 }
 
-/* Disable sticky CTA from main styles on service pages */
-.sticky-cta { display:none !important; }
+/* TYPES NEW */
+.types-new-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);
+}
+.type-new-card{
+  border-right:1px solid var(--border);
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.type-new-card:last-child{border-right:none;}
+.type-new-inner{
+  padding:48px 48px 48px;
+  display:flex;flex-direction:column;height:100%;
+}
+.type-new-dark{background:var(--black);}
+.type-new-badge{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.type-new-badge-light{color:var(--white);}
+.type-new-title{
+  font-family:var(--font-display);font-size:18px;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+  line-height:1.1;
+}
+.type-new-dark .type-new-title{color:var(--white);}
+.type-new-desc{font-size:13px;line-height:1.8;color:#666;margin-bottom:28px;}
+.type-new-dark .type-new-desc{color:rgba(255,255,255,0.5);}
+.type-new-desc-light{color:rgba(255,255,255,0.75);}
+.type-new-includes{margin-bottom:28px;}
+.type-new-includes-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.type-new-dark .type-new-includes-label{color:rgba(255,255,255,0.3);}
+.type-new-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.type-new-includes li{
+  font-size:13px;color:var(--text);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.type-new-dark .type-new-includes li{color:rgba(255,255,255,0.65);}
+.type-new-includes li::before{
+  content:'';width:14px;height:1px;background:var(--orange);
+  flex-shrink:0;margin-top:9px;
+}
+.type-new-price{
+  font-family:var(--font-display);font-size:28px;font-weight:900;
+  margin-top:auto;padding-top:24px;border-top:1px solid var(--border);
+}
+.type-new-dark .type-new-price{color:var(--white);border-color:rgba(255,255,255,0.1);}
+.type-new-price-sub{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:20px;}
+.type-new-dark .type-new-price-sub{color:rgba(255,255,255,0.3);}
+.type-new-price-sub-light{color:rgba(255,255,255,0.6);}
+.type-new-btn{
+  display:inline-block;background:var(--black);color:var(--white);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;align-self:flex-start;
+}
+.type-new-btn:hover{background:var(--orange);color:var(--black);}
+.type-new-dark .type-new-btn{background:var(--white);color:var(--black);}
+.type-new-dark .type-new-btn:hover{background:var(--orange);color:var(--black);}
+.type-new-btn-orange{background:var(--orange);color:var(--black);}
+.type-new-btn-orange:hover{background:var(--white);color:var(--black);}
 
-/* Nav override: hero left is white, so nav must be dark from start */
-nav { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border) !important; }
-nav .nav-links a { color: var(--text) !important; }
-nav .nav-cta { background: var(--black) !important; color: var(--white) !important; border-color: var(--black) !important; }
-nav .logo-white { display: none !important; }
-nav .logo-black { display: block !important; }
-nav .nav-hamburger span { background: var(--black) !important; }
+/* Фото-карточка */
+.type-new-photo{overflow:hidden;}
+.type-new-photo img{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+}
+.type-new-overlay{
+  position:relative;z-index:1;
+  height:100%;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:560px;
+  background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 50%);
+  padding:40px 48px 48px;
+}
+
+@media(max-width:1000px){
+  .types-new-grid{grid-template-columns:1fr;}
+  .type-new-card{border-right:none;border-bottom:1px solid var(--border);}
+  .type-new-photo{min-height:480px;}
+}
 </style>
+<link rel="stylesheet" href="/css/mobile.css">
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">
-    <img class="logo-white" src="/img/logo-white.png" alt="">
-    <img class="logo-black" src="/img/logo-black.png" alt="">
+  <a href="/" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Все услуги
   </a>
-  <ul class="nav-links">
-    <li><a href="/#about">О нас</a></li>
-    <li><a href="/#services">Услуги</a></li>
-    <li><a href="/#team">Мастера</a></li>
-    <li><a href="/#packages">Абонементы</a></li>
-    <li><a href="/#locations">Адреса</a></li>
-  </ul>
+  <a href="/" class="nav-logo"><img src="/img/logo-black.png" alt="REHAB.YOU"></a>
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+  <!-- Hamburger (мобильный) -->
   <button class="nav-hamburger" id="navHamburger" aria-label="Меню">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
 <div class="nav-mobile-menu" id="navMobileMenu">
   <a href="/">Главная</a>
   <a href="/#services">Услуги</a>
@@ -372,323 +588,402 @@ nav .nav-hamburger span { background: var(--black) !important; }
 </div>
 
 <!-- HERO -->
-<section class="svc-hero">
-  <div class="svc-hero-left">
-    <a href="/#services" class="svc-back">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg>
-      Все услуги
-    </a>
-    <div class="svc-eyebrow">Массаж</div>
-    <h1 class="svc-title">
-      ТЕПЛО<br>
-      <span class="ac">ИДЁТ</span><br>
-      ИЗНУТРИ.
-    </h1>
-    <p class="svc-sub">Горячие базальтовые камни прогревают мышцы на глубину, недостижимую руками. Хроническое напряжение уходит быстрее, расслабление — глубже.</p>
-    <div class="hero-bullets"><div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>Базальт удерживает тепло 45–60 минут</div>
-<div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>Прогревание на глубину 3–4 см — недостижимо руками</div>
-<div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>Медитативный эффект — как час в бане</div></div>
-    <div class="hero-meta"><div class="hero-meta-item"><span>от 6 500 ₽</span></div>
-<div class="hero-meta-item"><span>75–90 минут</span></div>
-<div class="hero-meta-item"><span>прогрев в глубину</span></div></div>
-    <a href="https://n1276048.yclients.com" target="_blank" class="svc-book-btn">Записаться онлайн</a>
+<div class="hero">
+  <div class="hero-img">
+    <img src="/img/2 vertical.png" alt="Массаж лица Rehab.You">
   </div>
-  <div class="svc-hero-right">
-    <img src="/img/2 vertical.png" class="svc-hero-img" alt="">
-  </div>
-</section>
-
-<!-- WHO -->
-<section class="who-section">
-  <div class="who-inner">
-    <div class="who-left">
-      <div class="who-eyebrow">Только для вас</div>
-      <h2 class="who-title">КОГДА<br><span class="ac">НУЖЕН СТОУН</span></h2>
-      <div class="who-items"><div class="who-item">
-          <div class="who-num">01</div>
-          <div class="who-text">Хронические мышечные зажимы, которые не уходят от обычного массажа</div>
-        </div>
-<div class="who-item">
-          <div class="who-num">02</div>
-          <div class="who-text">Хотите максимально глубокое расслабление без интенсивного воздействия</div>
-        </div>
-<div class="who-item">
-          <div class="who-num">03</div>
-          <div class="who-text">Холодное время года, ощущение что «заморозило» и не можете разогреться</div>
-        </div>
-<div class="who-item">
-          <div class="who-num">04</div>
-          <div class="who-text">Особый опыт — хотите что-то, чего ещё не пробовали</div>
-        </div></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Горячие камни</div>
+    <h1 class="hero-title">Тепло<br><em>в каждую</em><br>клетку</h1>
+    <p class="hero-subtitle">Массаж горячими базальтовыми камнями прогревает мышцы глубже, чем руки. Тело расслабляется на уровне, который недоступен при обычном массаже.</p>
+    <ul class="hero-bullets">
+      <li>Прогрев мышц на глубину 4–5 см — в два раза глубже рук</li>
+      <li>Камни удерживают тепло 30–40 минут — длительный эффект</li>
+      <li>Медитативное состояние и полное отключение</li>
+    </ul>
+    <div class="hero-btns">
+      <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться</a>
+      <a href="#types" class="btn-secondary">Выбрать формат</a>
     </div>
-    <div class="who-right">
-      <img src="/img/3 vertical.jpg" class="who-photo" alt="">
-      <div class="who-label">
-        <img src="/img/logo-white.png" alt="REHAB.YOU">
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-val">от 6 500 <em>₽</em></div>
+        <div class="meta-label">Стоимость</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">70–90</div>
+        <div class="meta-label">минут</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">тепло</div>
+        <div class="meta-label">до глубин</div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- PROCESS -->
-<section class="proc-section">
-  <div class="section-header">
-    <div class="section-eyebrow" style="color:var(--orange)">Как проходит</div>
-    <h2 class="section-title" style="color:var(--white)">КАК ПРОХОДИТ<br><span style="color:var(--orange)">СЕАНС</span></h2>
+<!-- ТОЛЬКО ДЛЯ ВАС -->
+<div class="who-section">
+  <div class="who-inner">
+    <!-- Геометрия: оранжевый угол -->
+    <div class="who-geo who-geo-tl"></div>
+    <div class="who-geo who-geo-br"></div>
+
+    <!-- Текстовая колонка -->
+    <div class="who-left">
+      <div class="section-label">Только для вас</div>
+      <h2 class="who-title">Кому<br>подходит</h2>
+      <div class="who-list">
+        <div class="who-item">
+          <div class="who-num">01</div>
+          <div class="who-text">Хроническое напряжение в мышцах не снимается обычным массажем</div>
+        </div>
+        <div class="who-item">
+          <div class="who-num">02</div>
+          <div class="who-text">Мёрзнете, плохо переносите холод — тепло буквально необходимо телу</div>
+        </div>
+        <div class="who-item">
+          <div class="who-num">03</div>
+          <div class="who-text">Хотите медитативного, почти ритуального опыта расслабления</div>
+        </div>
+        <div class="who-item">
+          <div class="who-num">04</div>
+          <div class="who-text">Суставы или мышцы нуждаются в прогреве — после нагрузок или в холодный сезон</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фото -->
+    <div class="who-right">
+      <img src="/img/3 vertical.jpg" alt="Массаж лица Rehab.You">
+      <!-- Чёрный акцентный блок поверх угла фото -->
+      <div class="who-photo-label">
+        <img src="/img/logo-white.png" alt="Rehab.You">
+      </div>
+    </div>
   </div>
-  <div class="proc-grid"><div class="proc-step">
-          <div class="proc-num">01</div>
-          <div class="proc-time">10 мин</div>
-          <div class="proc-name">Нагрев камней</div>
-          <div class="proc-desc">Базальтовые камни нагреваются до точной температуры 45–55°C.</div>
-        </div><div class="proc-step">
-          <div class="proc-num">02</div>
-          <div class="proc-time">10 мин</div>
-          <div class="proc-name">Подготовка тела</div>
-          <div class="proc-desc">Мягкий разогрев руками перед введением камней.</div>
-        </div><div class="proc-step">
-          <div class="proc-num">03</div>
-          <div class="proc-time">55 мин</div>
-          <div class="proc-name">Работа с камнями</div>
-          <div class="proc-desc">Камни используются как инструмент массажа и устанавливаются на ключевые точки.</div>
-        </div><div class="proc-step">
-          <div class="proc-num">04</div>
-          <div class="proc-time">10 мин</div>
-          <div class="proc-name">Завершение</div>
-          <div class="proc-desc">Постепенное остывание, заземление. Тело как после бани — тёплое и расслабленное.</div>
-        </div></div>
-</section>
+</div>
 
-<!-- EFFECTS -->
-<section class="effects-section">
+<!-- КАК ПРОХОДИТ -->
+<div class="section section-bg">
+  <div class="section-label">Процесс</div>
+  <h2 class="section-title">Как проходит<br>массаж</h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-time">5 мин</div>
+      <div class="step-title">Консультация</div>
+      <div class="step-desc">Разбираем состояние кожи и подбираем технику под ваши задачи: лифтинг, уменьшение отёков, проработка мимических мышц.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-time">10 мин</div>
+      <div class="step-title">Подготовка</div>
+      <div class="step-desc">Демакияж, тонизирование, нанесение масла. Кожа готова к работе — ничего лишнего не нужно приносить с собой.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-time">40 мин</div>
+      <div class="step-title">Массаж</div>
+      <div class="step-desc">Глубокая проработка всех зон лица и шеи. Вы почувствуете, как уходит напряжение — уже в процессе.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-time">15 мин</div>
+      <div class="step-title">Маска и финал</div>
+      <div class="step-desc">Успокаивающая маска и рекомендации по домашнему уходу — чтобы эффект держался как можно дольше.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ЭФФЕКТ -->
+<div class="effects-section">
+  <!-- Левая: заголовок + список -->
   <div class="effects-left">
-    <div class="effects-eyebrow">Результат</div>
-    <h2 class="effects-title">ЧТО<br><span style="color:var(--orange)">ПОЛУЧИТЕ</span></h2>
-    <div class="effects-list"><div class="effect-item">
-            <div class="effect-name">Глубокий прогрев</div>
-            <div class="effect-desc">Тепло проникает в мышцы на 3–4 см. Хронические зажимы, не поддающиеся обычным техникам, наконец уходят.</div>
-          </div><div class="effect-item">
-            <div class="effect-name">Нервная система</div>
-            <div class="effect-desc">Тепло — самый мощный природный успокоитель. Нервная система расслабляется полностью.</div>
-          </div><div class="effect-item">
-            <div class="effect-name">Суставы</div>
-            <div class="effect-desc">Прогрев снижает скованность суставов. Особенно эффективно при остеохондрозе.</div>
-          </div><div class="effect-item">
-            <div class="effect-name">Иммунитет</div>
-            <div class="effect-desc">Термическое воздействие стимулирует иммунные процессы. Хорошо делать в сезон простуд.</div>
-          </div></div>
-    <a href="https://n1276048.yclients.com" target="_blank" class="effects-book">Записаться</a>
+    <div class="section-label" style="color:var(--orange);">Результат</div>
+    <h2 class="effects-title">Эффект от<br>горячих<br><em>камней</em></h2>
+    <div class="effects-list">
+      <div class="effect-row">
+        <div class="effect-row-num">01</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Подтяжка овала</div>
+          <div class="effect-row-desc">Чёткие скулы и контур — без филлеров и пластики.</div>
+        </div>
+      </div>
+      <div class="effect-row">
+        <div class="effect-row-num">02</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Здоровый цвет и сияние</div>
+          <div class="effect-row-desc">Кожа светится изнутри — видно даже после тяжёлой недели.</div>
+        </div>
+      </div>
+      <div class="effect-row">
+        <div class="effect-row-num">03</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Уменьшение отёков</div>
+          <div class="effect-row-desc">Мешки и тёмные круги уходят после первого сеанса.</div>
+        </div>
+      </div>
+      <div class="effect-row">
+        <div class="effect-row-num">04</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Гладкость кожи</div>
+          <div class="effect-row-desc">Мимические морщины разглаживаются без ботокса и игл.</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary" style="margin-top:40px;">Записаться</a>
   </div>
+
+  <!-- Правая: фото с оранжевой полосой -->
   <div class="effects-right">
-    <img src="/img/4 vertical.jpg" class="effects-img" alt="">
-    <div class="effects-vline"></div>
-  </div>
-</section>
+    <!-- Оранжевая вертикальная полоса -->
+    <div class="effects-stripe"></div>
+    <div class="effects-photo-wrap">
+      <img src="/img/4 vertical.jpg" alt="Эффект массажа лица">
 
-<!-- TYPES -->
-<section class="types-section">
-  <div class="types-header">
-    <div>
-      <div class="section-eyebrow">Форматы</div>
-      <h2 class="section-title">ВЫБЕРИТЕ<br><span style="color:var(--orange)">СВОЙ ФОРМАТ</span></h2>
     </div>
   </div>
-  <div class="types-grid"><div class="type-card" style="background:var(--black);color:white;">
-        <div class="type-inner">
-          <div class="type-num" style="color:rgba(255,255,255,0.2)">01</div>
-          <div class="type-name">Стоун-массаж спины</div>
-          <div class="type-desc">Акцент на спине, шее и плечах — зонах максимального напряжения. Камни + ручные техники.</div>
-          <div class="type-feats"><div class="type-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Нагретые базальтовые камни</div>
-<div class="type-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Работа со спиной, шеей, плечами</div>
-<div class="type-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Глубокий прогрев</div></div>
-          <div class="type-price">6 500 ₽</div>
-          <div class="type-meta" style="color:rgba(255,255,255,0.35)">1 сеанс · 75 мин</div>
-          <a href="https://n1276048.yclients.com" target="_blank" class="type-btn type-btn-white">Записаться</a>
-        </div>
-      </div><div class="type-card" style="background:var(--white);color:var(--text);">
-        <div class="type-inner">
-          <div class="type-num" style="color:rgba(0,0,0,0.1)">02</div>
-          <div class="type-name">Стоун полное тело</div>
-          <div class="type-desc">Комплексная процедура на всё тело. Камни устанавливаются по всей длине позвоночника и на конечностях.</div>
-          <div class="type-feats"><div class="type-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Камни по всему телу</div>
-<div class="type-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Полная проработка</div>
-<div class="type-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Медитативное завершение</div></div>
-          <div class="type-price">8 500 ₽</div>
-          <div class="type-meta" style="color:var(--muted)">1 сеанс · 90 мин</div>
-          <a href="https://n1276048.yclients.com" target="_blank" class="type-btn type-btn-black">Записаться</a>
-        </div>
-      </div><div class="type-card type-card-photo" style="background-image:url('/img/7 vertical.jpg');">
-        <div class="type-photo-overlay"></div>
-        <div class="type-inner type-inner-photo">
-          <div class="type-eyebrow">АБОНЕМЕНТ</div>
-          <div class="type-name">5 сеансов</div>
-          <div class="type-desc">Фиксированная цена. Без срока действия. Используйте в удобном темпе.</div>
-          <div class="type-price">27 500 ₽</div>
-          <div class="type-meta" style="color:rgba(255,255,255,0.45)">вместо 32 500 ₽</div>
-          <a href="https://n1276048.yclients.com" target="_blank" class="type-btn type-btn-orange">Купить абонемент</a>
-        </div>
-      </div></div>
-</section>
+</div>
 
-<!-- MASTERS -->
-<section class="masters-section">
-  <div class="masters-header">
-    <div class="section-eyebrow" style="color:var(--orange)">Специалисты</div>
-    <h2 class="section-title" style="color:var(--white)">ВАШИ<br><span style="color:var(--orange)">МАСТЕРА</span></h2>
+<!-- ТИПЫ -->
+<div class="section" id="types" style="padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;">
+  <div style="padding:80px 72px 48px;">
+    <div class="section-label">Форматы</div>
+    <h2 class="section-title">Выберите<br>свой формат</h2>
   </div>
-  <div class="masters-track" id="mastersTrack"><a href="/masters/konstantin-lyapunov/" class="ms-card">
-        <div class="ms-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/konstantin-lyapunov.png')"></div>
-        <div class="ms-info">
-          <div class="ms-name">Константин<br>Ляпунов</div>
-          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3340221" target="_blank" class="ms-btn" onclick="event.stopPropagation()">Записаться</a>
+  <div class="types-new-grid">
+    <div class="type-new-card">
+      <div class="type-new-inner">
+        <div class="type-new-badge">01</div>
+        <div class="type-new-title">Спина и позвоночник</div>
+        <div class="type-new-desc">Камни вдоль позвоночника + проработка спины. Для тех, кто несёт всё напряжение в спине.</div>
+        <div class="type-new-includes">
+          <div class="type-new-includes-label">Что входит</div>
+          <ul>
+            <li>Позвоночник и паравертебральные мышцы</li>
+            <li>Горячие камни 55–60°C</li>
+            <li>Завершение прохладными камнями</li>
+          </ul>
         </div>
-      </a><a href="/masters/anton-lugovskoj/" class="ms-card">
-        <div class="ms-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/anton-lugovskoj.png')"></div>
-        <div class="ms-info">
-          <div class="ms-name">Антон<br>Луговской</div>
-          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3317866" target="_blank" class="ms-btn" onclick="event.stopPropagation()">Записаться</a>
-        </div>
-      </a><a href="/masters/alla-nesena/" class="ms-card">
-        <div class="ms-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/07/img_4207-scaled.jpg')"></div>
-        <div class="ms-info">
-          <div class="ms-name">Алла<br>Несена</div>
-          <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m4091547" target="_blank" class="ms-btn" onclick="event.stopPropagation()">Записаться</a>
-        </div>
-      </a><a href="/masters/nikolaj-shein/" class="ms-card">
-        <div class="ms-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/07/img_4209-scaled.jpg')"></div>
-        <div class="ms-info">
-          <div class="ms-name">Николай<br>Шеин</div>
-          <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m4103178" target="_blank" class="ms-btn" onclick="event.stopPropagation()">Записаться</a>
-        </div>
-      </a><a href="/masters/vladislav-daniels/" class="ms-card">
-        <div class="ms-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/dsc02094-scaled.jpg')"></div>
-        <div class="ms-info">
-          <div class="ms-name">Владислав<br>Даниэльс</div>
-          <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m3610670" target="_blank" class="ms-btn" onclick="event.stopPropagation()">Записаться</a>
-        </div>
-      </a><a href="/masters/egor-zajkovskij/" class="ms-card">
-        <div class="ms-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png')"></div>
-        <div class="ms-info">
-          <div class="ms-name">Егор<br>Зайковский</div>
-          <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m1805072" target="_blank" class="ms-btn" onclick="event.stopPropagation()">Записаться</a>
-        </div>
-      </a></div>
-  <div class="masters-nav">
-    <div class="masters-arrows">
-      <button class="ms-arrow" id="msPrev">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="ms-arrow" id="msNext">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+        <div class="type-new-price">6 500 ₽</div>
+        <div class="type-new-price-sub">1 сеанс · 70 мин</div>
+        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn">Записаться</a>
+      </div>
     </div>
-    <div class="ms-counter"><span id="msCurr">1</span> / 6</div>
+    <div class="type-new-card type-new-dark">
+      <div class="type-new-inner">
+        <div class="type-new-badge">02</div>
+        <div class="type-new-title">Всё тело</div>
+        <div class="type-new-desc">Полный сеанс с камнями по всему телу. Максимальный прогрев и расслабление от головы до ног.</div>
+        <div class="type-new-includes">
+          <div class="type-new-includes-label">Что входит</div>
+          <ul>
+            <li>Полное тело</li>
+            <li>22 базальтовых камня</li>
+            <li>Индивидуальный температурный режим</li>
+          </ul>
+        </div>
+        <div class="type-new-price">8 500 ₽</div>
+        <div class="type-new-price-sub">1 сеанс · 90 мин</div>
+        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn">Записаться</a>
+      </div>
+    </div>
+    <div class="type-new-card type-new-photo">
+      <img src="/img/7 vertical.jpg" alt="Абонемент Rehab.You">
+      <div class="type-new-overlay">
+        <div class="type-new-badge type-new-badge-light">−12%</div>
+        <div class="type-new-title" style="color:var(--white);">5 сеансов<br>5 сеансов</div>
+        <div class="type-new-desc type-new-desc-light">Фиксированная цена. Без срока действия. Используйте в удобном темпе.</div>
+        <div class="type-new-price" style="color:var(--white);border-color:rgba(255,255,255,0.25);">27 500 ₽</div>
+        <div class="type-new-price-sub type-new-price-sub-light">вместо 32 500 ₽</div>
+        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn type-new-btn-orange">Купить абонемент</a>
+      </div>
+    </div>
+
   </div>
-</section>
+
+<!-- МАСТЕРА -->
+<div class="masters-strip section-bg">
+  <div style="padding:0 0 0 0;">
+    <div class="section-label" style="padding:80px 72px 0;">Специалисты</div>
+    <h2 class="section-title" style="padding:16px 72px 0;">Мастера<br>Rehab.You</h2>
+  </div>
+  <div style="padding:0 72px 80px;">
+    <div class="masters-scroll">
+      <a href="/masters/stepan-tulynin/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2025/01/dsc07203-scaled.jpg" alt="Степан Тулынин">
+        <div class="master-info">
+          <div class="master-card-name">Степан Тулынин</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/arina-porfireva/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png" alt="Арина Порфирьева">
+        <div class="master-info">
+          <div class="master-card-name">Арина Порфирьева</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/belozer-natalya/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2026/01/belozer-natalya.webp" alt="Белозер Наталья">
+        <div class="master-info">
+          <div class="master-card-name">Белозер Наталья</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/topal-vera/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp" alt="Топал Вера">
+        <div class="master-info">
+          <div class="master-card-name">Топал Вера</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/evgeniya-minina/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/evgeniya-minina.png" alt="Евгения Минина">
+        <div class="master-info">
+          <div class="master-card-name">Евгения Минина</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+      <a href="/masters/elizaveta-smolyaninova/" class="master-card">
+        <img class="master-photo" src="https://rehabyou.ru/wp-content/uploads/2024/12/elizaveta-smolyaninova.png" alt="Елизавета Смольянинова">
+        <div class="master-info">
+          <div class="master-card-name">Елизавета Смольянинова</div>
+          <div class="master-card-cta">Записаться →</div>
+        </div>
+      </a>
+    </div>
+    <div style="margin-top:32px;text-align:center;">
+      <a href="/#team" style="font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text);text-decoration:none;border-bottom:1.5px solid var(--orange);padding-bottom:4px;">Все мастера →</a>
+    </div>
+  </div>
+</div>
 
 <!-- CTA BAND -->
 <div class="cta-band">
   <div>
-    <div class="cta-band-title">Готовы записаться?</div>
-    <div class="cta-band-sub">Выберите удобное время онлайн — за 2 минуты</div>
+    <div class="cta-band-title">Прогрейте тело<br>до <em>самой глубины</em></div>
+    <div class="cta-band-sub">Базальт держит тепло там, где руки не достают — попробуйте один раз</div>
   </div>
   <div class="cta-band-right">
-    <div class="cta-band-price">6 500 ₽</div>
-    <a href="https://n1276048.yclients.com" target="_blank" class="cta-band-btn">Записаться</a>
+    <div class="cta-price-row">
+      <div class="cta-price-new">от 6 500 ₽</div>
+      <div class="cta-price-old">7 500 ₽</div>
+    </div>
+    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться на сеанс</a>
   </div>
 </div>
 
 <!-- FAQ -->
-<section class="svc-faq">
-  <div class="section-eyebrow" style="margin-bottom:12px">Вопросы</div>
-  <h2 class="section-title">ЧАСТЫЕ<br><span style="color:var(--orange)">ВОПРОСЫ</span></h2>
-  <div class="faq-list"><div class="faq-item">
-        <div class="faq-q">Камни не слишком горячие?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
-        <div class="faq-a">Температура 45–55°C — это комфортное рабочее тепло. Мастер контролирует и регулирует при необходимости. Ожогов не бывает.</div>
-      </div><div class="faq-item">
-        <div class="faq-q">Подходит ли при остеохондрозе?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
-        <div class="faq-a">Да. Прогрев особенно эффективен при остеохондрозе шейного и грудного отдела.</div>
-      </div><div class="faq-item">
-        <div class="faq-q">Можно при беременности?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
-        <div class="faq-a">Не рекомендуется. Термическое воздействие на область живота и поясницы противопоказано.</div>
-      </div><div class="faq-item">
-        <div class="faq-q">Нужна ли подготовка?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
-        <div class="faq-a">Не есть за 1.5–2 часа. Не употреблять алкоголь. Принять душ. Снять украшения.</div>
-      </div><div class="faq-item">
-        <div class="faq-q">Как часто можно делать?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
-        <div class="faq-a">1 раз в неделю — оптимально. Чаще — по рекомендации мастера.</div>
-      </div><div class="faq-item">
-        <div class="faq-q">Как долго держится эффект?<div class="faq-toggle"><div class="faq-plus"></div></div></div>
-        <div class="faq-a">После первого сеанса — 2–4 дня. После курса 5–6 процедур — эффект накапливается и держится значительно дольше.</div>
-      </div></div>
-</section>
+<div class="section">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Ответы на частые<br>вопросы</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Не слишком ли горячо?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Температура камней 55–60°C — это приятное тепло, не обжигание. Мастер проверяет на себе перед укладкой и всегда регулирует по вашим ощущениям.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Есть ли противопоказания?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Нельзя при высокой температуре тела, острых воспалениях, онкологии, тромбозах и варикозе в острой стадии. На консультации мастер уточнит.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Нужно ли что-то делать после сеанса?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Пейте больше воды — тепло активизирует обмен веществ. Избегайте холода и сквозняков 1–2 часа после.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Можно ли сочетать с другими видами массажа?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Да. Горячие камни отлично сочетаются с классическим или расслабляющим массажем. Можно чередовать.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Как часто делать?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Для расслабления — раз в 1–2 недели. Для восстановления суставов и мышц — курс 5–8 сеансов. Мастер подберёт режим.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Есть ли у вас парковка?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">На Сухаревской — бесплатная, предупредите за 5 минут. На Парке Культуры — платная городская парковка рядом.</div>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-logo"><img src="/img/logo-black.png" alt="REHAB.YOU" style="filter:invert(1)"></div>
-      <div class="footer-tagline">Для тех, кто не останавливается. Два центра в Москве.</div>
-      <a href="tel:+79255404060" class="footer-phone">+7 (925) 540-40-60</a>
+      <a href="/"><img src="/img/logo-white.png" alt="REHAB.YOU" class="footer-logo" style="height:28px;width:auto;margin-bottom:20px;display:block;filter:invert(0);"></a>
+      <div class="footer-tagline">Массаж и реабилитация<br>в Москве. Два центра.</div>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Услуги</div>
-      <ul class="footer-links">
+      <ul>
         <li><a href="/massage/classic/">Классический массаж</a></li>
         <li><a href="/massage/sport/">Спортивный массаж</a></li>
-        <li><a href="/massage/relax/">Релакс массаж</a></li>
+        <li><a href="/massage/relax/">Расслабляющий массаж</a></li>
         <li><a href="/massage/face/">Массаж лица</a></li>
         <li><a href="/massage/4hands/">Массаж 4 руки</a></li>
-        <li><a href="/massage/anticell/">Антицеллюлитный</a></li>
-        <li><a href="/massage/angiopharm/">Ангиофарм</a></li>
-        <li><a href="/massage/stones/">Горячие камни</a></li>
       </ul>
     </div>
-    <div>
-      <div class="footer-col-title">Центры</div>
-      <ul class="footer-links">
-        <li><a href="/#locations">Сухаревская</a></li>
-        <li><a href="/#locations">Парк Культуры</a></li>
+    <div class="footer-col">
+      <div class="footer-col-title">Адреса</div>
+      <ul>
+        <li><a href="/#locations">ул. Мещанская, 7 (Сухаревская)</a></li>
+        <li><a href="/#locations">Мансуровский пер., 10 (Парк Культуры)</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Контакты</div>
-      <ul class="footer-links">
+      <ul>
         <li><a href="tel:+79255404060">+7 (925) 540-40-60</a></li>
-        <li><a href="https://t.me/rehabyou" target="_blank">Telegram</a></li>
-        <li><a href="https://instagram.com/rehab.you" target="_blank">Instagram</a></li>
+        <li><a href="https://n1276048.yclients.com" target="_blank">Записаться онлайн</a></li>
+        <li><a href="/#team">Мастера</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 REHAB.YOU. Все права защищены.</div>
+    <div class="footer-copy">© 2025 Rehab.You. Все права защищены.</div>
   </div>
 </footer>
 
-<script src="/js/main.js"></script>
 <script>
-// FAQ
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => item.classList.toggle('open'));
-});
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const icon = el.querySelector('.faq-icon');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-icon').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    icon.textContent = '−';
+  }
+}
+</script>
 
-// Masters slider drag
-const track = document.getElementById('mastersTrack');
-const curr = document.getElementById('msCurr');
-let isDown = false, startX, scrollLeft;
-track.addEventListener('mousedown', e => { isDown=true; track.classList.add('dragging'); startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft; });
-track.addEventListener('mouseleave', () => { isDown=false; track.classList.remove('dragging'); });
-track.addEventListener('mouseup', () => { isDown=false; track.classList.remove('dragging'); });
-track.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); const x=e.pageX-track.offsetLeft; track.scrollLeft=scrollLeft-(x-startX)*1.5; });
-track.addEventListener('scroll', () => { const idx = Math.round(track.scrollLeft/300)+1; curr.textContent = Math.min(idx,6); });
 
-document.getElementById('msPrev').addEventListener('click', () => track.scrollBy({left:-300,behavior:'smooth'}));
-document.getElementById('msNext').addEventListener('click', () => track.scrollBy({left:300,behavior:'smooth'}));
-
-// Hamburger
+<script>
 const hamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobileMenu');
-if(hamburger && mobileMenu) {
+if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
