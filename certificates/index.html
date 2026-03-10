@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подарочные сертификаты на массаж — Rehab.You</title>
+<meta name="description" content="Подарочные сертификаты на массаж в Rehab.You. Электронный и физический формат. Действует 1 год. Москва, Сухаревская и Парк Культуры.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<style>
+.page-hero {
+  background: #000;
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 72px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+}
+.page-hero-content { position: relative; z-index: 1; }
+.page-back {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(255,255,255,0.45);
+  text-decoration: none; display: block; margin-bottom: 32px;
+}
+.page-back:hover { color: var(--orange); }
+.page-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 900; line-height: 0.9;
+  text-transform: uppercase; color: #fff;
+  letter-spacing: -0.02em;
+}
+.page-subtitle {
+  font-size: 16px; color: rgba(255,255,255,0.55);
+  margin-top: 24px; max-width: 480px; line-height: 1.6;
+}
+.cert-body {
+  background: #fff;
+  padding: 100px 72px;
+}
+.cert-intro {
+  max-width: 680px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+.cert-intro p {
+  font-size: 18px; color: #444; line-height: 1.7;
+}
+.cert-badges {
+  display: flex; gap: 24px; justify-content: center;
+  margin-top: 32px; flex-wrap: wrap;
+}
+.cert-badge {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 600; color: #666;
+  letter-spacing: 0.05em;
+}
+.cert-badge::before {
+  content: '';
+  width: 24px; height: 2px; background: var(--orange);
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: #e5e5e5;
+  border: 2px solid #e5e5e5;
+  margin-bottom: 80px;
+}
+.cert-card {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: background 0.2s;
+}
+.cert-card:hover { background: #fafafa; }
+.cert-service-name {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800;
+  text-transform: uppercase; color: #000;
+}
+.cert-service-desc {
+  font-size: 14px; color: #666; line-height: 1.6; flex: 1;
+}
+.cert-price {
+  font-size: 24px; font-weight: 800; color: #000;
+}
+.cert-price span { font-size: 14px; font-weight: 400; color: #999; }
+.cert-buy-btn {
+  display: inline-block;
+  background: #000; color: #fff;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s;
+  text-align: center;
+}
+.cert-buy-btn:hover { background: var(--orange); color: #000; }
+.cert-how {
+  max-width: 900px;
+  margin: 0 auto 80px;
+}
+.cert-how-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900; text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.cert-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+.cert-step-num {
+  font-family: var(--font-display);
+  font-size: 48px; font-weight: 900;
+  color: var(--orange); line-height: 1;
+  margin-bottom: 12px;
+}
+.cert-step-title {
+  font-size: 15px; font-weight: 700; margin-bottom: 8px;
+}
+.cert-step-desc { font-size: 14px; color: #666; line-height: 1.6; }
+.cert-cta-band {
+  background: #000; color: #fff;
+  padding: 80px 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap;
+}
+.cert-cta-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900; text-transform: uppercase; line-height: 0.9;
+  margin-bottom: 16px;
+}
+.cert-cta-text p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 400px; }
+.cert-cta-btn {
+  display: inline-block;
+  background: var(--orange); color: #000;
+  padding: 20px 48px;
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  transition: background 0.2s;
+}
+.cert-cta-btn:hover { background: #ff8c00; }
+@media (max-width: 768px) {
+  .page-hero { padding: 0 24px 60px; }
+  .cert-body { padding: 60px 24px; }
+  .cert-cta-band { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img class="logo-white" src="../../img/logo-white.png" alt="">
+    <img class="logo-black" src="../../img/logo-black.png" alt="">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">О нас</a></li>
+    <li><a href="/#services">Услуги</a></li>
+    <li><a href="/#team">Мастера</a></li>
+    <li><a href="/#packages">Абонементы</a></li>
+    <li><a href="/#locations">Адреса</a></li>
+  </ul>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="/">Главная</a>
+  <a href="/#services">Услуги</a>
+  <a href="/#team">Мастера</a>
+  <a href="/#packages">Абонементы</a>
+  <a href="/#locations">Адреса</a>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-mobile-cta">Записаться</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <a href="/" class="page-back">← Rehab.You</a>
+    <div class="page-eyebrow">Подарок · Rehab.You</div>
+    <div class="page-title">Сертификат<br>на массаж</div>
+    <div class="page-subtitle">Подарок, который точно понравится — потому что тело скажет спасибо</div>
+  </div>
+</div>
+
+<div class="cert-body">
+
+  <div class="cert-intro">
+    <p>Не знаешь что подарить? Сертификат на массаж — это конкретная забота, а не очередная вещь. Получатель сам выберет мастера, вид массажа и удобное время.</p>
+    <div class="cert-badges">
+      <div class="cert-badge">Действует 1 год</div>
+      <div class="cert-badge">Электронный и физический формат</div>
+      <div class="cert-badge">Оба центра Москвы</div>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-service-name">Классический</div>
+      <div class="cert-service-desc">Базовый сеанс для тех, кто хочет снять общее напряжение и восстановить тонус. Хорошо заходит тем, кто ещё не определился с видом массажа.</div>
+      <div class="cert-price">от 6 900 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-service-name">Расслабляющий</div>
+      <div class="cert-service-desc">Для тех, кому нужно выдохнуть. Мягкие техники, работа с нервной системой — выходишь другим человеком.</div>
+      <div class="cert-price">от 6 900 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-service-name">Массаж лица</div>
+      <div class="cert-service-desc">Результат виден с первого сеанса — уходят отёки, лицо светлеет. Идеальный подарок для тех, кто следит за собой.</div>
+      <div class="cert-price">от 7 400 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-service-name">Антицеллюлитный</div>
+      <div class="cert-service-desc">Для тех, кто хочет видеть разницу в зеркале. Видимый результат курсом — сертификат на первый шаг.</div>
+      <div class="cert-price">от 7 400 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-service-name">Спортивный</div>
+      <div class="cert-service-desc">Для тех, кто тренируется. Восстановление между нагрузками — это не роскошь, это часть процесса.</div>
+      <div class="cert-price">от 7 400 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
+    </div>
+  </div>
+
+  <div class="cert-how">
+    <div class="cert-how-title">Как это работает</div>
+    <div class="cert-steps">
+      <div class="cert-step">
+        <div class="cert-step-num">01</div>
+        <div class="cert-step-title">Покупаешь</div>
+        <div class="cert-step-desc">Онлайн или по телефону. Электронный приходит на почту, физический — забираешь в студии или доставка.</div>
+      </div>
+      <div class="cert-step">
+        <div class="cert-step-num">02</div>
+        <div class="cert-step-title">Даришь</div>
+        <div class="cert-step-desc">Получатель сам решает — когда, в каком центре, к какому мастеру и на какой вид массажа.</div>
+      </div>
+      <div class="cert-step">
+        <div class="cert-step-num">03</div>
+        <div class="cert-step-title">Записывается</div>
+        <div class="cert-step-desc">Онлайн через наш сайт или по телефону. Нужно только сообщить номер сертификата при записи.</div>
+      </div>
+      <div class="cert-step">
+        <div class="cert-step-num">04</div>
+        <div class="cert-step-title">Приходит</div>
+        <div class="cert-step-desc">Сертификат действует 1 год. Можно использовать в любом из двух центров Москвы.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="cert-cta-band">
+  <div class="cert-cta-text">
+    <h2>Хочешь<br>физический<br>формат?</h2>
+    <p>Звони — оформим красиво, с конвертом. Можно забрать в студии или доставим.</p>
+  </div>
+  <a href="tel:+79255404060" class="cert-cta-btn">+7 (925) 540-40-60</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">REHAB.YOU</div>
+      <div class="footer-tagline">Твоё тело — твой главный актив</div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Услуги</div>
+        <a href="/massage/classic/">Классический</a>
+        <a href="/massage/sport/">Спортивный</a>
+        <a href="/massage/relax/">Расслабляющий</a>
+        <a href="/massage/anticell/">Антицеллюлитный</a>
+        <a href="/massage/face/">Массаж лица</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Студия</div>
+        <a href="/#about">О нас</a>
+        <a href="/#team">Мастера</a>
+        <a href="/certificates/">Сертификаты</a>
+        <a href="/subscriptions/">Абонементы</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="tel:+79255404060">+7 (925) 540-40-60</a>
+        <div style="color:var(--muted);font-size:13px;margin-top:8px">Сухаревская: ул. Мещанская, 7, стр. 1</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:4px">Парк Культуры: Мансуровский пер., 10, стр. 1А</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Rehab.You. Все права защищены.</div>
+  </div>
+</footer>
+<script>
+// Nav scroll
+(function(){
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  // Hamburger
+  document.getElementById('navHamburger').addEventListener('click', function(){
+    document.getElementById('navMobileMenu').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>
