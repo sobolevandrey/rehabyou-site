@@ -385,8 +385,9 @@ footer{
 }
 .who-list{border-top:1px solid var(--border);}
 .who-item{
-  padding:18px 0;border-bottom:1px solid var(--border);
+  padding:18px 0;border-bottom:1px solid #ddd);
   display:flex;align-items:flex-start;gap:20px;
+  background:transparent;
 }
 .who-num{
   font-family:var(--font-display);font-size:11px;font-weight:900;
@@ -404,13 +405,13 @@ footer{
 }
 .who-photo-label{
   position:absolute;bottom:0;left:0;right:0;
-  background:var(--black);color:var(--white);
-  padding:14px 20px;
-  font-family:var(--font-display);font-size:13px;font-weight:900;
-  text-transform:uppercase;letter-spacing:0.15em;
-  display:flex;gap:8px;
+  background:var(--black);
+  padding:16px 20px;
+  display:flex;align-items:center;
 }
-.who-photo-label-accent{color:var(--orange);}
+.who-photo-label img{
+  height:22px;width:auto;display:block;
+}
 @media(max-width:1000px){
   .who-inner{grid-template-columns:1fr;gap:40px;}
   .who-right{max-width:320px;}
@@ -475,7 +476,7 @@ footer{
     <!-- Текстовая колонка -->
     <div class="who-left">
       <div class="section-label">Кому подходит</div>
-      <h2 class="who-title">Узнаёте<br>себя?</h2>
+      <h2 class="who-title">Кому<br>подходит</h2>
       <div class="who-list">
         <div class="who-item">
           <div class="who-num">01</div>
@@ -501,8 +502,7 @@ footer{
       <img src="/img/3 vertical.jpg" alt="Массаж лица Rehab.You">
       <!-- Чёрный акцентный блок поверх угла фото -->
       <div class="who-photo-label">
-        <span>Rehab</span>
-        <span class="who-photo-label-accent">You</span>
+        <img src="/img/logo-white.png" alt="Rehab.You">
       </div>
     </div>
   </div>
