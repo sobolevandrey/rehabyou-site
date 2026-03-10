@@ -20,6 +20,131 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/styles.css">
 <link rel="stylesheet" href="../../css/master.css">
+<style>
+/* === OLD MASTER LAYOUT FIX === */
+.master-hero-photo {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center top;
+}
+.master-hero-breadcrumb, .master-breadcrumb {
+  margin-bottom: 20px;
+}
+.master-hero-breadcrumb a, .master-breadcrumb a {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+.master-hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 80px);
+  font-weight: 900; line-height: 0.95; letter-spacing: -0.02em;
+  text-transform: uppercase; color: #fff; margin-bottom: 20px;
+}
+.master-hero-title {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 20px;
+}
+.master-hero-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
+}
+.master-hero-btn {
+  display: inline-block;
+  background: var(--orange); color: var(--black);
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s;
+}
+.master-hero-btn:hover { background: #ff8c00; }
+/* Spec grid */
+.master-spec-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 16px;
+}
+.master-spec-card {
+  padding: 24px; border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.msc-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.msc-icon svg { width: 24px; height: 24px; }
+.msc-name {
+  font-size: 14px; font-weight: 700; color: var(--text);
+}
+.msc-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.5;
+}
+/* For list */
+.master-for-list {
+  border-top: 1px solid var(--border);
+  padding: 0; margin: 16px 0 0;
+  list-style: none;
+}
+.master-for-list li {
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  font-size: 15px; color: #444; line-height: 1.5;
+  display: flex; align-items: center; gap: 14px;
+}
+.master-for-list li::before {
+  content: ''; width: 20px; height: 2px;
+  background: var(--orange); flex-shrink: 0;
+}
+/* Info card sidebar */
+.master-info-card {
+  background: #f8f8f8; padding: 32px;
+  border-left: 3px solid var(--orange);
+}
+.mic-row {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.mic-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted);
+}
+.mic-val {
+  font-size: 15px; font-weight: 600; color: var(--text);
+}
+.master-book-btn {
+  display: block; width: 100%; padding: 18px;
+  background: var(--black); color: var(--white);
+  font-family: var(--font-display); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  text-decoration: none; text-align: center;
+  transition: background 0.2s; margin-top: 24px; margin-bottom: 16px;
+  box-sizing: border-box;
+}
+.master-book-btn:hover { background: var(--orange); }
+.master-back-link {
+  display: block; text-align: center;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.master-back-link:hover { color: var(--orange); }
+/* Layout */
+.master-body {
+  background: var(--white); padding: 80px 72px;
+  display: grid; grid-template-columns: 1fr 320px;
+  gap: 80px; max-width: 1400px; margin: 0 auto;
+}
+.master-bio p {
+  font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 16px;
+}
+.master-spec-section, .master-for-section { margin-top: 48px; }
+@media(max-width:1100px) {
+  .master-body { grid-template-columns: 1fr; gap: 48px; padding: 56px 32px; }
+  .master-spec-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width:640px) {
+  .master-body { padding: 40px 20px; }
+  .master-spec-grid { grid-template-columns: 1fr; }
+}
+/* === END OLD MASTER LAYOUT FIX === */
+</style>
 </head>
 <body>
 <nav>
@@ -37,7 +162,8 @@
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
 </nav>
 
-<section class="master-hero" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp')">
+<section class="master-hero">
+  <div class="master-hero-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp')"></div>
   <div class="master-hero-overlay"></div>
   <div class="master-hero-content">
     <div class="master-breadcrumb"><a href="/#team">← Мастера</a></div>
