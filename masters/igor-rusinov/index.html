@@ -21,13 +21,10 @@
 <link rel="stylesheet" href="../../css/styles.css">
 <link rel="stylesheet" href="../../css/master.css">
 <style>
+
 /* === DESKTOP PORTRAIT FIX === */
 @media (min-width: 1024px) {
   .master-hero-photo {
-    background-position: center top !important;
-    background-size: cover !important;
-  }
-  .master-hero {
     background-position: center top !important;
     background-size: cover !important;
   }
@@ -51,20 +48,22 @@
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
 </nav>
 
-<section class="master-hero" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/igor-rusinov.png')">
+<div class="master-hero">
+  <!-- Портрет — только мобильная -->
+  <div class="master-hero-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/igor-rusinov.png')"></div>
   <div class="master-hero-overlay"></div>
   <div class="master-hero-content">
-    <div class="master-breadcrumb"><a href="/#team">← Мастера</a></div>
-    <div class="master-hero-name">Игорь Русинов</div>
-    <div class="master-hero-title">Мастер массажа</div>
-    <div class="master-hero-tags">
-      <span class="master-tag">Индивидуальный подход</span>
+    <a href="/#team" class="master-back">← Все мастера</a>
+    <div class="master-eyebrow">Мастер · Rehab.You</div>
+    <h1 class="master-name">Игорь<br>Русинов</h1>
+    <div class="master-tags">
       <span class="master-tag">Классический</span>
       <span class="master-tag">Спортивный</span>
+      <span class="master-tag">Лечебный</span>
     </div>
-    <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3401465" target="_blank" class="master-hero-btn">Записаться</a>
+    <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3401465" target="_blank" class="master-cta-btn">Записаться к Игорю</a>
   </div>
-</section>
+</div>
 
 <div class="master-body">
   <div class="master-main">
