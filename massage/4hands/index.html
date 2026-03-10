@@ -232,10 +232,10 @@
 }
 
 /* ===== MASTERS ===== */
-.masters-section { background:var(--black); padding:100px 0 0; overflow:hidden; }
+.masters-section { background:var(--black); padding:100px 0 0; overflow:hidden; display:flex; flex-direction:column; }
 .masters-header { padding:0 72px; margin-bottom:48px; }
 .masters-track {
-  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  display:flex; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory;
   scrollbar-width:none; -ms-overflow-style:none; cursor:grab;
 }
 .masters-track::-webkit-scrollbar { display:none; }
@@ -333,6 +333,14 @@
 
 /* Disable sticky CTA from main styles on service pages */
 .sticky-cta { display:none !important; }
+
+/* Nav override: hero left is white, so nav must be dark from start */
+nav { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border) !important; }
+nav .nav-links a { color: var(--text) !important; }
+nav .nav-cta { background: var(--black) !important; color: var(--white) !important; border-color: var(--black) !important; }
+nav .logo-white { display: none !important; }
+nav .logo-black { display: block !important; }
+nav .nav-hamburger span { background: var(--black) !important; }
 </style>
 </head>
 <body>
