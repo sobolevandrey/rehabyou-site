@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/mobile.css">
 <!-- cache-bust: 2026-03-07-v20 -->
 </head>
 <body>
@@ -37,7 +38,22 @@
     <li><a href="#locations">Адреса</a></li>
   </ul>
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+
+  <!-- Hamburger (мобильный) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="/#about" class="mobile-nav-link">О нас</a>
+  <a href="/#services" class="mobile-nav-link">Услуги</a>
+  <a href="/#team" class="mobile-nav-link">Мастера</a>
+  <a href="/#packages" class="mobile-nav-link">Абонементы</a>
+  <a href="/#locations" class="mobile-nav-link">Адреса</a>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-mobile-cta">Записаться</a>
+</div>
 
 <!-- HERO -->
 <section class="hero-v2" id="hero">
@@ -927,5 +943,25 @@
 </div>
 
 <script src="js/main.js"></script>
+
+<script>
+// Hamburger menu
+const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('navMobileMenu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+</script>
 </body>
 </html>
