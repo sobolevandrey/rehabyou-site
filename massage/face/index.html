@@ -421,6 +421,72 @@ footer{
   .who-section{padding:64px 32px;}
   .who-geo-tl,.who-geo-br{display:none;}
 }
+
+/* EFFECTS SECTION */
+.effects-section{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--black);color:var(--white);
+  min-height:640px;
+}
+.effects-left{
+  padding:80px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.effects-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,48px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:0.9;margin:16px 0 48px;color:var(--white);
+}
+.effects-title em{color:var(--orange);font-style:normal;}
+.effects-list{border-top:1px solid rgba(255,255,255,0.1);}
+.effect-row{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.effect-row-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:3px;letter-spacing:0.1em;
+}
+.effect-row-title{
+  font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;
+}
+.effect-row-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* Правая колонка */
+.effects-right{
+  position:relative;display:flex;align-items:stretch;
+}
+.effects-stripe{
+  width:8px;background:var(--orange);flex-shrink:0;
+}
+.effects-photo-wrap{
+  position:relative;flex:1;overflow:hidden;
+}
+.effects-photo-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+}
+.effects-badge{
+  position:absolute;top:40px;left:-28px;
+  background:var(--orange);
+  padding:16px 20px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:-4px 4px 0 var(--black);
+}
+.effects-badge-num{
+  font-family:var(--font-display);font-size:36px;font-weight:900;
+  color:var(--black);line-height:1;
+}
+.effects-badge-num span{font-size:20px;}
+.effects-badge-text{
+  font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--black);line-height:1.4;
+}
+@media(max-width:900px){
+  .effects-section{grid-template-columns:1fr;}
+  .effects-left{padding:56px 32px;}
+  .effects-right{min-height:400px;}
+  .effects-badge{top:24px;left:24px;}
+}
 </style>
 </head>
 <body>
@@ -544,29 +610,55 @@ footer{
 </div>
 
 <!-- ЭФФЕКТ -->
-<div class="section section-dark">
-  <div class="section-label">Результат</div>
-  <h2 class="section-title" style="color:var(--white);">Эффект от<br>массажа лица</h2>
-  <div class="effects-grid">
-    <div class="effect-item">
-      <div class="effect-num">01</div>
-      <div class="effect-title">Подтяжка овала</div>
-      <div class="effect-desc">Чёткие скулы и контур — без филлеров и пластики. Мышечный каркас работает как естественный лифтинг.</div>
+<div class="effects-section">
+  <!-- Левая: заголовок + список -->
+  <div class="effects-left">
+    <div class="section-label" style="color:var(--orange);">Результат</div>
+    <h2 class="effects-title">Эффект от<br>массажа<br><em>лица</em></h2>
+    <div class="effects-list">
+      <div class="effect-row">
+        <div class="effect-row-num">01</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Подтяжка овала</div>
+          <div class="effect-row-desc">Чёткие скулы и контур — без филлеров и пластики.</div>
+        </div>
+      </div>
+      <div class="effect-row">
+        <div class="effect-row-num">02</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Здоровый цвет и сияние</div>
+          <div class="effect-row-desc">Кожа светится изнутри — видно даже после тяжёлой недели.</div>
+        </div>
+      </div>
+      <div class="effect-row">
+        <div class="effect-row-num">03</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Уменьшение отёков</div>
+          <div class="effect-row-desc">Мешки и тёмные круги уходят после первого сеанса.</div>
+        </div>
+      </div>
+      <div class="effect-row">
+        <div class="effect-row-num">04</div>
+        <div class="effect-row-body">
+          <div class="effect-row-title">Гладкость кожи</div>
+          <div class="effect-row-desc">Мимические морщины разглаживаются без ботокса и игл.</div>
+        </div>
+      </div>
     </div>
-    <div class="effect-item">
-      <div class="effect-num">02</div>
-      <div class="effect-title">Здоровый цвет и сияние</div>
-      <div class="effect-desc">Выглядите отдохнувшей даже после тяжёлой недели. Микроциркуляция восстановлена — кожа светится изнутри.</div>
-    </div>
-    <div class="effect-item">
-      <div class="effect-num">03</div>
-      <div class="effect-title">Уменьшение отёков</div>
-      <div class="effect-desc">Утренние отёки и мешки под глазами уходят после первого сеанса. Лимфоотток налажен, жидкость больше не задерживается.</div>
-    </div>
-    <div class="effect-item">
-      <div class="effect-num">04</div>
-      <div class="effect-title">Гладкость кожи</div>
-      <div class="effect-desc">Разглаживание мимических морщин без ботокса и игл. Мышцы расслаблены — кожа следует за ними.</div>
+    <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary" style="margin-top:40px;">Записаться</a>
+  </div>
+
+  <!-- Правая: фото с оранжевой полосой -->
+  <div class="effects-right">
+    <!-- Оранжевая вертикальная полоса -->
+    <div class="effects-stripe"></div>
+    <div class="effects-photo-wrap">
+      <img src="/img/4 vertical.jpg" alt="Эффект массажа лица">
+      <!-- Плашка с цифрой -->
+      <div class="effects-badge">
+        <div class="effects-badge-num">1<span>й</span></div>
+        <div class="effects-badge-text">сеанс<br>= результат</div>
+      </div>
     </div>
   </div>
 </div>
