@@ -1046,3 +1046,137 @@ nav.scrolled .logo-black { display: block !important; }
   .tg-popup { width: calc(100vw - 24px); bottom: 12px; right: 12px; }
   .tg-popup-photo { width: 110px; }
 }
+
+
+/* ================================================
+   LEAD MODAL — форма заявки
+   ================================================ */
+.lead-modal-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 24px;
+}
+.lead-modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+.lead-modal {
+  background: #fff;
+  width: 100%; max-width: 480px;
+  position: relative;
+  transform: translateY(24px);
+  transition: transform 0.3s ease;
+}
+.lead-modal-overlay.open .lead-modal {
+  transform: translateY(0);
+}
+.lead-modal-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 36px; height: 36px;
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #999; transition: color 0.2s;
+}
+.lead-modal-close:hover { color: #000; }
+.lead-modal-close svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.lead-modal-header {
+  background: #000; color: #fff;
+  padding: 40px 40px 32px;
+}
+.lead-modal-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: #F49933; margin-bottom: 12px;
+}
+.lead-modal-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px; font-weight: 900;
+  text-transform: uppercase; line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+.lead-modal-subtitle {
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  margin-top: 10px; line-height: 1.6;
+}
+
+.lead-modal-body {
+  padding: 32px 40px 40px;
+}
+.lead-modal-field {
+  margin-bottom: 16px;
+}
+.lead-modal-label {
+  display: block;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #888;
+  margin-bottom: 8px;
+}
+.lead-modal-input {
+  width: 100%; padding: 14px 16px;
+  border: 1.5px solid #e5e5e5;
+  background: #fff; color: #000;
+  font-family: 'Inter', sans-serif; font-size: 15px;
+  outline: none; transition: border-color 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.lead-modal-input:focus { border-color: #000; }
+.lead-modal-input.error { border-color: #e53e3e; }
+
+.lead-modal-submit {
+  width: 100%; padding: 18px;
+  background: #000; color: #fff; border: none; cursor: pointer;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.2s; margin-top: 8px;
+}
+.lead-modal-submit:hover { background: #F49933; color: #000; }
+.lead-modal-submit:disabled { background: #ccc; cursor: not-allowed; color: #fff; }
+
+.lead-modal-agree {
+  font-size: 11px; color: #aaa; line-height: 1.6;
+  margin-top: 14px; text-align: center;
+}
+
+/* Состояние успеха */
+.lead-modal-success {
+  display: none;
+  padding: 48px 40px;
+  text-align: center;
+}
+.lead-modal-success-icon {
+  width: 56px; height: 56px;
+  background: #F49933; margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+}
+.lead-modal-success-icon svg {
+  width: 28px; height: 28px; stroke: #fff; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.lead-modal-success-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px; font-weight: 900;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.lead-modal-success-desc {
+  font-size: 14px; color: #666; line-height: 1.7;
+}
+
+/* Состояние: идёт отправка */
+.lead-modal-overlay.sending .lead-modal-submit {
+  background: #666; pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .lead-modal-header { padding: 32px 24px 24px; }
+  .lead-modal-body { padding: 24px 24px 32px; }
+  .lead-modal-success { padding: 40px 24px; }
+  .lead-modal-title { font-size: 20px; }
+}
+/* ================================================
+   END LEAD MODAL
+   ================================================ */
