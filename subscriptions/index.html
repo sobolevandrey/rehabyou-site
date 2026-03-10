@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Абонементы на массаж — Rehab.You</title>
+<meta name="description" content="Абонементы на массаж в Rehab.You. 5 или 10 сеансов со скидкой. Любой вид массажа. Москва, Сухаревская и Парк Культуры.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<style>
+.page-hero {
+  background: #000;
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 72px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #111 0%, #000 60%, #1a1100 100%);
+}
+.page-hero-content { position: relative; z-index: 1; }
+.page-back {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(255,255,255,0.45);
+  text-decoration: none; display: block; margin-bottom: 32px;
+}
+.page-back:hover { color: var(--orange); }
+.page-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 900; line-height: 0.9;
+  text-transform: uppercase; color: #fff;
+  letter-spacing: -0.02em;
+}
+.page-subtitle {
+  font-size: 16px; color: rgba(255,255,255,0.55);
+  margin-top: 24px; max-width: 520px; line-height: 1.6;
+}
+.subs-body { background: #fff; padding: 100px 72px; }
+
+.subs-why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+  align-items: center;
+}
+.subs-why-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 900; text-transform: uppercase;
+  line-height: 0.95; margin-bottom: 24px;
+}
+.subs-why-text h2 em { color: var(--orange); font-style: normal; }
+.subs-why-text p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+.subs-why-points { display: flex; flex-direction: column; gap: 16px; }
+.subs-why-point {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px; background: #f8f8f8;
+}
+.subs-why-point-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: var(--orange); display: flex;
+  align-items: center; justify-content: center;
+}
+.subs-why-point-icon svg {
+  width: 18px; height: 18px; stroke: #fff; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.subs-why-point-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.subs-why-point-desc { font-size: 13px; color: #666; line-height: 1.5; }
+
+.subs-grid-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900; text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.subs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px;
+  background: #e5e5e5;
+  border: 2px solid #e5e5e5;
+  margin-bottom: 100px;
+}
+.subs-card {
+  background: #fff;
+  padding: 40px;
+  display: flex; flex-direction: column; gap: 16px;
+  position: relative;
+  transition: background 0.2s;
+}
+.subs-card:hover { background: #fafafa; }
+.subs-card.featured {
+  background: #000; color: #fff;
+}
+.subs-card.featured:hover { background: #111; }
+.subs-badge {
+  display: inline-block;
+  background: var(--orange); color: #000;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 5px 12px;
+  align-self: flex-start;
+}
+.subs-service-name {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800;
+  text-transform: uppercase;
+}
+.subs-card.featured .subs-service-name { color: #fff; }
+.subs-sessions {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--orange);
+}
+.subs-desc {
+  font-size: 14px; line-height: 1.6; flex: 1;
+}
+.subs-card.featured .subs-desc { color: rgba(255,255,255,0.65); }
+.subs-card:not(.featured) .subs-desc { color: #666; }
+.subs-price-row {
+  display: flex; gap: 16px; align-items: baseline;
+}
+.subs-price {
+  font-size: 28px; font-weight: 800;
+}
+.subs-price-old {
+  font-size: 15px; text-decoration: line-through;
+  color: #999;
+}
+.subs-card.featured .subs-price { color: #fff; }
+.subs-buy-btn {
+  display: block; text-align: center;
+  padding: 16px 28px;
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s;
+}
+.subs-card:not(.featured) .subs-buy-btn {
+  background: #000; color: #fff;
+}
+.subs-card:not(.featured) .subs-buy-btn:hover {
+  background: var(--orange); color: #000;
+}
+.subs-card.featured .subs-buy-btn {
+  background: var(--orange); color: #000;
+}
+.subs-card.featured .subs-buy-btn:hover { background: #ff8c00; }
+
+.subs-faq { margin-bottom: 100px; }
+.subs-faq-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 900; text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.subs-faq-item {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 24px 0;
+}
+.subs-faq-q {
+  font-size: 16px; font-weight: 700; margin-bottom: 10px;
+}
+.subs-faq-a {
+  font-size: 14px; color: #666; line-height: 1.7;
+}
+
+.subs-cta-band {
+  background: #000; color: #fff;
+  padding: 80px 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap;
+}
+.subs-cta-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900; text-transform: uppercase; line-height: 0.9;
+  margin-bottom: 16px;
+}
+.subs-cta-text h2 em { color: var(--orange); font-style: normal; }
+.subs-cta-text p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 400px; }
+.subs-cta-btn {
+  display: inline-block;
+  background: var(--orange); color: #000;
+  padding: 20px 48px;
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  transition: background 0.2s;
+}
+.subs-cta-btn:hover { background: #ff8c00; }
+
+@media (max-width: 768px) {
+  .page-hero { padding: 0 24px 60px; }
+  .subs-body { padding: 60px 24px; }
+  .subs-why { grid-template-columns: 1fr; gap: 40px; }
+  .subs-cta-band { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img class="logo-white" src="../../img/logo-white.png" alt="">
+    <img class="logo-black" src="../../img/logo-black.png" alt="">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">О нас</a></li>
+    <li><a href="/#services">Услуги</a></li>
+    <li><a href="/#team">Мастера</a></li>
+    <li><a href="/#packages">Абонементы</a></li>
+    <li><a href="/#locations">Адреса</a></li>
+  </ul>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="/">Главная</a>
+  <a href="/#services">Услуги</a>
+  <a href="/#team">Мастера</a>
+  <a href="/#packages">Абонементы</a>
+  <a href="/#locations">Адреса</a>
+  <a href="https://n1276048.yclients.com" target="_blank" class="nav-mobile-cta">Записаться</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <a href="/" class="page-back">← Rehab.You</a>
+    <div class="page-eyebrow">Система · Rehab.You</div>
+    <div class="page-title">Абонемент<br>на массаж</div>
+    <div class="page-subtitle">Тело меняется системой, не разовым визитом. 5 или 10 сеансов — с ощутимой выгодой</div>
+  </div>
+</div>
+
+<div class="subs-body">
+
+  <div class="subs-why">
+    <div class="subs-why-text">
+      <h2>Почему<br>абонемент, а не<br><em>разовый?</em></h2>
+      <p>Один сеанс — это хорошо. Но тело работает циклами. Настоящий результат — расслабленность, тонус, улучшение осанки — появляется после 3–5 сеансов, когда мастер уже знает твоё тело и работает по программе.</p>
+      <p>Абонемент — это ещё и экономия. Каждый сеанс обходится дешевле разового.</p>
+    </div>
+    <div class="subs-why-points">
+      <div class="subs-why-point">
+        <div class="subs-why-point-icon">
+          <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div>
+          <div class="subs-why-point-title">Результат накапливается</div>
+          <div class="subs-why-point-desc">Мастер помнит твоё тело — каждый следующий сеанс эффективнее предыдущего</div>
+        </div>
+      </div>
+      <div class="subs-why-point">
+        <div class="subs-why-point-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="subs-why-point-title">Действует 6 месяцев</div>
+          <div class="subs-why-point-desc">Можно ходить раз в 2–3 недели — стабильная забота о теле без спешки</div>
+        </div>
+      </div>
+      <div class="subs-why-point">
+        <div class="subs-why-point-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <div class="subs-why-point-title">Оба центра Москвы</div>
+          <div class="subs-why-point-desc">Сухаревская или Парк Культуры — по абонементу, без доплат</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subs-grid-title">Выбери свой абонемент</div>
+  <div class="subs-grid">
+    <div class="subs-card">
+      <div class="subs-service-name">Классический</div>
+      <div class="subs-sessions">5 или 10 сеансов</div>
+      <div class="subs-desc">Базовая работа с телом — снимаем напряжение, восстанавливаем тонус. Для тех, кто хочет регулярно поддерживать себя в форме.</div>
+      <div class="subs-price-row">
+        <div class="subs-price">от 31 050 ₽</div>
+        <div class="subs-price-old">34 500 ₽</div>
+      </div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="subs-buy-btn">Купить абонемент</a>
+    </div>
+    <div class="subs-card featured">
+      <div class="subs-badge">Популярный</div>
+      <div class="subs-service-name">Спортивный</div>
+      <div class="subs-sessions">5 или 10 сеансов</div>
+      <div class="subs-desc">Для тех, кто тренируется. Восстановление между нагрузками — это не опция, это часть результата.</div>
+      <div class="subs-price-row">
+        <div class="subs-price">от 33 300 ₽</div>
+        <div class="subs-price-old">37 000 ₽</div>
+      </div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="subs-buy-btn">Купить абонемент</a>
+    </div>
+    <div class="subs-card">
+      <div class="subs-service-name">Расслабляющий</div>
+      <div class="subs-sessions">5 или 10 сеансов</div>
+      <div class="subs-desc">Для тех, кому нужно регулярно выдыхать. Стресс, усталость, нервная система — работаем системно.</div>
+      <div class="subs-price-row">
+        <div class="subs-price">от 31 050 ₽</div>
+        <div class="subs-price-old">34 500 ₽</div>
+      </div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="subs-buy-btn">Купить абонемент</a>
+    </div>
+    <div class="subs-card">
+      <div class="subs-service-name">Массаж лица</div>
+      <div class="subs-sessions">5 или 10 сеансов</div>
+      <div class="subs-desc">Видимый результат появляется курсом. Уходят отёки, улучшается овал, кожа светлеет — без инъекций.</div>
+      <div class="subs-price-row">
+        <div class="subs-price">от 33 300 ₽</div>
+        <div class="subs-price-old">37 000 ₽</div>
+      </div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="subs-buy-btn">Купить абонемент</a>
+    </div>
+    <div class="subs-card">
+      <div class="subs-service-name">Антицеллюлитный</div>
+      <div class="subs-sessions">5 или 10 сеансов</div>
+      <div class="subs-desc">Работает только курсом. Изменения в структуре ткани требуют регулярности — абонемент создаёт её.</div>
+      <div class="subs-price-row">
+        <div class="subs-price">от 33 300 ₽</div>
+        <div class="subs-price-old">37 000 ₽</div>
+      </div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="subs-buy-btn">Купить абонемент</a>
+    </div>
+  </div>
+
+  <div class="subs-faq">
+    <div class="subs-faq-title">Частые вопросы</div>
+    <div class="subs-faq-item">
+      <div class="subs-faq-q">Можно ли менять вид массажа внутри абонемента?</div>
+      <div class="subs-faq-a">Абонемент привязан к конкретному виду массажа. Если хочешь гибкость — спроси менеджера, подберём вариант.</div>
+    </div>
+    <div class="subs-faq-item">
+      <div class="subs-faq-q">Можно ли передать абонемент другому человеку?</div>
+      <div class="subs-faq-a">Да, абонемент можно передать — предупреди нас при записи.</div>
+    </div>
+    <div class="subs-faq-item">
+      <div class="subs-faq-q">Что если не успею использовать за 6 месяцев?</div>
+      <div class="subs-faq-a">Обратись к нам — рассмотрим варианты продления индивидуально.</div>
+    </div>
+    <div class="subs-faq-item">
+      <div class="subs-faq-q">Работает ли абонемент в обоих центрах?</div>
+      <div class="subs-faq-a">Да, оба центра — Сухаревская и Парк Культуры — доступны по абонементу без каких-либо доплат.</div>
+    </div>
+    <div class="subs-faq-item">
+      <div class="subs-faq-q">Как оплатить?</div>
+      <div class="subs-faq-a">Онлайн через сайт или по телефону. Активация — в день первого визита.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="subs-cta-band">
+  <div class="subs-cta-text">
+    <h2>Готов<br>начать<br><em>системно?</em></h2>
+    <p>Запишись или позвони — подберём абонемент под твои задачи и расписание.</p>
+  </div>
+  <a href="https://n1276048.yclients.com" target="_blank" class="subs-cta-btn">Купить абонемент</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">REHAB.YOU</div>
+      <div class="footer-tagline">Твоё тело — твой главный актив</div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Услуги</div>
+        <a href="/massage/classic/">Классический</a>
+        <a href="/massage/sport/">Спортивный</a>
+        <a href="/massage/relax/">Расслабляющий</a>
+        <a href="/massage/anticell/">Антицеллюлитный</a>
+        <a href="/massage/face/">Массаж лица</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Студия</div>
+        <a href="/#about">О нас</a>
+        <a href="/#team">Мастера</a>
+        <a href="/certificates/">Сертификаты</a>
+        <a href="/subscriptions/">Абонементы</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="tel:+79255404060">+7 (925) 540-40-60</a>
+        <div style="color:var(--muted);font-size:13px;margin-top:8px">Сухаревская: ул. Мещанская, 7, стр. 1</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:4px">Парк Культуры: Мансуровский пер., 10, стр. 1А</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Rehab.You. Все права защищены.</div>
+  </div>
+</footer>
+<script>
+// Nav scroll
+(function(){
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  // Hamburger
+  document.getElementById('navHamburger').addEventListener('click', function(){
+    document.getElementById('navMobileMenu').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>
