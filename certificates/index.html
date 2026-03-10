@@ -1,177 +1,903 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107225079', 'ym');
+    ym(107225079, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107225079" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Подарочные сертификаты на массаж — Rehab.You</title>
-<meta name="description" content="Подарочные сертификаты на массаж в Rehab.You. Электронный и физический формат. Действует 1 год. Москва, Сухаревская и Парк Культуры.">
+<meta name="description" content="Подарочный сертификат на массаж в Rehab.You. Электронный и физический формат. Действует 1 год. Два центра в Москве.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="../css/mobile.css">
 <style>
-.page-hero {
+
+:root {
+  --black:#000;--white:#fff;--orange:#F49933;
+  --gray:#636F80;--light:#F7F7F7;--text:#1A1A1A;
+  --muted:#888;--border:#E5E5E5;
+  --font-display:'Unbounded',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--white);color:var(--text);overflow-x:hidden;}
+
+/* NAV: see override below */
+/* HERO */
+.hero{
+  padding-top:72px;min-height:100vh;
+  display:grid;grid-template-columns:2fr 3fr;
+}
+.hero-img{
+  overflow:hidden;position:relative;
+}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+}
+.hero-content{
+  padding:80px 72px 80px 80px;display:flex;flex-direction:column;justify-content:center;
+  background:var(--black);color:var(--white);
+}
+.hero-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:0.28em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:2px;background:var(--orange);}
+.hero-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,52px);
+  font-weight:900;text-transform:uppercase;line-height:0.95;
+  letter-spacing:-0.02em;margin-bottom:20px;
+}
+.hero-subtitle{
+  font-size:16px;line-height:1.7;color:rgba(255,255,255,0.6);margin-bottom:36px;
+  max-width:480px;
+}
+.hero-bullets{
+  list-style:none;margin-bottom:40px;display:flex;flex-direction:column;gap:10px;
+}
+.hero-bullets li{
+  font-size:13px;color:rgba(255,255,255,0.75);
+  display:flex;align-items:center;gap:10px;
+}
+.hero-bullets li::before{content:'';width:16px;height:1px;background:var(--orange);flex-shrink:0;}
+.btn-primary{
+  display:inline-block;background:var(--orange);color:var(--black);
+  padding:16px 36px;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s,transform 0.15s;
+  align-self:flex-start;
+}
+.btn-primary:hover{background:#ff8c00;transform:translateY(-2px);}
+.btn-secondary{
+  display:inline-block;border:1.5px solid rgba(255,255,255,0.25);color:var(--white);
+  padding:14px 32px;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:all 0.2s;
+}
+.btn-secondary:hover{border-color:var(--orange);color:var(--orange);}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-meta{
+  display:flex;gap:40px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);margin-top:auto;
+}
+.meta-val{font-size:28px;font-weight:900;font-family:var(--font-display);color:var(--white);}
+.meta-val em{color:var(--orange);font-style:normal;}
+.meta-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+/* WHO IS IT FOR */
+.section{padding:96px 72px;}
+.section-label{
+  font-size:11px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-label::before{content:'';width:32px;height:2px;background:var(--orange);}
+.section-title{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,38px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:1.0;margin-bottom:56px;
+}
+.section-bg{background:var(--light);}
+.section-dark{background:var(--black);color:var(--white);}
+
+.who-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border);border:1px solid var(--border);
+}
+.who-item{
+  background:var(--white);padding:32px 36px;
+  display:flex;align-items:flex-start;gap:20px;
+}
+.who-num{
+  font-family:var(--font-display);font-size:13px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:2px;
+}
+.who-text{font-size:15px;line-height:1.6;color:var(--text);}
+
+/* PROCESS */
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--border);
+}
+.process-step{
+  padding:40px 36px;border-right:1px solid var(--border);position:relative;
+}
+.process-step:last-child{border-right:none;}
+.step-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.step-time{
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.step-title{
+  font-family:var(--font-display);font-size:14px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:12px;
+}
+.step-desc{font-size:13px;line-height:1.7;color:#555;}
+
+/* EFFECTS */
+.effects-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.effect-item{
+  padding:48px 48px;border-right:1px solid rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.effect-item:nth-child(2n){border-right:none;}
+.effect-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.effect-title{
+  font-family:var(--font-display);font-size:15px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:10px;color:var(--white);
+}
+.effect-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45);}
+
+/* TYPES */
+.types-grid{
+  display:grid;grid-template-columns:2fr 3fr;gap:2px;background:var(--border);
+}
+.type-card{
+  background:var(--white);padding:48px;
+}
+.type-badge{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--orange);
+  border:1px solid var(--orange);padding:4px 12px;margin-bottom:24px;
+}
+.type-title{
+  font-family:var(--font-display);font-size:20px;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+}
+.type-desc{font-size:14px;line-height:1.8;color:#555;margin-bottom:28px;}
+.type-includes{margin-bottom:28px;}
+.type-includes-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.type-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.type-includes li{
+  font-size:13px;color:var(--text);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.type-includes li::before{content:'';width:16px;height:1px;background:var(--orange);flex-shrink:0;margin-top:10px;}
+.type-price{
+  display:flex;align-items:baseline;gap:16px;
+  padding-top:28px;border-top:1px solid var(--border);margin-bottom:24px;
+}
+.price-main{
+  font-family:var(--font-display);font-size:28px;font-weight:900;
+}
+.price-pack{font-size:13px;color:var(--muted);}
+.price-pack strong{color:var(--text);}
+.price-discount{
+  font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);background:rgba(244,153,51,0.1);padding:4px 10px;
+}
+.type-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-book{
+  display:inline-block;background:var(--black);color:var(--white);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;
+}
+.btn-book:hover{background:var(--orange);}
+
+/* MASTERS */
+.masters-strip{
+  padding:80px 72px;
+}
+.masters-scroll{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
+  margin-top:48px;
+}
+.master-card{
+  display:block;text-decoration:none;color:var(--text);
+  position:relative;overflow:hidden;
+}
+.master-photo{
+  width:100%;aspect-ratio:3/4;object-fit:cover;display:block;
+  filter:grayscale(20%);transition:filter 0.3s,transform 0.3s;
+}
+.master-card:hover .master-photo{filter:grayscale(0%);transform:scale(1.03);}
+.master-info{
+  padding:12px 0 0;
+}
+.master-card-name{font-size:12px;font-weight:700;margin-bottom:2px;}
+.master-card-cta{
+  display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);font-weight:700;text-decoration:none;margin-top:6px;
+}
+
+/* CTA BAND */
+.cta-band{
+  padding:100px 72px;background:var(--white);color:var(--black);
+  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
+}
+.cta-band-title{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,38px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.0;
+}
+.cta-band-title em{color:var(--orange);font-style:normal;}
+.cta-band-sub{font-size:14px;color:rgba(255,255,255,0.4);margin-top:12px;}
+.cta-band-right{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.cta-price-row{text-align:right;}
+.cta-price-new{font-family:var(--font-display);font-size:32px;font-weight:900;color:var(--orange);}
+.cta-price-old{font-size:14px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-top:2px;}
+
+/* FAQ */
+.faq-list{margin-top:48px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  padding:24px 0;font-size:15px;font-weight:600;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:20px;user-select:none;
+}
+.faq-q:hover{color:var(--orange);}
+.faq-icon{
+  width:24px;height:24px;flex-shrink:0;
+  border:1.5px solid var(--border);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;transition:all 0.2s;
+}
+.faq-item.open .faq-icon{background:var(--orange);border-color:var(--orange);color:var(--white);}
+.faq-a{
+  display:none;padding:0 0 24px;font-size:14px;line-height:1.8;color:#555;
+  max-width:700px;
+}
+.faq-item.open .faq-a{display:block;}
+
+/* FOOTER */
+footer{
+  background:var(--black);padding:56px 72px 40px;
+}
+.footer-top{
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07);
+  margin-bottom:32px;
+}
+.footer-logo img{height:28px;width:auto;margin-bottom:20px;}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;}
+.footer-col-title{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);margin-bottom:16px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-col a:hover{color:var(--orange);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);}
+
+@media(max-width:1100px){
+  .masters-scroll{grid-template-columns:repeat(4,1fr);}
+  .process-steps{grid-template-columns:repeat(2,1fr);}
+  .process-step{border-right:none;border-bottom:1px solid var(--border);}
+}
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .hero{grid-template-columns:1fr;}
+  .hero-img{min-height:300px;}
+  .hero-content{padding:48px 32px;}
+  .section{padding:64px 32px;}
+  .who-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .effects-grid{grid-template-columns:1fr;}
+  .effect-item{border-right:none;}
+  .types-grid{grid-template-columns:1fr;}
+  .masters-scroll{grid-template-columns:repeat(3,1fr);}
+  .cta-band{grid-template-columns:1fr;gap:32px;}
+  .cta-band-right{align-items:flex-start;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
+  footer{padding:48px 32px 32px;}
+}
+@media(max-width:600px){
+  .masters-scroll{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+}
+
+/* WHO SECTION */
+.who-section{
+  background:var(--light);
+  padding:80px 72px;
+}
+.who-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 380px;gap:64px;
+  align-items:center;
+  position:relative;
+}
+/* Геометрия */
+.who-geo{position:absolute;pointer-events:none;}
+.who-geo-tl{
+  top:-32px;left:-32px;
+  width:80px;height:80px;
+  border-top:4px solid var(--orange);
+  border-left:4px solid var(--orange);
+}
+.who-geo-br{
+  bottom:-32px;right:-32px;
+  width:56px;height:56px;
+  background:var(--black);
+}
+/* Левая колонка */
+.who-left{}
+.who-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,44px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:0.95;margin-bottom:40px;
+}
+.who-title-accent{color:var(--orange);font-style:normal;}
+.who-list{border-top:1px solid var(--border);}
+.who-item{
+  padding:18px 0;border-bottom:1px solid #ddd);
+  display:flex;align-items:flex-start;gap:20px;
+  background:transparent;
+}
+.who-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:3px;letter-spacing:0.1em;
+}
+.who-text{font-size:14px;line-height:1.6;color:var(--text);}
+/* Правая колонка — фото */
+.who-right{
+  position:relative;
+  flex-shrink:0;
+  overflow:visible;
+  height:520px;
+}
+.who-right img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  display:block;
+}
+.who-photo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:var(--black);
+  padding:18px 24px;
+  display:flex;align-items:center;
+}
+.who-photo-label img{
+  height:32px;width:auto;display:block;
+}
+@media(max-width:1000px){
+  .who-inner{grid-template-columns:1fr;gap:40px;}
+  .who-right{max-width:320px;}
+  .who-section{padding:64px 32px;}
+  .who-geo-tl,.who-geo-br{display:none;}
+}
+
+/* EFFECTS SECTION */
+.effects-section{
+  display:grid;grid-template-columns:3fr 2fr;
+  background:var(--black);color:var(--white);
+  min-height:100vh;
+}
+.effects-left{
+  padding:72px 64px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.effects-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,48px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:0.9;margin:16px 0 48px;color:var(--white);
+}
+.effects-title em{color:var(--orange);font-style:normal;}
+.effects-list{border-top:1px solid rgba(255,255,255,0.1);}
+.effect-row{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.effect-row-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:3px;letter-spacing:0.1em;
+}
+.effect-row-title{
+  font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;
+}
+.effect-row-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* Правая колонка */
+.effects-right{
+  position:relative;display:flex;align-items:stretch;
+}
+.effects-stripe{
+  width:8px;background:var(--orange);flex-shrink:0;
+}
+.effects-photo-wrap{
+  position:relative;flex:1;overflow:hidden;
+}
+.effects-photo-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+}
+
+@media(max-width:900px){
+  .effects-section{grid-template-columns:1fr;}
+  .effects-left{padding:56px 32px;}
+  .effects-right{min-height:400px;}
+  .effects-badge{top:24px;left:24px;}
+}
+
+/* TYPES NEW */
+.types-new-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);
+}
+.type-new-card{
+  border-right:1px solid var(--border);
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.type-new-card:last-child{border-right:none;}
+.type-new-inner{
+  padding:48px 48px 48px;
+  display:flex;flex-direction:column;height:100%;
+}
+.type-new-dark{background:var(--black);}
+.type-new-badge{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.type-new-badge-light{color:var(--white);}
+.type-new-title{
+  font-family:var(--font-display);font-size:18px;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+  line-height:1.1;
+}
+.type-new-dark .type-new-title{color:var(--white);}
+.type-new-desc{font-size:13px;line-height:1.8;color:#666;margin-bottom:28px;}
+.type-new-dark .type-new-desc{color:rgba(255,255,255,0.5);}
+.type-new-desc-light{color:rgba(255,255,255,0.75);}
+.type-new-includes{margin-bottom:28px;}
+.type-new-includes-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.type-new-dark .type-new-includes-label{color:rgba(255,255,255,0.3);}
+.type-new-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.type-new-includes li{
+  font-size:13px;color:var(--text);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.type-new-dark .type-new-includes li{color:rgba(255,255,255,0.65);}
+.type-new-includes li::before{
+  content:'';width:14px;height:1px;background:var(--orange);
+  flex-shrink:0;margin-top:9px;
+}
+.type-new-price{
+  font-family:var(--font-display);font-size:28px;font-weight:900;
+  margin-top:auto;padding-top:24px;border-top:1px solid var(--border);
+}
+.type-new-dark .type-new-price{color:var(--white);border-color:rgba(255,255,255,0.1);}
+.type-new-price-sub{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:20px;}
+.type-new-dark .type-new-price-sub{color:rgba(255,255,255,0.3);}
+.type-new-price-sub-light{color:rgba(255,255,255,0.6);}
+.type-new-btn{
+  display:inline-block;background:var(--black);color:var(--white);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;align-self:flex-start;
+}
+.type-new-btn:hover{background:var(--orange);color:var(--black);}
+.type-new-dark .type-new-btn{background:var(--white);color:var(--black);}
+.type-new-dark .type-new-btn:hover{background:var(--orange);color:var(--black);}
+.type-new-btn-orange{background:var(--orange);color:var(--black);}
+.type-new-btn-orange:hover{background:var(--white);color:var(--black);}
+
+/* Фото-карточка */
+.type-new-photo{overflow:hidden;}
+.type-new-photo img{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+}
+.type-new-overlay{
+  position:relative;z-index:1;
+  height:100%;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:560px;
+  background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 50%);
+  padding:40px 48px 48px;
+}
+
+@media(max-width:1000px){
+  .types-new-grid{grid-template-columns:1fr;}
+  .type-new-card{border-right:none;border-bottom:1px solid var(--border);}
+  .type-new-photo{min-height:480px;}
+}
+
+
+
+/* === NAV FIXED === */
+nav {
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 48px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E5E5E5;
+}
+.nav-logo { display:inline-flex;align-items:center;text-decoration:none; }
+.nav-logo img { height:32px;width:auto;display:block; }
+.logo-white { display:none !important; }
+.logo-black { display:block !important; }
+.nav-links { display:flex;gap:40px;list-style:none; }
+.nav-links a {
+  font-size:11px;font-weight:500;letter-spacing:0.12em;
+  font-family:'Inter',sans-serif;
+  text-transform:uppercase;color:#1A1A1A;text-decoration:none;transition:color 0.2s;
+}
+.nav-links a:hover { color:#F49933; }
+.nav-cta {
+  background:#000;color:#fff;border:2px solid #000;
+  padding:10px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:background 0.2s,color 0.2s,border-color 0.2s;display:inline-block;
+}
+.nav-cta:hover { background:#F49933;border-color:#F49933; }
+@media(max-width:900px){
+  nav { padding:0 24px; }
+  .nav-links { display:none; }
+}
+/* === END NAV FIXED === */
+
+
+
+/* === MASTERS SLIDER === */
+.masters-section { background: #000; padding: 0; }
+.masters-section-header { padding: 80px 72px 48px; }
+.masters-section .team-slider-wrap { position: relative; }
+.masters-section .team-slider-track {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -ms-overflow-style: none; cursor: grab;
+}
+.masters-section .team-slider-track::-webkit-scrollbar { display: none; }
+.masters-section .team-slider-track.dragging { cursor: grabbing; }
+.masters-section .team-card {
+  flex: 0 0 320px; scroll-snap-align: start;
+  position: relative; overflow: hidden;
   background: #000;
-  min-height: 52vh;
-  display: flex;
-  align-items: flex-end;
-  padding: 0 72px 80px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.masters-section .team-photo {
+  width: 100%; height: 400px; background-size: cover; background-position: center top;
+  transition: transform 0.5s ease;
+}
+.masters-section .team-card:hover .team-photo { transform: scale(1.04); }
+.masters-section .team-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  pointer-events: none;
+}
+.masters-section .team-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 28px 32px; }
+.masters-section .team-name {
+  font-size: 16px; font-weight: 800; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px;
+}
+.masters-section .team-spec-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.masters-section .spec-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 10px; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+}
+.masters-section .spec-tag svg { flex-shrink: 0; opacity: 0.7; }
+.masters-section .team-btns { display: flex; align-items: center; gap: 12px; }
+.masters-section .team-btn {
+  display: inline-block; background: var(--orange); color: var(--black);
+  padding: 9px 20px; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s; white-space: nowrap;
+}
+.masters-section .team-btn:hover { background: #ff8c00; }
+.masters-section .team-btn-more {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  color: rgba(255,255,255,0.55); border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; white-space: nowrap;
+}
+.masters-section .team-btn-more:hover { color: var(--orange); border-color: var(--orange); }
+.masters-section .team-slider-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 72px 48px;
+}
+.masters-section .team-slider-arrows { display: flex; gap: 12px; }
+.masters-section .slider-arrow {
+  width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2);
+  background: transparent; color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.masters-section .slider-arrow:hover { background: var(--orange); border-color: var(--orange); }
+.masters-section .team-slider-counter {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+}
+.masters-section .team-slider-counter span { color: rgba(255,255,255,0.7); }
+@media(max-width:900px){
+  .masters-section-header { padding: 56px 24px 32px; }
+  .masters-section .team-slider-nav { padding: 24px 24px 40px; }
+  .masters-section .team-card { flex: 0 0 260px; }
+}
+/* === END MASTERS SLIDER === */
+
+/* === OTHER SERVICES SECTION === */
+.other-services-section {
+  background: var(--black);
+  padding: 0;
+}
+.other-services-header {
+  padding: 80px 72px 48px;
+}
+.other-services-section .services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1px;
+  background: rgba(255,255,255,0.07);
+}
+.other-services-section .service-card {
+  flex: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  display: block !important;
   position: relative;
   overflow: hidden;
+  background: var(--black);
+  transition: background 0.3s;
+  text-decoration: none;
+  border-right: none;
 }
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+.other-services-section .service-card:hover { background: #0d0d0d; }
+.other-services-section .service-photo {
+  width: 100%; height: 220px; object-fit: cover; display: block;
+  opacity: 0.75; transition: opacity 0.4s, transform 0.4s;
 }
-.page-hero-content { position: relative; z-index: 1; }
-.page-back {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; color: rgba(255,255,255,0.45);
-  text-decoration: none; display: block; margin-bottom: 32px;
+.other-services-section .service-card:hover .service-photo { opacity: 0.9; transform: scale(1.03); }
+.other-services-section .service-body { padding: 32px 36px 36px; }
+.other-services-section .service-name {
+  font-size: 18px; font-weight: 800; text-transform: uppercase;
+  font-family: var(--font-display); letter-spacing: 0.05em;
+  margin-bottom: 10px; color: var(--white);
 }
-.page-back:hover { color: var(--orange); }
-.page-eyebrow {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+.other-services-section .service-desc {
+  font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 24px;
 }
-.page-title {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 100px);
-  font-weight: 900; line-height: 0.9;
-  text-transform: uppercase; color: #fff;
-  letter-spacing: -0.02em;
+.other-services-section .service-price {
+  font-size: 26px; font-weight: 900; color: var(--white);
 }
-.page-subtitle {
-  font-size: 16px; color: rgba(255,255,255,0.55);
-  margin-top: 24px; max-width: 480px; line-height: 1.6;
+.other-services-section .service-price span {
+  font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.3); margin-left: 4px;
 }
-.cert-body {
-  background: #fff;
-  padding: 100px 72px;
+.other-services-section .service-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: var(--orange); transform: scaleX(0);
+  transition: transform 0.3s; transform-origin: left;
 }
-.cert-intro {
-  max-width: 680px;
-  margin: 0 auto 80px;
-  text-align: center;
+.other-services-section .service-card:hover::after { transform: scaleX(1); }
+.other-services-section .service-arrow {
+  position: absolute; bottom: 36px; right: 36px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
-.cert-intro p {
-  font-size: 18px; color: #444; line-height: 1.7;
+.other-services-section .service-card:hover .service-arrow {
+  background: var(--orange); border-color: var(--orange); transform: translate(2px,-2px);
 }
-.cert-badges {
-  display: flex; gap: 24px; justify-content: center;
-  margin-top: 32px; flex-wrap: wrap;
+@media(max-width:1100px){
+  .other-services-section .services-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }
-.cert-badge {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13px; font-weight: 600; color: #666;
-  letter-spacing: 0.05em;
+@media(max-width:900px){
+  .other-services-header { padding: 56px 24px 32px; }
+  .other-services-section .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
-.cert-badge::before {
-  content: '';
-  width: 24px; height: 2px; background: var(--orange);
+@media(max-width:500px){
+  .other-services-section .services-grid { grid-template-columns: 1fr !important; }
 }
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2px;
-  background: #e5e5e5;
-  border: 2px solid #e5e5e5;
-  margin-bottom: 80px;
+/* === END OTHER SERVICES SECTION === */
+
+/* === CTA BAND WHITE === */
+.cta-band { background: var(--white) !important; color: var(--black) !important; }
+.cta-band-title { color: var(--black) !important; }
+.cta-band-title em { color: var(--orange) !important; }
+.cta-band-sub { color: rgba(0,0,0,0.5) !important; }
+.cta-price-new { color: var(--orange) !important; }
+.cta-price-old { color: rgba(0,0,0,0.3) !important; }
+/* === END CTA BAND WHITE === */
+
+
+/* === PAGE EXTRA === */
+.page-hero{
+  padding-top:72px; min-height:70vh;
+  display:grid; grid-template-columns:1fr 1fr;
+  background:var(--black); color:var(--white);
 }
-.cert-card {
-  background: #fff;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: background 0.2s;
+.page-hero-left{
+  padding:80px 72px; display:flex; flex-direction:column; justify-content:flex-end;
 }
-.cert-card:hover { background: #fafafa; }
-.cert-service-name {
-  font-family: var(--font-display);
-  font-size: 20px; font-weight: 800;
-  text-transform: uppercase; color: #000;
+.page-hero-right{
+  position:relative; overflow:hidden;
+  background:url('/img/2 vertical.png') center top / cover no-repeat;
 }
-.cert-service-desc {
-  font-size: 14px; color: #666; line-height: 1.6; flex: 1;
+.page-hero-right::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to right, var(--black) 0%, transparent 40%);
 }
-.cert-price {
-  font-size: 24px; font-weight: 800; color: #000;
+.page-back{
+  font-size:11px; font-weight:700; letter-spacing:0.15em;
+  text-transform:uppercase; color:rgba(255,255,255,0.35);
+  text-decoration:none; margin-bottom:40px; display:block;
+  display:flex; align-items:center; gap:10px;
 }
-.cert-price span { font-size: 14px; font-weight: 400; color: #999; }
-.cert-buy-btn {
-  display: inline-block;
-  background: #000; color: #fff;
-  padding: 14px 28px;
-  font-family: var(--font-display);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; text-decoration: none;
-  transition: background 0.2s;
-  text-align: center;
+.page-back:hover{ color:var(--orange); }
+.page-eyebrow{
+  font-size:11px; font-weight:700; letter-spacing:0.28em;
+  text-transform:uppercase; color:var(--orange); margin-bottom:20px;
+  display:flex; align-items:center; gap:12px;
 }
-.cert-buy-btn:hover { background: var(--orange); color: #000; }
-.cert-how {
-  max-width: 900px;
-  margin: 0 auto 80px;
+.page-eyebrow::before{content:'';width:32px;height:2px;background:var(--orange);}
+.page-title{
+  font-family:var(--font-display);
+  font-size:clamp(40px, 5vw, 80px);
+  font-weight:900; text-transform:uppercase;
+  line-height:0.9; letter-spacing:-0.02em; margin-bottom:24px;
 }
-.cert-how-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 900; text-transform: uppercase;
-  margin-bottom: 48px;
+.page-subtitle{
+  font-size:16px; line-height:1.7; color:rgba(255,255,255,0.55);
+  max-width:480px; margin-bottom:48px;
 }
-.cert-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
+.page-meta{
+  display:flex; gap:40px; padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);
 }
-.cert-step-num {
-  font-family: var(--font-display);
-  font-size: 48px; font-weight: 900;
-  color: var(--orange); line-height: 1;
-  margin-bottom: 12px;
+.page-meta-item .meta-val{font-size:22px;font-weight:900;font-family:var(--font-display);color:var(--white);}
+.page-meta-item .meta-val em{color:var(--orange);font-style:normal;}
+.page-meta-item .meta-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+/* Cards grid */
+.offers-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1px; background:var(--border);
+  border:1px solid var(--border);
+  margin-bottom:2px;
 }
-.cert-step-title {
-  font-size: 15px; font-weight: 700; margin-bottom: 8px;
+.offer-card{
+  background:var(--white); padding:40px 36px;
+  display:flex; flex-direction:column; gap:16px;
+  transition:background 0.2s;
 }
-.cert-step-desc { font-size: 14px; color: #666; line-height: 1.6; }
-.cert-cta-band {
-  background: #000; color: #fff;
-  padding: 80px 72px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 40px; flex-wrap: wrap;
+.offer-card:hover{background:#fafafa;}
+.offer-card.featured{background:var(--black);color:var(--white);}
+.offer-card.featured:hover{background:#111;}
+.offer-name{
+  font-family:var(--font-display); font-size:18px; font-weight:900;
+  text-transform:uppercase; letter-spacing:-0.01em;
 }
-.cert-cta-text h2 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 52px);
-  font-weight: 900; text-transform: uppercase; line-height: 0.9;
-  margin-bottom: 16px;
+.offer-card.featured .offer-name{color:var(--white);}
+.offer-desc{font-size:13px;line-height:1.7;color:#666;flex:1;}
+.offer-card.featured .offer-desc{color:rgba(255,255,255,0.5);}
+.offer-price{font-family:var(--font-display);font-size:26px;font-weight:900;}
+.offer-price span{font-size:13px;font-weight:400;color:#999;font-family:var(--font-body);}
+.offer-card.featured .offer-price{color:var(--white);}
+.offer-card.featured .offer-price span{color:rgba(255,255,255,0.3);}
+.offer-btn{
+  display:block; text-align:center;
+  padding:14px 20px;
+  font-family:var(--font-display); font-size:10px; font-weight:700;
+  letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;
+  transition:background 0.2s, color 0.2s;
 }
-.cert-cta-text p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 400px; }
-.cert-cta-btn {
-  display: inline-block;
-  background: var(--orange); color: #000;
-  padding: 20px 48px;
-  font-family: var(--font-display);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; text-decoration: none; white-space: nowrap;
-  transition: background 0.2s;
+.offer-card:not(.featured) .offer-btn{background:var(--black);color:var(--white);}
+.offer-card:not(.featured) .offer-btn:hover{background:var(--orange);color:var(--black);}
+.offer-card.featured .offer-btn{background:var(--orange);color:var(--black);}
+.offer-card.featured .offer-btn:hover{background:#ff8c00;}
+
+/* How block */
+.how-band{
+  background:var(--black); color:var(--white);
+  padding:80px 72px;
 }
-.cert-cta-btn:hover { background: #ff8c00; }
-@media (max-width: 768px) {
-  .page-hero { padding: 0 24px 60px; }
-  .cert-body { padding: 60px 24px; }
-  .cert-cta-band { padding: 60px 24px; }
+.how-steps{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0; border-top:1px solid rgba(255,255,255,0.1); margin-top:48px;
+}
+.how-step{
+  padding:36px 32px 36px 0; border-right:1px solid rgba(255,255,255,0.08);
+  padding-right:32px;
+}
+.how-step:last-child{border-right:none; padding-right:0;}
+.how-step-num{
+  font-family:var(--font-display); font-size:11px; font-weight:900;
+  letter-spacing:0.2em; color:var(--orange); margin-bottom:20px;
+}
+.how-step-title{
+  font-family:var(--font-display); font-size:14px; font-weight:800;
+  text-transform:uppercase; margin-bottom:10px; letter-spacing:-0.01em;
+}
+.how-step-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;}
+
+/* CTA Band */
+.cert-cta{
+  padding:100px 72px; background:var(--white);
+  display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center;
+  border-top:1px solid var(--border);
+}
+.cert-cta-title{
+  font-family:var(--font-display); font-size:clamp(28px,3vw,44px);
+  font-weight:900; text-transform:uppercase; line-height:0.9; margin-bottom:16px;
+}
+.cert-cta-title em{color:var(--orange);font-style:normal;}
+.cert-cta-desc{font-size:15px;color:#666;}
+.cert-cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.cert-btn-primary{
+  display:inline-block; background:var(--black); color:var(--white);
+  padding:18px 48px;
+  font-family:var(--font-display); font-size:11px; font-weight:700;
+  letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;
+  transition:background 0.2s; white-space:nowrap;
+}
+.cert-btn-primary:hover{background:var(--orange);color:var(--black);}
+.cert-btn-phone{
+  font-size:12px; font-weight:600; color:#666; text-decoration:none;
+  letter-spacing:0.05em;
+}
+.cert-btn-phone:hover{color:var(--orange);}
+
+@media(max-width:900px){
+  .page-hero{grid-template-columns:1fr; min-height:auto;}
+  .page-hero-right{min-height:320px;}
+  .page-hero-left{padding:80px 24px 48px;}
+  .offers-grid{grid-template-columns:1fr;}
+  .how-band{padding:56px 24px;}
+  .how-steps{grid-template-columns:1fr 1fr;}
+  .cert-cta{padding:64px 24px; grid-template-columns:1fr;}
+  .cert-cta-actions{align-items:flex-start;}
+}
+@media(max-width:600px){
+  .how-steps{grid-template-columns:1fr;}
 }
 </style>
+<link rel="stylesheet" href="/css/mobile.css">
 </head>
 <body>
+
 <nav>
   <a href="/" class="nav-logo">
-    <img class="logo-white" src="../../img/logo-white.png" alt="">
-    <img class="logo-black" src="../../img/logo-black.png" alt="">
+    <img class="logo-white" src="/img/logo-white.png" alt="">
+    <img class="logo-black" src="/img/logo-black.png" alt="">
   </a>
   <ul class="nav-links">
     <li><a href="/#about">О нас</a></li>
@@ -181,10 +907,13 @@
     <li><a href="/#locations">Адреса</a></li>
   </ul>
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+  <!-- Hamburger (мобильный) -->
   <button class="nav-hamburger" id="navHamburger" aria-label="Меню">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
 <div class="nav-mobile-menu" id="navMobileMenu">
   <a href="/">Главная</a>
   <a href="/#services">Услуги</a>
@@ -194,141 +923,397 @@
   <a href="https://n1276048.yclients.com" target="_blank" class="nav-mobile-cta">Записаться</a>
 </div>
 
+<!-- HERO -->
 <div class="page-hero">
-  <div class="page-hero-content">
+  <div class="page-hero-left">
     <a href="/" class="page-back">← Rehab.You</a>
-    <div class="page-eyebrow">Подарок · Rehab.You</div>
+    <div class="page-eyebrow">Подарок</div>
     <div class="page-title">Сертификат<br>на массаж</div>
-    <div class="page-subtitle">Подарок, который точно понравится — потому что тело скажет спасибо</div>
+    <div class="page-subtitle">Не знаешь что подарить? Сертификат — это конкретная забота. Получатель сам выберет мастера, вид массажа и удобное время.</div>
+    <div class="page-meta">
+      <div class="page-meta-item">
+        <div class="meta-val">1 <em>год</em></div>
+        <div class="meta-label">Срок действия</div>
+      </div>
+      <div class="page-meta-item">
+        <div class="meta-val">2</div>
+        <div class="meta-label">Центра</div>
+      </div>
+      <div class="page-meta-item">
+        <div class="meta-val">от 6 900 <em>₽</em></div>
+        <div class="meta-label">Стоимость</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-right"></div>
+</div>
+
+<!-- ФОРМАТЫ -->
+<div class="section">
+  <div class="section-label">Форматы</div>
+  <h2 class="section-title">Электронный или физический</h2>
+  <div class="who-grid">
+    <div class="who-item">
+      <div class="who-num">01</div>
+      <div class="who-text"><strong>Электронный</strong> — отправим на почту сразу после оплаты. Можно подарить в любой момент, хоть за минуту до встречи.</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">02</div>
+      <div class="who-text"><strong>Физический</strong> — красиво оформленный конверт. Забрать можно в студии или закажи доставку по телефону +7 (925) 540-40-60.</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">03</div>
+      <div class="who-text"><strong>Любой центр</strong> — Сухаревская или Парк Культуры. Получатель выбирает сам при записи.</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">04</div>
+      <div class="who-text"><strong>Любой мастер</strong> — 14+ специалистов с разным стилем и специализацией. Каждый найдёт своего.</div>
+    </div>
   </div>
 </div>
 
-<div class="cert-body">
-
-  <div class="cert-intro">
-    <p>Не знаешь что подарить? Сертификат на массаж — это конкретная забота, а не очередная вещь. Получатель сам выберет мастера, вид массажа и удобное время.</p>
-    <div class="cert-badges">
-      <div class="cert-badge">Действует 1 год</div>
-      <div class="cert-badge">Электронный и физический формат</div>
-      <div class="cert-badge">Оба центра Москвы</div>
+<!-- СЕРТИФИКАТЫ -->
+<div class="section section-bg">
+  <div class="section-label">Виды массажа</div>
+  <h2 class="section-title">Выбери что подарить</h2>
+  <div class="offers-grid">
+    <div class="offer-card">
+      <div class="offer-name">Классический</div>
+      <div class="offer-desc">Базовый сеанс для снятия общего напряжения. Хорошо подходит тем, кто ещё не определился с видом.</div>
+      <div class="offer-price">от 6 900 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="offer-btn">Купить сертификат</a>
+    </div>
+    <div class="offer-card featured">
+      <div class="offer-name">Расслабляющий</div>
+      <div class="offer-desc">Для тех, кому нужно выдохнуть. Мягкие техники, работа с нервной системой — выходишь другим человеком.</div>
+      <div class="offer-price">от 6 900 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="offer-btn">Купить сертификат</a>
+    </div>
+    <div class="offer-card">
+      <div class="offer-name">Массаж лица</div>
+      <div class="offer-desc">Результат виден с первого сеанса — уходят отёки, лицо светлеет. Идеально для тех, кто следит за собой.</div>
+      <div class="offer-price">от 7 400 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="offer-btn">Купить сертификат</a>
+    </div>
+    <div class="offer-card">
+      <div class="offer-name">Антицеллюлитный</div>
+      <div class="offer-desc">Для тех, кто хочет видеть разницу в зеркале. Сертификат — первый шаг к курсу.</div>
+      <div class="offer-price">от 7 400 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="offer-btn">Купить сертификат</a>
+    </div>
+    <div class="offer-card">
+      <div class="offer-name">Спортивный</div>
+      <div class="offer-desc">Для тех, кто тренируется. Восстановление между нагрузками — это не роскошь, это часть процесса.</div>
+      <div class="offer-price">от 7 400 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="offer-btn">Купить сертификат</a>
+    </div>
+    <div class="offer-card">
+      <div class="offer-name">Четыре руки</div>
+      <div class="offer-desc">Синхронный массаж двух мастеров — самый глубокий и необычный формат. Подарок, который запомнится.</div>
+      <div class="offer-price">от 12 900 ₽ <span>/ сеанс</span></div>
+      <a href="https://n1276048.yclients.com" target="_blank" class="offer-btn">Купить сертификат</a>
     </div>
   </div>
-
-  <div class="cert-grid">
-    <div class="cert-card">
-      <div class="cert-service-name">Классический</div>
-      <div class="cert-service-desc">Базовый сеанс для тех, кто хочет снять общее напряжение и восстановить тонус. Хорошо заходит тем, кто ещё не определился с видом массажа.</div>
-      <div class="cert-price">от 6 900 ₽ <span>/ сеанс</span></div>
-      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
-    </div>
-    <div class="cert-card">
-      <div class="cert-service-name">Расслабляющий</div>
-      <div class="cert-service-desc">Для тех, кому нужно выдохнуть. Мягкие техники, работа с нервной системой — выходишь другим человеком.</div>
-      <div class="cert-price">от 6 900 ₽ <span>/ сеанс</span></div>
-      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
-    </div>
-    <div class="cert-card">
-      <div class="cert-service-name">Массаж лица</div>
-      <div class="cert-service-desc">Результат виден с первого сеанса — уходят отёки, лицо светлеет. Идеальный подарок для тех, кто следит за собой.</div>
-      <div class="cert-price">от 7 400 ₽ <span>/ сеанс</span></div>
-      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
-    </div>
-    <div class="cert-card">
-      <div class="cert-service-name">Антицеллюлитный</div>
-      <div class="cert-service-desc">Для тех, кто хочет видеть разницу в зеркале. Видимый результат курсом — сертификат на первый шаг.</div>
-      <div class="cert-price">от 7 400 ₽ <span>/ сеанс</span></div>
-      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
-    </div>
-    <div class="cert-card">
-      <div class="cert-service-name">Спортивный</div>
-      <div class="cert-service-desc">Для тех, кто тренируется. Восстановление между нагрузками — это не роскошь, это часть процесса.</div>
-      <div class="cert-price">от 7 400 ₽ <span>/ сеанс</span></div>
-      <a href="https://n1276048.yclients.com" target="_blank" class="cert-buy-btn">Купить сертификат</a>
-    </div>
-  </div>
-
-  <div class="cert-how">
-    <div class="cert-how-title">Как это работает</div>
-    <div class="cert-steps">
-      <div class="cert-step">
-        <div class="cert-step-num">01</div>
-        <div class="cert-step-title">Покупаешь</div>
-        <div class="cert-step-desc">Онлайн или по телефону. Электронный приходит на почту, физический — забираешь в студии или доставка.</div>
-      </div>
-      <div class="cert-step">
-        <div class="cert-step-num">02</div>
-        <div class="cert-step-title">Даришь</div>
-        <div class="cert-step-desc">Получатель сам решает — когда, в каком центре, к какому мастеру и на какой вид массажа.</div>
-      </div>
-      <div class="cert-step">
-        <div class="cert-step-num">03</div>
-        <div class="cert-step-title">Записывается</div>
-        <div class="cert-step-desc">Онлайн через наш сайт или по телефону. Нужно только сообщить номер сертификата при записи.</div>
-      </div>
-      <div class="cert-step">
-        <div class="cert-step-num">04</div>
-        <div class="cert-step-title">Приходит</div>
-        <div class="cert-step-desc">Сертификат действует 1 год. Можно использовать в любом из двух центров Москвы.</div>
-      </div>
-    </div>
-  </div>
-
 </div>
 
-<div class="cert-cta-band">
-  <div class="cert-cta-text">
-    <h2>Хочешь<br>физический<br>формат?</h2>
-    <p>Звони — оформим красиво, с конвертом. Можно забрать в студии или доставим.</p>
+<!-- КАК РАБОТАЕТ -->
+<div class="how-band">
+  <div class="section-label" style="color:var(--orange);">Как это работает</div>
+  <h2 class="section-title" style="color:#fff;">От покупки до сеанса</h2>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <div class="how-step-title">Покупаешь</div>
+      <div class="how-step-desc">Онлайн через сайт или по телефону. Электронный — сразу на почту, физический — в студии.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <div class="how-step-title">Даришь</div>
+      <div class="how-step-desc">Получатель сам решает — когда, в каком центре, к какому мастеру и на какой вид массажа.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <div class="how-step-title">Записывается</div>
+      <div class="how-step-desc">Онлайн или по телефону. При записи нужно сообщить номер сертификата.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">04</div>
+      <div class="how-step-title">Приходит</div>
+      <div class="how-step-desc">Сертификат действует 1 год. Можно использовать в любом из двух центров Москвы.</div>
+    </div>
   </div>
-  <a href="tel:+79255404060" class="cert-cta-btn">+7 (925) 540-40-60</a>
 </div>
 
-<footer class="footer">
+<!-- МАСТЕРА -->
+<div class="masters-section">
+  <div class="masters-section-header">
+    <div class="section-label" style="color:var(--orange);">Специалисты</div>
+    <h2 class="section-title" style="color:#fff;">Мастера Rehab.You</h2>
+  </div>
+  <div class="team-slider-wrap">
+    <div class="team-slider-track" id="mastersTrack">
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Арина Порфирьева</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Расслабление</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Классика</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m2352358" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/arina-porfireva/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc07203-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Степан Тулынин</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Классика</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Лечебный</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581654" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/stepan-tulynin/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/igor-rusinov.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Игорь Русинов</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Классика</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3401465" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/igor-rusinov/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/01/sofya.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Софья Кателкина</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Расслабление</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Классика</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m3632616" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/sofya-katelkina/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/mark-mazur.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Марк Мазур</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Лечебный</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m3401476" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/mark-mazur/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Егор Зайковский</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Восстановление</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m1805072" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/egor-zajkovskij/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2026/01/belozer-natalya.webp')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Белозер Наталья</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Расслабление</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Восстановление</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4841223" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/belozer-natalya/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2024/12/dsc02094-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Владислав Даниэльс</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Расслабление</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>ШВЗ</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m3610670" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/vladislav-daniels/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/07/img_4209-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Николай Шеин</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Восстановление</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>Глубокий</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m4103178" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/nikolaj-shein/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/02/nbvjattd-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Кирилл Тимофеев</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Антицеллюлит</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m3729069" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/kirill-timofeev/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Павел Репин</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Реабилитация</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4581687" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/pavel-repin/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Топал Вера</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>Триггерные точки</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4923885" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/topal-vera/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00017-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Дмитрий Иванчинков</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Спорт</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>Глубокая проработка</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/193162/personal/menu?o=m4567419" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/dmitrij-ivanchinkov/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('https://rehabyou.ru/wp-content/uploads/2025/07/img_4207-scaled.jpg')"></div>
+        <div class="team-card-overlay"></div>
+        <div class="team-info">
+          <div class="team-name">Алла Несена</div>
+          <div class="team-spec-tags"><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Кинезиология</span><span class="spec-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>ШВЗ</span></div>
+          <div class="team-btns">
+            <a href="https://b643828.yclients.com/company/1067623/personal/menu?o=m4091547" target="_blank" class="team-btn">Записаться</a>
+            <a href="/masters/alla-nesena/" class="team-btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="team-slider-nav">
+    <div class="team-slider-arrows">
+      <button class="slider-arrow" id="mastersPrev" aria-label="Назад"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="slider-arrow" id="mastersNext" aria-label="Вперёд"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+    <div class="team-slider-counter"><span id="mastersCurrent">1</span> / <span id="mastersTotal">14</span></div>
+  </div>
+</div>
+
+
+
+<!-- CTA -->
+<div class="cert-cta">
+  <div>
+    <div class="cert-cta-title">Хочешь <em>физический</em><br>формат?</div>
+    <div class="cert-cta-desc">Оформим красиво — с конвертом. Можно забрать в студии или доставим.</div>
+  </div>
+  <div class="cert-cta-actions">
+    <a href="https://n1276048.yclients.com" target="_blank" class="cert-btn-primary">Купить онлайн</a>
+    <a href="tel:+79255404060" class="cert-btn-phone">или позвони: +7 (925) 540-40-60</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">REHAB.YOU</div>
-      <div class="footer-tagline">Твоё тело — твой главный актив</div>
+    <div>
+      <a href="/"><img src="/img/logo-white.png" alt="REHAB.YOU" class="footer-logo" style="height:28px;width:auto;margin-bottom:20px;display:block;filter:invert(0);"></a>
+      <div class="footer-tagline">Массаж и реабилитация<br>в Москве. Два центра.</div>
     </div>
-    <div class="footer-cols">
-      <div class="footer-col">
-        <div class="footer-col-title">Услуги</div>
-        <a href="/massage/classic/">Классический</a>
-        <a href="/massage/sport/">Спортивный</a>
-        <a href="/massage/relax/">Расслабляющий</a>
-        <a href="/massage/anticell/">Антицеллюлитный</a>
-        <a href="/massage/face/">Массаж лица</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Студия</div>
-        <a href="/#about">О нас</a>
-        <a href="/#team">Мастера</a>
-        <a href="/certificates/">Сертификаты</a>
-        <a href="/subscriptions/">Абонементы</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Контакты</div>
-        <a href="tel:+79255404060">+7 (925) 540-40-60</a>
-        <div style="color:var(--muted);font-size:13px;margin-top:8px">Сухаревская: ул. Мещанская, 7, стр. 1</div>
-        <div style="color:var(--muted);font-size:13px;margin-top:4px">Парк Культуры: Мансуровский пер., 10, стр. 1А</div>
-      </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Услуги</div>
+      <ul>
+        <li><a href="/massage/classic/">Классический массаж</a></li>
+        <li><a href="/massage/sport/">Спортивный массаж</a></li>
+        <li><a href="/massage/relax/">Расслабляющий массаж</a></li>
+        <li><a href="/massage/face/">Массаж лица</a></li>
+        <li><a href="/massage/4hands/">Массаж 4 руки</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Адреса</div>
+      <ul>
+        <li><a href="/#locations">ул. Мещанская, 7 (Сухаревская)</a></li>
+        <li><a href="/#locations">Мансуровский пер., 10 (Парк Культуры)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <ul>
+        <li><a href="tel:+79255404060">+7 (925) 540-40-60</a></li>
+        <li><a href="https://n1276048.yclients.com" target="_blank">Записаться онлайн</a></li>
+        <li><a href="/#team">Мастера</a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2025 Rehab.You. Все права защищены.</div>
+    <div class="footer-copy">© 2025 Rehab.You. Все права защищены.</div>
   </div>
 </footer>
 <script>
-// Nav scroll
 (function(){
   var nav = document.querySelector('nav');
   window.addEventListener('scroll', function(){
     nav.classList.toggle('scrolled', window.scrollY > 40);
   });
-  // Hamburger
-  document.getElementById('navHamburger').addEventListener('click', function(){
-    document.getElementById('navMobileMenu').classList.toggle('open');
-    this.classList.toggle('open');
+  var ham = document.getElementById('navHamburger');
+  var menu = document.getElementById('navMobileMenu');
+  if(ham) ham.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    ham.classList.toggle('open');
   });
+})();
+</script>
+<script>
+(function(){
+  var track = document.getElementById('mastersTrack');
+  var prev = document.getElementById('mastersPrev');
+  var next = document.getElementById('mastersNext');
+  var cur = document.getElementById('mastersCurrent');
+  if(!track) return;
+  var cards = track.querySelectorAll('.team-card');
+  function getIdx(){var w=cards[0]?cards[0].offsetWidth:320;return Math.round(track.scrollLeft/w)+1;}
+  function upd(){if(cur)cur.textContent=getIdx();}
+  track.addEventListener('scroll',upd,{passive:true});
+  if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-320,behavior:'smooth'});});
+  if(next)next.addEventListener('click',function(){track.scrollBy({left:320,behavior:'smooth'});});
+  var isDown=false,startX,scrollLeft;
+  track.addEventListener('mousedown',function(e){isDown=true;track.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;});
+  track.addEventListener('mouseleave',function(){isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mouseup',function(){isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mousemove',function(e){if(!isDown)return;e.preventDefault();var x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.5;});
 })();
 </script>
 </body>
