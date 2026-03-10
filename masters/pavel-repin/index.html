@@ -16,22 +16,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Павел Репин — мастер Rehab.You</title>
-<meta name="description" content="Павел Репин — специалист по спортивному массажу и реабилитации. Rehab.You, Москва.">
+<meta name="description" content="Павел Репин — мастер классического и спортивного массажа. Rehab.You, Москва.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/styles.css">
 <link rel="stylesheet" href="../../css/master.css">
+<link rel="stylesheet" href="../../css/mobile.css">
 <style>
-
-
 /* === DESKTOP PORTRAIT FIX === */
 @media (min-width: 1024px) {
   .master-hero-photo {
+    display: block;
+    background-image: url('https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg') !important;
     background-position: center top !important;
     background-size: cover !important;
   }
+  body { background: #fff; }
+  .master-body { background: #ffffff; position: relative; z-index: 1; }
+  nav { background: transparent; }
+  nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); }
+}
+@media (max-width: 1023px) {
+  .master-hero-photo { display: block; }
+  .master-body { background: #ffffff; }
 }
 /* === END DESKTOP PORTRAIT FIX === */
+
 /* === SVG SPEC ICON === */
 .master-spec-icon {
   width: 40px;
