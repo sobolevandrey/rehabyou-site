@@ -472,6 +472,92 @@ footer{
   .effects-right{min-height:400px;}
   .effects-badge{top:24px;left:24px;}
 }
+
+/* TYPES NEW */
+.types-new-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);
+}
+.type-new-card{
+  border-right:1px solid var(--border);
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.type-new-card:last-child{border-right:none;}
+.type-new-inner{
+  padding:48px 48px 48px;
+  display:flex;flex-direction:column;height:100%;
+}
+.type-new-dark{background:var(--black);}
+.type-new-badge{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  letter-spacing:0.2em;color:var(--orange);margin-bottom:20px;
+}
+.type-new-badge-light{color:var(--white);}
+.type-new-title{
+  font-family:var(--font-display);font-size:18px;font-weight:900;
+  text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:16px;
+  line-height:1.1;
+}
+.type-new-dark .type-new-title{color:var(--white);}
+.type-new-desc{font-size:13px;line-height:1.8;color:#666;margin-bottom:28px;}
+.type-new-dark .type-new-desc{color:rgba(255,255,255,0.5);}
+.type-new-desc-light{color:rgba(255,255,255,0.75);}
+.type-new-includes{margin-bottom:28px;}
+.type-new-includes-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.type-new-dark .type-new-includes-label{color:rgba(255,255,255,0.3);}
+.type-new-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.type-new-includes li{
+  font-size:13px;color:var(--text);
+  display:flex;align-items:flex-start;gap:10px;
+}
+.type-new-dark .type-new-includes li{color:rgba(255,255,255,0.65);}
+.type-new-includes li::before{
+  content:'';width:14px;height:1px;background:var(--orange);
+  flex-shrink:0;margin-top:9px;
+}
+.type-new-price{
+  font-family:var(--font-display);font-size:28px;font-weight:900;
+  margin-top:auto;padding-top:24px;border-top:1px solid var(--border);
+}
+.type-new-dark .type-new-price{color:var(--white);border-color:rgba(255,255,255,0.1);}
+.type-new-price-sub{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:20px;}
+.type-new-dark .type-new-price-sub{color:rgba(255,255,255,0.3);}
+.type-new-price-sub-light{color:rgba(255,255,255,0.6);}
+.type-new-btn{
+  display:inline-block;background:var(--black);color:var(--white);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;align-self:flex-start;
+}
+.type-new-btn:hover{background:var(--orange);color:var(--black);}
+.type-new-btn-orange{background:var(--orange);color:var(--black);}
+.type-new-btn-orange:hover{background:var(--white);color:var(--black);}
+
+/* Фото-карточка */
+.type-new-photo{overflow:hidden;}
+.type-new-photo img{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+}
+.type-new-overlay{
+  position:relative;z-index:1;
+  padding:48px 48px;height:100%;
+  background:linear-gradient(to top, rgba(0,0,0,0.92) 50%, rgba(0,0,0,0.3) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:560px;
+}
+.type-new-overlay .type-new-price{
+  color:var(--white);border-color:rgba(255,255,255,0.2);
+}
+@media(max-width:1000px){
+  .types-new-grid{grid-template-columns:1fr;}
+  .type-new-card{border-right:none;border-bottom:1px solid var(--border);}
+  .type-new-photo{min-height:480px;}
+}
 </style>
 </head>
 <body>
@@ -645,62 +731,68 @@ footer{
 </div>
 
 <!-- ТИПЫ -->
-<div class="section" id="types">
-  <div class="section-label">Форматы</div>
-  <h2 class="section-title">Выберите<br>свой массаж</h2>
-  <div class="types-grid">
+<div class="section" id="types" style="padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;">
+  <div style="padding:80px 72px 48px;">
+    <div class="section-label">Форматы</div>
+    <h2 class="section-title">Выберите<br>свой массаж</h2>
+  </div>
+  <div class="types-new-grid">
+
     <!-- Классический -->
-    <div class="type-card">
-      <div class="type-badge">Классический</div>
-      <div class="type-title">Классический<br>массаж лица</div>
-      <div class="type-desc">Мягкая ручная техника для расслабления мышц, снятия отёчности и улучшения цвета кожи. Стимулирует микроциркуляцию, возвращает тонус и свежесть, помогает разгладить мелкие морщины.</div>
-      <div class="type-includes">
-        <div class="type-includes-label">Что входит</div>
-        <ul>
-          <li>Консультация специалиста, анализ состояния кожи</li>
-          <li>Подготовка: демакияж, тонизирование, масло</li>
-          <li>Массаж лица и шеи — 40 минут</li>
-          <li>Завершающая успокаивающая маска</li>
-        </ul>
-      </div>
-      <div class="type-price">
-        <div>
-          <div class="price-main">6 900 ₽</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:4px;">1 сеанс · 60 мин</div>
+    <div class="type-new-card">
+      <div class="type-new-inner">
+        <div class="type-new-badge">01</div>
+        <div class="type-new-title">Классический<br>массаж лица</div>
+        <div class="type-new-desc">Мягкая ручная техника для расслабления мышц, снятия отёчности и улучшения цвета кожи. Стимулирует микроциркуляцию, возвращает тонус и свежесть.</div>
+        <div class="type-new-includes">
+          <div class="type-new-includes-label">Что входит</div>
+          <ul>
+            <li>Консультация и анализ состояния кожи</li>
+            <li>Подготовка: демакияж, тонизирование, масло</li>
+            <li>Массаж лица и шеи — 40 минут</li>
+            <li>Завершающая успокаивающая маска</li>
+          </ul>
         </div>
-        <div class="price-discount">−15% на 5 сеансов</div>
-      </div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:24px;">Абонемент на 5 сеансов: <strong style="color:var(--text);">29 900 ₽</strong> вместо 34 500 ₽</div>
-      <div class="type-btns">
-        <a href="https://n1276048.yclients.com" target="_blank" class="btn-book">Записаться</a>
+        <div class="type-new-price">6 900 ₽</div>
+        <div class="type-new-price-sub">1 сеанс · 60 мин</div>
+        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn">Записаться</a>
       </div>
     </div>
+
     <!-- Буккальный -->
-    <div class="type-card" style="background:var(--black);color:var(--white);">
-      <div class="type-badge">Буккальный</div>
-      <div class="type-title" style="color:var(--white);">Буккальный<br>массаж лица</div>
-      <div class="type-desc" style="color:rgba(255,255,255,0.55);">Глубокая проработка мышц через полость рта и снаружи. Моделирует овал лица, снимает зажимы, уменьшает носогубные складки и даёт выраженный лифтинг-эффект без инъекций.</div>
-      <div class="type-includes">
-        <div class="type-includes-label" style="color:rgba(255,255,255,0.35);">Что входит</div>
-        <ul style="color:rgba(255,255,255,0.7);">
-          <li>Консультация специалиста, анализ состояния кожи</li>
-          <li>Подготовка: демакияж, тонизирование, масло</li>
-          <li>Массаж лица и шеи — 40 минут</li>
-          <li>Завершающая успокаивающая маска</li>
-        </ul>
-      </div>
-      <div class="type-price" style="border-color:rgba(255,255,255,0.1);">
-        <div>
-          <div class="price-main" style="color:var(--white);">6 900 ₽</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">1 сеанс · 60 мин</div>
+    <div class="type-new-card type-new-dark">
+      <div class="type-new-inner">
+        <div class="type-new-badge">02</div>
+        <div class="type-new-title">Буккальный<br>массаж лица</div>
+        <div class="type-new-desc">Глубокая проработка мышц через полость рта и снаружи. Моделирует овал лица, снимает зажимы, уменьшает носогубные складки.</div>
+        <div class="type-new-includes">
+          <div class="type-new-includes-label">Что входит</div>
+          <ul>
+            <li>Консультация и анализ состояния кожи</li>
+            <li>Подготовка: демакияж, тонизирование, масло</li>
+            <li>Массаж лица и шеи — 40 минут</li>
+            <li>Завершающая успокаивающая маска</li>
+          </ul>
         </div>
-        <div class="price-discount">−15% на 5 сеансов</div>
-      </div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Абонемент на 5 сеансов: <strong style="color:rgba(255,255,255,0.8);">29 900 ₽</strong> вместо 34 500 ₽</div>
-      <div class="type-btns">
-        <a href="https://n1276048.yclients.com" target="_blank" class="btn-primary">Записаться</a>
+        <div class="type-new-price">6 900 ₽</div>
+        <div class="type-new-price-sub">1 сеанс · 60 мин</div>
+        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn">Записаться</a>
       </div>
     </div>
+
+    <!-- Абонемент + фото -->
+    <div class="type-new-card type-new-photo">
+      <img src="/img/7 vertical.jpg" alt="Абонемент Rehab.You">
+      <div class="type-new-overlay">
+        <div class="type-new-badge type-new-badge-light">−15%</div>
+        <div class="type-new-title">Абонемент<br>5 сеансов</div>
+        <div class="type-new-desc type-new-desc-light">Скидка 15% при покупке курса от 5 сеансов. Действует на оба формата.</div>
+        <div class="type-new-price">29 900 ₽</div>
+        <div class="type-new-price-sub type-new-price-sub-light">вместо 34 500 ₽ · экономия 4 600 ₽</div>
+        <a href="https://n1276048.yclients.com" target="_blank" class="type-new-btn type-new-btn-orange">Купить абонемент</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
