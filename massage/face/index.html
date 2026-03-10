@@ -352,35 +352,70 @@ footer{
   .hero-btns{flex-direction:column;}
 }
 
-/* WHO SECTION WITH PHOTO */
+/* WHO SECTION */
 .who-section{
-  display:grid;grid-template-columns:2fr 3fr;min-height:600px;
+  background:var(--light);
+  padding:80px 72px;
 }
-.who-photo{
-  overflow:hidden;position:relative;
+.who-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 380px;gap:64px;
+  align-items:center;
+  position:relative;
 }
-.who-photo img{
-  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+/* Геометрия */
+.who-geo{position:absolute;pointer-events:none;}
+.who-geo-tl{
+  top:-32px;left:-32px;
+  width:80px;height:80px;
+  border-top:4px solid var(--orange);
+  border-left:4px solid var(--orange);
 }
-.who-content{
-  padding:80px 72px;background:var(--white);
-  display:flex;flex-direction:column;justify-content:center;
+.who-geo-br{
+  bottom:-32px;right:-32px;
+  width:56px;height:56px;
+  background:var(--black);
 }
-.who-content .section-title{margin-bottom:40px;}
-.who-content .who-grid{
-  display:grid;grid-template-columns:1fr;gap:0;
-  background:transparent;border:none;
+/* Левая колонка */
+.who-left{}
+.who-title{
+  font-family:var(--font-display);font-size:clamp(28px,3vw,44px);
+  font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;
+  line-height:0.95;margin-bottom:40px;
 }
-.who-content .who-item{
-  background:transparent;padding:20px 0;border:none;
-  border-bottom:1px solid var(--border);
+.who-list{border-top:1px solid var(--border);}
+.who-item{
+  padding:18px 0;border-bottom:1px solid var(--border);
   display:flex;align-items:flex-start;gap:20px;
 }
-.who-content .who-item:first-child{border-top:1px solid var(--border);}
-@media(max-width:900px){
-  .who-section{grid-template-columns:1fr;}
-  .who-photo{min-height:320px;}
-  .who-content{padding:56px 32px;}
+.who-num{
+  font-family:var(--font-display);font-size:11px;font-weight:900;
+  color:var(--orange);flex-shrink:0;padding-top:3px;letter-spacing:0.1em;
+}
+.who-text{font-size:14px;line-height:1.6;color:var(--text);}
+/* Правая колонка — фото */
+.who-right{
+  position:relative;
+  flex-shrink:0;
+}
+.who-right img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;
+  display:block;
+}
+.who-photo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:var(--black);color:var(--white);
+  padding:14px 20px;
+  font-family:var(--font-display);font-size:13px;font-weight:900;
+  text-transform:uppercase;letter-spacing:0.15em;
+  display:flex;gap:8px;
+}
+.who-photo-label-accent{color:var(--orange);}
+@media(max-width:1000px){
+  .who-inner{grid-template-columns:1fr;gap:40px;}
+  .who-right{max-width:320px;}
+  .who-section{padding:64px 32px;}
+  .who-geo-tl,.who-geo-br{display:none;}
 }
 </style>
 </head>
@@ -432,28 +467,42 @@ footer{
 
 <!-- КОМУ ПОДХОДИТ -->
 <div class="who-section">
-  <div class="who-photo">
-    <img src="/img/3 vertical.jpg" alt="Массаж лица Rehab.You">
-  </div>
-  <div class="who-content">
-    <div class="section-label">Кому подходит</div>
-    <h2 class="section-title">Узнаёте<br>себя?</h2>
-    <div class="who-grid">
-      <div class="who-item">
-        <div class="who-num">01</div>
-        <div class="who-text">Замечаете отёки по утрам и уставший вид к вечеру — даже после нормального сна</div>
+  <div class="who-inner">
+    <!-- Геометрия: оранжевый угол -->
+    <div class="who-geo who-geo-tl"></div>
+    <div class="who-geo who-geo-br"></div>
+
+    <!-- Текстовая колонка -->
+    <div class="who-left">
+      <div class="section-label">Кому подходит</div>
+      <h2 class="who-title">Узнаёте<br>себя?</h2>
+      <div class="who-list">
+        <div class="who-item">
+          <div class="who-num">01</div>
+          <div class="who-text">Замечаете отёки по утрам и уставший вид к вечеру — даже после нормального сна</div>
+        </div>
+        <div class="who-item">
+          <div class="who-num">02</div>
+          <div class="who-text">Хотите подтянуть овал без инъекций и ботокса — сохраняя естественность</div>
+        </div>
+        <div class="who-item">
+          <div class="who-num">03</div>
+          <div class="who-text">Уже тратите на уход за кожей, но хочется ощутимого и видимого результата</div>
+        </div>
+        <div class="who-item">
+          <div class="who-num">04</div>
+          <div class="who-text">Кожа начала терять тонус после 25+ — и вы хотите это изменить без операций</div>
+        </div>
       </div>
-      <div class="who-item">
-        <div class="who-num">02</div>
-        <div class="who-text">Хотите подтянуть овал без инъекций и ботокса — сохраняя естественность</div>
-      </div>
-      <div class="who-item">
-        <div class="who-num">03</div>
-        <div class="who-text">Уже тратите на уход за кожей, но хочется ощутимого и видимого результата</div>
-      </div>
-      <div class="who-item">
-        <div class="who-num">04</div>
-        <div class="who-text">Кожа начала терять тонус после 25+ — и вы хотите это изменить без операций</div>
+    </div>
+
+    <!-- Фото -->
+    <div class="who-right">
+      <img src="/img/3 vertical.jpg" alt="Массаж лица Rehab.You">
+      <!-- Чёрный акцентный блок поверх угла фото -->
+      <div class="who-photo-label">
+        <span>Rehab</span>
+        <span class="who-photo-label-accent">You</span>
       </div>
     </div>
   </div>
