@@ -351,6 +351,37 @@ footer{
   .footer-top{grid-template-columns:1fr;}
   .hero-btns{flex-direction:column;}
 }
+
+/* WHO SECTION WITH PHOTO */
+.who-section{
+  display:grid;grid-template-columns:2fr 3fr;min-height:600px;
+}
+.who-photo{
+  overflow:hidden;position:relative;
+}
+.who-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+}
+.who-content{
+  padding:80px 72px;background:var(--white);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.who-content .section-title{margin-bottom:40px;}
+.who-content .who-grid{
+  display:grid;grid-template-columns:1fr;gap:0;
+  background:transparent;border:none;
+}
+.who-content .who-item{
+  background:transparent;padding:20px 0;border:none;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:20px;
+}
+.who-content .who-item:first-child{border-top:1px solid var(--border);}
+@media(max-width:900px){
+  .who-section{grid-template-columns:1fr;}
+  .who-photo{min-height:320px;}
+  .who-content{padding:56px 32px;}
+}
 </style>
 </head>
 <body>
@@ -400,25 +431,30 @@ footer{
 </div>
 
 <!-- КОМУ ПОДХОДИТ -->
-<div class="section">
-  <div class="section-label">Кому подходит</div>
-  <h2 class="section-title">Узнаёте себя?</h2>
-  <div class="who-grid">
-    <div class="who-item">
-      <div class="who-num">01</div>
-      <div class="who-text">Замечаете отёки по утрам и уставший вид к вечеру — даже после нормального сна</div>
-    </div>
-    <div class="who-item">
-      <div class="who-num">02</div>
-      <div class="who-text">Хотите подтянуть овал без инъекций и ботокса — сохраняя естественность</div>
-    </div>
-    <div class="who-item">
-      <div class="who-num">03</div>
-      <div class="who-text">Уже тратите на уход за кожей, но хочется ощутимого и видимого результата</div>
-    </div>
-    <div class="who-item">
-      <div class="who-num">04</div>
-      <div class="who-text">Кожа начала терять тонус после 25+ — и вы хотите это изменить без операций</div>
+<div class="who-section">
+  <div class="who-photo">
+    <img src="/img/3 vertical.jpg" alt="Массаж лица Rehab.You">
+  </div>
+  <div class="who-content">
+    <div class="section-label">Кому подходит</div>
+    <h2 class="section-title">Узнаёте<br>себя?</h2>
+    <div class="who-grid">
+      <div class="who-item">
+        <div class="who-num">01</div>
+        <div class="who-text">Замечаете отёки по утрам и уставший вид к вечеру — даже после нормального сна</div>
+      </div>
+      <div class="who-item">
+        <div class="who-num">02</div>
+        <div class="who-text">Хотите подтянуть овал без инъекций и ботокса — сохраняя естественность</div>
+      </div>
+      <div class="who-item">
+        <div class="who-num">03</div>
+        <div class="who-text">Уже тратите на уход за кожей, но хочется ощутимого и видимого результата</div>
+      </div>
+      <div class="who-item">
+        <div class="who-num">04</div>
+        <div class="who-text">Кожа начала терять тонус после 25+ — и вы хотите это изменить без операций</div>
+      </div>
     </div>
   </div>
 </div>
