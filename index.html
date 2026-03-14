@@ -17,16 +17,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>REHAB.YOU — Массажный салон нового поколения</title>
 <meta name="description" content="Массажный салон нового поколения с медицинским подходом. Два центра в Москве: Сухаревская и Парк Культуры. +7 (925) 540-40-60">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rehabyou.site/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rehabyou.site/">
+<meta property="og:title" content="REHAB.YOU — Массажный салон нового поколения">
+<meta property="og:description" content="Массажный салон нового поколения с медицинским подходом. Два центра в Москве: Сухаревская и Парк Культуры.">
+<meta property="og:image" content="https://rehabyou.site/img/1_wide.png">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="REHAB.YOU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/mobile.css">
-<!-- cache-bust: 2026-03-07-v20 -->
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MassageTherapy",
+  "name": "REHAB.YOU",
+  "url": "https://rehabyou.site",
+  "telephone": "+7 (925) 540-40-60",
+  "description": "Массажный салон нового поколения с медицинским подходом. Два центра в Москве.",
+  "image": "https://rehabyou.site/img/1_wide.png",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Сретенский тупик, 2",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Зубовский проезд, 2",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    }
+  ],
+  "geo": [
+    {
+      "@type": "GeoCoordinates",
+      "latitude": 55.7676,
+      "longitude": 37.6327
+    }
+  ],
+  "openingHours": "Mo-Su 09:00-22:00",
+  "priceRange": "₽₽",
+  "sameAs": [
+    "https://t.me/rehabyou_massage",
+    "https://www.instagram.com/rehab.you/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Услуги массажа",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Классический массаж",
+          "description": "60 минут глубокой проработки"
+        },
+        "price": "6900",
+        "priceCurrency": "RUB"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Спортивный массаж",
+          "description": "Восстановление после тренировок"
+        },
+        "price": "6900",
+        "priceCurrency": "RUB"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Массаж в четыре руки",
+          "description": "Максимальное расслабление"
+        },
+        "price": "13800",
+        "priceCurrency": "RUB"
+      }
+    ]
+  }
+}
+</script>
+<!-- cache-bust: 2026-03-14-v21 -->
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img class="logo-white" src="img/logo-white.png" alt="">
     <img class="logo-black" src="img/logo-black.png" alt="">
   </a>
@@ -67,11 +153,11 @@
 
   <div class="hero-v2-content">
     <div class="hero-v2-eyebrow">Массажный салон · Москва</div>
-    <div class="hero-v2-title-inline">
+    <h1 class="hero-v2-title-inline">
       <span class="hvt-1">ТЫ УЖЕ</span>
       <span class="hvt-2">ЛУЧШАЯ</span>
       <span class="hvt-3">ВЕРСИЯ</span>
-    </div>
+    </h1>
     <p class="hero-v2-desc">Не останавливайся. Твоё тело способно на большее.<br>Дай ему восстановиться правильно.</p>
     <a href="https://n1276048.yclients.com" target="_blank" class="hero-v2-btn">Записаться на сеанс</a>
     <div class="hero-v2-stats">
@@ -110,7 +196,7 @@
 <div class="about-section" id="about">
   <div class="about-grid reveal">
     <div class="about-photo-wrap">
-      <img src="img/6%20vertical.jpg" alt="Rehab.You команда" class="about-photo-main">
+      <img src="img/6%20vertical.jpg" alt="Rehab.You команда" class="about-photo-main" loading="lazy">
       <div class="about-photo-badge">
         <div class="about-photo-badge-text">С 2021<br>в Москве</div>
       </div>
@@ -124,7 +210,7 @@
         <p>Потому что есть вещи, которые не восстанавливаются сами — хроническое напряжение, усталость которая не уходит после выходных, тело которое держит стресс даже когда голова уже отпустила. С этим и работаем.</p>
       </div>
       <div class="about-founder">
-        <img src="img/alex.jpg" alt="Александр Ледень" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--orange)">
+        <img src="img/alex.jpg" alt="Александр Ледень" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--orange)">
         <div>
           <div class="about-founder-name">Александр Ледень</div>
           <div class="about-founder-role">Основатель · Врач-невролог · Мануальный терапевт</div>
@@ -165,7 +251,7 @@
   </div>
   <div class="services-grid reveal">
     <a href="/massage/classic/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg" alt="Классический массаж" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg" alt="Классический массаж" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Классический</div>
         <div class="service-desc">Когда нужно привести тело в порядок и держать его в тонусе. Регулярная база для тех, кто следит за собой.</div>
@@ -174,7 +260,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/sport/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/sport.jpeg" alt="Спортивный массаж" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/sport.jpeg" alt="Спортивный массаж" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Спортивный</div>
         <div class="service-desc">Хит клуба. После зала, перед стартом, в середине цикла. Для тех, кто тренируется и хочет тренироваться дольше.</div>
@@ -183,7 +269,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/relax/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/relaks.jpeg" alt="Расслабляющий массаж" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/relaks.jpeg" alt="Расслабляющий массаж" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Расслабляющий</div>
         <div class="service-desc">Когда тело на пределе и нужно выдохнуть по-настоящему. Не просто «полежать» — а реально перезагрузиться.</div>
@@ -192,7 +278,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/anticell/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/acz.jpeg" alt="Антицеллюлитный массаж" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/acz.jpeg" alt="Антицеллюлитный массаж" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Антицеллюлитный</div>
         <div class="service-desc">Видимый результат курсом. Для тех, кто хочет видеть разницу в зеркале — и видит её.</div>
@@ -201,7 +287,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/face/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg" alt="Массаж лица" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg" alt="Массаж лица" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Массаж лица</div>
         <div class="service-desc">Выглядеть на 5 лет моложе — это не про ботокс. Убирает отёки, прорабатывает мимические мышцы. Результат виден с первого раза.</div>
@@ -210,7 +296,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/4hands/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/4-ruki.jpeg" alt="Массаж в четыре руки" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/4-ruki.jpeg" alt="Массаж в четыре руки" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">В четыре руки</div>
         <div class="service-desc">Два мастера, один сеанс — тело не успевает напрягаться в ожидании следующего движения. Самый глубокий формат.</div>
@@ -219,7 +305,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/stones/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2025/03/funkczionalnaya-scaled.jpg" alt="Массаж с камнями" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2025/03/funkczionalnaya-scaled.jpg" alt="Массаж с камнями" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Массаж + камни</div>
         <div class="service-desc">Тепло проникает туда, куда руки доходят не сразу. Для хронически зажатых мышц и тех, кто мёрзнет.</div>
@@ -228,7 +314,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="/massage/angiopharm/" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2025/04/zhp02726-scaled.jpg" alt="Rehab.You × Angiopharm" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2025/04/zhp02726-scaled.jpg" alt="Rehab.You × Angiopharm" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Rehab.You × Angiopharm</div>
         <div class="service-desc">Коллаборация с Angiopharm. Протокол для тех, кто привык работать на результат — и в зале, и в восстановлении.</div>
@@ -237,7 +323,7 @@
       <div class="service-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a href="https://n1276048.yclients.com" target="_blank" class="service-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg" alt="Утренние часы" class="service-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg" alt="Утренние часы" class="service-photo" loading="lazy">
       <div class="service-body">
         <div class="service-name">Утренние часы</div>
         <div class="service-desc">Те же мастера, тот же уровень — с 10:00 до 12:00. Общий 6 000 ₽ · Лицо и антицеллюлит 6 500 ₽.</div>
@@ -721,7 +807,7 @@
   </div>
   <div class="locations-grid reveal">
     <div class="location-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/dsc07783-1-1-1.jpg" alt="Сухаревская" class="location-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/dsc07783-1-1-1.jpg" alt="Сухаревская" class="location-photo" loading="lazy">
       <div class="location-body">
         <div class="location-metro"><div class="metro-dot"></div>Сухаревская</div>
         <div class="location-name">Центр на Сухаревской</div>
@@ -731,7 +817,7 @@
       </div>
     </div>
     <div class="location-card">
-      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/img_7776-1-1-1.jpg" alt="Парк Культуры" class="location-photo">
+      <img src="https://rehabyou.ru/wp-content/uploads/2024/12/img_7776-1-1-1.jpg" alt="Парк Культуры" class="location-photo" loading="lazy">
       <div class="location-body">
         <div class="location-metro"><div class="metro-dot"></div>Парк Культуры</div>
         <div class="location-name">Центр на Парке Культуры</div>
@@ -829,7 +915,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2024 REHAB.YOU. Все права защищены.</div>
+    <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> REHAB.YOU. Все права защищены.</div>
     <div class="footer-copy"><a href="/privacy/" target="_blank" style="color:inherit;text-decoration:none">Политика конфиденциальности</a></div>
   </div>
 </footer>
