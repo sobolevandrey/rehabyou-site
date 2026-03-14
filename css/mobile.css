@@ -74,6 +74,7 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
 @media (max-width: 1100px) {
   .nav-hamburger { display: flex; }
   .nav-mobile-menu { display: flex; }
+  .nav-cta { display: none; }
 }
 
 /* ---- HERO ---- */
@@ -231,16 +232,23 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
 }
 
 /* ---- TELEGRAM POPUP ---- */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .tg-popup {
-    width: calc(100vw - 16px);
-    bottom: 8px;
-    right: 8px;
-    left: 8px;
+    width: calc(100vw - 24px);
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    max-height: 80px;
+    overflow: hidden;
+    border-radius: 12px;
   }
-  .tg-popup-photo { width: 90px; }
+  .tg-popup-photo { display: none; }
+  .tg-popup-content { padding: 12px 16px; gap: 4px; }
   .tg-popup-title { font-size: 13px; }
-  .tg-popup-text { font-size: 11px; }
+  .tg-popup-text { display: none; }
+  .tg-popup-label { font-size: 9px; }
+  .tg-popup-btn { font-size: 11px; padding: 6px 14px; }
+  .tg-popup-close { top: 8px; right: 8px; width: 24px; height: 24px; }
 }
 
 /* ---- QUIZ MODAL ---- */
