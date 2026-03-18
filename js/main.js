@@ -237,3 +237,28 @@ document.querySelectorAll('.faq-item').forEach(item => {
     sessionStorage.setItem('tgPopupClosed', '1');
   });
 })();
+
+// Передача ClientId Метрики в Yclients
+(function(){
+  function getYmClientId(){
+    var match = document.cookie.match(/_ym_uid=([^;]+)/);
+    return match ? match[1] : null;
+  }
+  function injectClientId(){
+    var clientId = getYmClientId();
+    if(!clientId) return;
+    var links = document.querySelectorAll('a[href*="yclients.com"]');
+    links.forEach(function(link){
+      try {
+        var url = new URL(link.href);
+        url.searchParams.set('utm_content', 'ym_' + clientId);
+        link.href = url.toString();
+      } catch(e){}
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', injectClientId);
+  } else {
+    injectClientId();
+  }
+})();
