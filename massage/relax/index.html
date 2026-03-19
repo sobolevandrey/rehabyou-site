@@ -986,7 +986,7 @@ nav {
       <img src="/img/7 vertical.jpg" alt="Абонемент Rehab.You">
       <div class="type-new-overlay">
         <div class="type-new-badge type-new-badge-light">−12%</div>
-        <div class="type-new-title" style="color:var(--white);">5 сеансов<br>5 сеансов</div>
+        <div class="type-new-title" style="color:var(--white);">5 сеансов</div>
         <div class="type-new-desc type-new-desc-light">Фиксированная цена. Без срока действия. Используйте в удобном темпе.</div>
         <div class="type-new-price" style="color:var(--white);border-color:rgba(255,255,255,0.25);">19 900 ₽</div>
         <div class="type-new-price-sub type-new-price-sub-light">вместо 22 500 ₽</div>
@@ -995,6 +995,7 @@ nav {
     </div>
 
   </div>
+</div>
 
 <!-- МАСТЕРА -->
 <div class="masters-section">
@@ -1395,38 +1396,6 @@ if (hamburger && mobileMenu) {
 }
 </script>
 
-
-<script>
-(function(){{
-  var track = document.getElementById('mastersTrack');
-  var prev = document.getElementById('mastersPrev');
-  var next = document.getElementById('mastersNext');
-  var cur = document.getElementById('mastersCurrent');
-  var tot = document.getElementById('mastersTotal');
-  if (!track) return;
-  var cards = track.querySelectorAll('.team-card');
-  var total = cards.length;
-  if (tot) tot.textContent = total;
-  function getIdx() {{
-    var cardW = cards[0] ? cards[0].offsetWidth : 320;
-    return Math.round(track.scrollLeft / cardW) + 1;
-  }}
-  function updateCounter() {{ if (cur) cur.textContent = getIdx(); }}
-  track.addEventListener('scroll', updateCounter, {{passive:true}});
-  if (prev) prev.addEventListener('click', function() {{
-    track.scrollBy({{left: -320, behavior:'smooth'}});
-  }});
-  if (next) next.addEventListener('click', function() {{
-    track.scrollBy({{left: 320, behavior:'smooth'}});
-  }});
-  // drag
-  var isDown=false, startX, scrollLeft;
-  track.addEventListener('mousedown',function(e){{isDown=true;track.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;}});
-  track.addEventListener('mouseleave',function(){{isDown=false;track.classList.remove('dragging');}});
-  track.addEventListener('mouseup',function(){{isDown=false;track.classList.remove('dragging');}});
-  track.addEventListener('mousemove',function(e){{if(!isDown)return;e.preventDefault();var x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.5;}});
-}})();
-</script>
 
 <script>
 (function(){
