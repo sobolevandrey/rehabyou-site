@@ -1192,3 +1192,18 @@ nav.scrolled .logo-black { display: block !important; }
 /* ================================================
    END LEAD MODAL
    ================================================ */
+
+/* Blog nav link */
+.nav-blog-link {
+  color: var(--orange) !important;
+  border-bottom: 1px solid rgba(244,153,51,0.4);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s !important;
+}
+.nav-blog-link:hover {
+  color: #ff8c00 !important;
+  border-color: #ff8c00;
+}
+nav.scrolled .nav-blog-link {
+  color: var(--orange) !important;
+}
