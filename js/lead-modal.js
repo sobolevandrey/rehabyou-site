@@ -6,43 +6,15 @@
 
   var BITRIX_WEBHOOK = 'https://rehabyou.bitrix24.ru/rest/41819/1eu77fq1ddmwfxd3/crm.lead.add.json';
 
+  /* ---------- Инжектируем стили ---------- */
+  var MODAL_CSS = '.lead-modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px;}.lead-modal-overlay.open{display:flex;}.lead-modal{background:#fff;width:100%;max-width:480px;position:relative;padding:48px 48px 40px;box-shadow:0 24px 80px rgba(0,0,0,0.25);}.lead-modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;background:none;border:1px solid #e5e5e5;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s;}.lead-modal-close:hover{border-color:#F49933;}.lead-modal-close svg{width:16px;height:16px;stroke:#1a1a1a;stroke-width:2;fill:none;}.lead-modal-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#F49933;margin-bottom:12px;font-family:"Inter",sans-serif;}.lead-modal-title{font-family:"Unbounded",sans-serif;font-size:24px;font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;color:#000;margin-bottom:8px;line-height:1.1;}.lead-modal-subtitle{font-size:13px;color:#888;line-height:1.6;margin-bottom:32px;font-family:"Inter",sans-serif;}.lead-modal-field{margin-bottom:16px;}.lead-modal-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:8px;font-family:"Inter",sans-serif;}.lead-modal-input{width:100%;height:52px;border:1.5px solid #e5e5e5;padding:0 16px;font-size:15px;font-family:"Inter",sans-serif;color:#1a1a1a;background:#fff;outline:none;transition:border-color 0.2s;box-sizing:border-box;}.lead-modal-input:focus{border-color:#1a1a1a;}.lead-modal-input.error{border-color:#e53e3e;}.lead-modal-input::placeholder{color:#bbb;}.lead-modal-submit{width:100%;height:52px;background:#000;color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;margin-top:8px;margin-bottom:16px;font-family:"Inter",sans-serif;transition:background 0.2s;}.lead-modal-submit:hover{background:#F49933;}.lead-modal-submit:disabled{background:#888;cursor:not-allowed;}.lead-modal-agree{font-size:11px;color:#bbb;line-height:1.5;font-family:"Inter",sans-serif;}.lead-modal-success{display:none;text-align:center;padding:24px 0;}.lead-modal-success-icon{width:56px;height:56px;border-radius:50%;background:#F49933;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}.lead-modal-success-icon svg{width:24px;height:24px;stroke:#fff;stroke-width:2.5;fill:none;}.lead-modal-success-title{font-family:"Unbounded",sans-serif;font-size:20px;font-weight:900;text-transform:uppercase;color:#000;margin-bottom:12px;}.lead-modal-success-desc{font-size:14px;color:#666;line-height:1.7;font-family:"Inter",sans-serif;}@media(max-width:600px){.lead-modal{padding:36px 24px 32px;}.lead-modal-title{font-size:20px;}}';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = MODAL_CSS;
+  document.head.appendChild(styleEl);
+
   /* ---------- HTML попапа ---------- */
-  var MODAL_HTML = `
-<div class="lead-modal-overlay" id="leadModalOverlay">
-  <div class="lead-modal" role="dialog" aria-modal="true" aria-label="Форма заявки">
-    <button class="lead-modal-close" id="leadModalClose" aria-label="Закрыть">
-      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-
-    <div id="leadModalForm">
-      <div class="lead-modal-header">
-        <div class="lead-modal-eyebrow">Rehab.You · Москва</div>
-        <div class="lead-modal-title">Оставь заявку</div>
-        <div class="lead-modal-subtitle">Перезвоним в течение 15 минут и запишем к мастеру</div>
-      </div>
-      <div class="lead-modal-body">
-        <div class="lead-modal-field">
-          <label class="lead-modal-label" for="leadName">Имя</label>
-          <input class="lead-modal-input" id="leadName" type="text" placeholder="Как тебя зовут?" autocomplete="given-name">
-        </div>
-        <div class="lead-modal-field">
-          <label class="lead-modal-label" for="leadPhone">Телефон</label>
-          <input class="lead-modal-input" id="leadPhone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel">
-        </div>
-        <button class="lead-modal-submit" id="leadSubmit">Жду звонка</button>
-        <div class="lead-modal-agree">Нажимая кнопку, ты соглашаешься на обработку персональных данных</div>
-      </div>
-    </div>
-
-    <div class="lead-modal-success" id="leadModalSuccess">
-      <div class="lead-modal-success-icon">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <div class="lead-modal-success-title">Заявка принята</div>
-      <div class="lead-modal-success-desc">Перезвоним в течение 15 минут.<br>Если срочно — <a href="tel:+79255404060" style="color:#F49933;">+7 (925) 540-40-60</a></div>
-    </div>
-  </div>
-</div>`;
+  var MODAL_HTML = '<div class="lead-modal-overlay" id="leadModalOverlay"><div class="lead-modal" role="dialog" aria-modal="true" aria-label="Форма заявки"><button class="lead-modal-close" id="leadModalClose" aria-label="Закрыть"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div id="leadModalForm"><div class="lead-modal-header"><div class="lead-modal-eyebrow">Rehab.You · Москва</div><div class="lead-modal-title">Оставь заявку</div><div class="lead-modal-subtitle">Перезвоним в течение 15 минут и запишем к мастеру</div></div><div class="lead-modal-body"><div class="lead-modal-field"><label class="lead-modal-label" for="leadName">Имя</label><input class="lead-modal-input" id="leadName" type="text" placeholder="Как тебя зовут?" autocomplete="given-name"></div><div class="lead-modal-field"><label class="lead-modal-label" for="leadPhone">Телефон</label><input class="lead-modal-input" id="leadPhone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div><button class="lead-modal-submit" id="leadSubmit">Жду звонка</button><div class="lead-modal-agree">Нажимая кнопку, ты соглашаешься на обработку персональных данных</div></div></div><div class="lead-modal-success" id="leadModalSuccess"><div class="lead-modal-success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="lead-modal-success-title">Заявка принята</div><div class="lead-modal-success-desc">Перезвоним в течение 15 минут.<br>Если срочно — <a href="tel:+79255404060" style="color:#F49933;">+7 (925) 540-40-60</a></div></div></div></div>';
 
   /* ---------- Вставляем в DOM ---------- */
   document.body.insertAdjacentHTML('beforeend', MODAL_HTML);
@@ -67,21 +39,17 @@
     document.body.style.overflow = '';
   }
 
-  // Закрытие по крестику и клику на оверлей
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) closeModal();
   });
-  // Закрытие по Escape
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
   });
 
   /* ---------- Открываем по всем кнопкам "Записаться" ---------- */
   function attachTriggers() {
-    // nav-cta и любые кнопки с классом nav-cta, nav-mobile-cta
     document.querySelectorAll('.nav-cta, .nav-mobile-cta').forEach(function(el) {
-      // Только если ведёт на yclients — перехватываем
       if (el.href && el.href.indexOf('yclients') !== -1) {
         el.addEventListener('click', function(e) {
           e.preventDefault();
@@ -91,7 +59,6 @@
     });
   }
 
-  // Публичный метод — можно вызвать openModal() из любого места
   window.openLeadModal = openModal;
 
   /* ---------- Телефон — маска ---------- */
@@ -145,13 +112,12 @@
     var name  = nameInput.value.trim();
     var phone = phoneInput.value.trim();
 
-    // Определяем источник — текущая страница
     var source = 'Форма сайта rehabyou.site';
     var path = window.location.pathname;
-    if (path.includes('/certificates')) source += ' — Сертификаты';
-    else if (path.includes('/subscriptions')) source += ' — Абонементы';
-    else if (path.includes('/masters')) source += ' — Мастера';
-    else if (path.includes('/massage')) source += ' — Услуги';
+    if (path.indexOf('/certificates') !== -1) source += ' — Сертификаты';
+    else if (path.indexOf('/subscriptions') !== -1) source += ' — Абонементы';
+    else if (path.indexOf('/masters') !== -1) source += ' — Мастера';
+    else if (path.indexOf('/massage') !== -1) source += ' — Услуги';
 
     var payload = {
       fields: {
@@ -172,10 +138,8 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.result) {
-        // Успех
         formBlock.style.display = 'none';
         successBlock.style.display = 'block';
-        // Сбросим форму через 3 сек после закрытия
         setTimeout(function() {
           nameInput.value = '';
           phoneInput.value = '';
@@ -189,7 +153,6 @@
       }
     })
     .catch(function() {
-      // Fallback — показываем успех в любом случае (не пугаем клиента)
       formBlock.style.display = 'none';
       successBlock.style.display = 'block';
       submitBtn.disabled = false;
