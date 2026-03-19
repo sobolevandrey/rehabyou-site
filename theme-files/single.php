@@ -10,14 +10,14 @@ $author_bio = get_the_author_meta('description');
 $author_avatar = get_avatar_url($author_id, ['size' => 64]);
 
 $cta_map = [
-  'sport'           => ['Бежите марафон? Тело надо готовить.', 'Спортивный массаж за 48 часов до старта снижает риск травм.', 'На спортивный массаж →', 'https://rehabyou.site/massage/sport/?utm_source=blog&utm_medium=sticky&utm_campaign=sport'],
-  'krasota'         => ['Уход за собой — это не только снаружи.', 'Расслабляющий и лимфодренажный массаж — часть бьюти-рутины.', 'Записаться →', 'https://rehabyou.site/massage/relax/?utm_source=blog&utm_medium=sticky&utm_campaign=beauty'],
-  'materinstvo'     => ['Восстановление после родов — это работа.', 'Деликатный массаж помогает телу вернуться в ресурс.', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=maternity'],
-  'telo-i-zdorovye' => ['Тело держит всё что накопилось за неделю.', 'Один сеанс — и напряжение уходит.', 'Записаться →', 'https://rehabyou.site/massage/classic/?utm_source=blog&utm_medium=sticky&utm_campaign=health'],
-  'moskva'          => ['Москва выматывает. Тело это чувствует.', 'Восстанавливайтесь — массаж в клубе рядом с вами.', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=moscow'],
-  'sobytiya'        => ['Насыщенные выходные — напряжённое тело.', 'Расслабляющий массаж вернёт ресурс за один сеанс.', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=events'],
+  'sport'           => ['Готовитесь к забегу?', 'Спортмассаж снижает риск травм', 'Записаться →', 'https://rehabyou.site/massage/sport/?utm_source=blog&utm_medium=sticky&utm_campaign=sport'],
+  'krasota'         => ['Уход — это не только снаружи.', 'Массаж как часть бьюти-рутины', 'Записаться →', 'https://rehabyou.site/massage/relax/?utm_source=blog&utm_medium=sticky&utm_campaign=beauty'],
+  'materinstvo'     => ['Восстановление после родов.', 'Деликатный массаж вернёт ресурс', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=maternity'],
+  'telo-i-zdorovye' => ['Тело накопило напряжение.', 'Один сеанс — и оно уходит', 'Записаться →', 'https://rehabyou.site/massage/classic/?utm_source=blog&utm_medium=sticky&utm_campaign=health'],
+  'moskva'          => ['Москва выматывает.', 'Массаж рядом — два клуба в центре', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=moscow'],
+  'sobytiya'        => ['Тело держит усталость.', 'Расслабляющий массаж за один сеанс', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=events'],
 ];
-$cta = $cta_map[$cat_slug] ?? ['Тело скажет спасибо уже после первого сеанса.', 'Два клуба в Москве, запись за минуту.', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=general'];
+$cta = $cta_map[$cat_slug] ?? ['Тело скажет спасибо.', 'Два клуба в Москве, запись онлайн', 'Записаться →', 'https://rehabyou.site/?utm_source=blog&utm_medium=sticky&utm_campaign=general'];
 ?>
 
 <?php if($has_thumb): ?>
