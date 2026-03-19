@@ -123,7 +123,7 @@
     <li><a href="#packages">Абонементы</a></li>
     <li><a href="#locations">Адреса</a></li>
   </ul>
-  <a href="https://n1276048.yclients.com" target="_blank" class="nav-cta">Записаться</a>
+  <button onclick="openLeadModal()" class="nav-cta">Бесплатная консультация</button>
 
   <!-- Hamburger (мобильный) -->
   <button class="nav-hamburger" id="navHamburger" aria-label="Меню">
@@ -159,7 +159,10 @@
       <span class="hvt-3">ВЕРСИЯ</span>
     </h1>
     <p class="hero-v2-desc">Не останавливайся. Твоё тело способно на большее.<br>Дай ему восстановиться правильно.</p>
+    <div class="hero-v2-btns">
     <a href="https://n1276048.yclients.com" target="_blank" class="hero-v2-btn">Записаться на сеанс</a>
+    <button onclick="openLeadModal()" class="hero-v2-btn hero-v2-btn-outline">Не знаю с чего начать →</button>
+  </div>
     <div class="hero-v2-stats">
       <div class="hvs-item"><div class="hvs-num">15 000<em>+</em></div><div class="hvs-label">Клиентов</div></div>
       <div class="hvs-item"><div class="hvs-num">5<em>+</em></div><div class="hvs-label">Лет работы</div></div>
@@ -715,33 +718,6 @@
   </div>
   <div class="packages-grid reveal">
     <div class="package-card">
-      <div class="package-name">Сертификат</div>
-      <div class="package-sessions">Подарок близким</div>
-      <div class="package-price">от 6 900 ₽</div>
-      <div class="package-per">Лучший подарок тому, кто следит за собой</div>
-      <ul class="package-features">
-        <li>Выбор вида массажа</li>
-        <li>Электронный или физический</li>
-        <li>Любой из двух клубов</li>
-        <li>Действует 1 год</li>
-      </ul>
-      <a href="/certificates/" target="_blank" class="package-btn package-btn-dark">Купить сертификат</a>
-    </div>
-    <div class="package-card featured">
-      <div class="package-badge">Популярный</div>
-      <div class="package-name">Абонемент</div>
-      <div class="package-sessions">5 или 10 сеансов</div>
-      <div class="package-price">Курс — это результат</div>
-      <div class="package-per">Тело меняется системой, не разовым визитом</div>
-      <ul class="package-features">
-        <li>Любой вид массажа</li>
-        <li>Оба клуба Москвы</li>
-        <li>Действует 6 месяцев</li>
-        <li>Мастер помнит всё с первого раза</li>
-      </ul>
-      <a href="/subscriptions/" target="_blank" class="package-btn package-btn-outline">Купить абонемент</a>
-    </div>
-    <div class="package-card">
       <div class="package-name">Разовый</div>
       <div class="package-sessions">Один сеанс</div>
       <div class="package-price">от 6 900 ₽</div>
@@ -753,6 +729,33 @@
         <li>Отмена без штрафа за 4 ч.</li>
       </ul>
       <a href="https://n1276048.yclients.com" target="_blank" class="package-btn package-btn-dark">Записаться</a>
+    </div>
+    <div class="package-card featured">
+      <div class="package-badge">Популярный</div>
+      <div class="package-name">Абонемент</div>
+      <div class="package-sessions">5 или 10 сеансов</div>
+      <div class="package-price"><span class="pkg-pct">15%</span> + <span class="pkg-pct">3%</span></div>
+      <div class="package-per"><span class="pkg-tag">выгода</span><span class="pkg-tag">кешбэк</span></div>
+      <ul class="package-features">
+        <li>Любой вид массажа</li>
+        <li>Оба клуба Москвы</li>
+        <li>Действует 6 месяцев</li>
+        <li>Мастер помнит всё с первого раза</li>
+      </ul>
+      <a href="/subscriptions/" target="_blank" class="package-btn package-btn-outline">Купить абонемент</a>
+    </div>
+    <div class="package-card">
+      <div class="package-name">Сертификат</div>
+      <div class="package-sessions">Подарок близким</div>
+      <div class="package-price">от 6 900 ₽</div>
+      <div class="package-per">Лучший подарок тому, кто следит за собой</div>
+      <ul class="package-features">
+        <li>Выбор вида массажа</li>
+        <li>Электронный или физический</li>
+        <li>Любой из двух клубов</li>
+        <li>Действует 1 год</li>
+      </ul>
+      <a href="/certificates/" target="_blank" class="package-btn package-btn-dark">Купить сертификат</a>
     </div>
   </div>
 </div>
