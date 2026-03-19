@@ -3,73 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Страница не найдена — REHAB.YOU</title>
+<title>404 — Страница не найдена | REHAB.YOU</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/mobile.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  .error-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px;
-    background: var(--black);
-    color: var(--white);
-  }
-  .error-code {
-    font-family: var(--font-display);
-    font-size: clamp(80px, 20vw, 200px);
-    font-weight: 900;
-    color: var(--orange);
-    line-height: 1;
-    letter-spacing: -0.04em;
-  }
-  .error-title {
-    font-family: var(--font-display);
-    font-size: clamp(18px, 3vw, 28px);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 16px 0 12px;
-    letter-spacing: -0.02em;
-  }
-  .error-text {
-    font-size: 15px;
-    color: rgba(255,255,255,0.5);
-    max-width: 400px;
-    line-height: 1.7;
-    margin-bottom: 40px;
-  }
-  .error-btn {
-    display: inline-block;
-    background: var(--orange);
-    color: var(--black);
-    font-family: var(--font-display);
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    padding: 16px 40px;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .error-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(244,153,51,0.3);
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #161616;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,169,110,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,169,110,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridShift 20s linear infinite;
+}
+@keyframes gridShift {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(80px, 80px); }
+}
+.bg-num {
+  position: absolute;
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(200px, 35vw, 480px);
+  font-weight: 900;
+  color: rgba(201,169,110,0.04);
+  letter-spacing: -0.05em;
+  user-select: none;
+  animation: pulse 4s ease-in-out infinite;
+  line-height: 1;
+  pointer-events: none;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A96E;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before, .eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: #C9A96E;
+  opacity: 0.5;
+}
+.title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(32px, 6vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.title em {
+  color: #C9A96E;
+  font-style: normal;
+  display: block;
+}
+.subtitle {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 48px;
+}
+.btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn-primary {
+  display: inline-block;
+  background: #C9A96E;
+  color: #000;
+  padding: 16px 36px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: #F49933; transform: translateY(-2px); }
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  padding: 15px 32px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: #C9A96E; color: #C9A96E; }
+.redirect-hint {
+  margin-top: 32px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.redirect-hint span { color: rgba(201,169,110,0.6); }
+.corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+.corner-tl { top: 32px; left: 32px; border-top: 2px solid rgba(201,169,110,0.2); border-left: 2px solid rgba(201,169,110,0.2); }
+.corner-br { bottom: 32px; right: 32px; border-bottom: 2px solid rgba(201,169,110,0.2); border-right: 2px solid rgba(201,169,110,0.2); }
+.logo {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.logo:hover { color: #C9A96E; }
+@media(max-width: 600px) {
+  .corner { display: none; }
+  .btns { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-outline { width: 260px; text-align: center; }
+}
 </style>
 </head>
 <body>
-<div class="error-page">
-  <div class="error-code">404</div>
-  <div class="error-title">Страница не найдена</div>
-  <p class="error-text">Такой страницы не существует. Возможно, она была перемещена или удалена.</p>
-  <a href="/" class="error-btn">На главную</a>
+
+<div class="grid"></div>
+<div class="bg-num">404</div>
+<div class="corner corner-tl"></div>
+<div class="corner corner-br"></div>
+<a href="/" class="logo">REHAB.YOU</a>
+
+<div class="content">
+  <div class="eyebrow">Страница не найдена</div>
+  <h1 class="title">
+    Такого
+    <em>не существует</em>
+  </h1>
+  <p class="subtitle">Зато существуем мы. И у нас есть свободные окна прямо сейчас.</p>
+  <div class="btns">
+    <a href="/" class="btn-primary">На главную</a>
+    <a href="https://n1276048.yclients.com" target="_blank" class="btn-outline">Записаться</a>
+  </div>
+  <div class="redirect-hint">Автоматический переход через <span id="cnt">10</span> сек</div>
 </div>
+
+<script>
+let n = 10;
+const el = document.getElementById('cnt');
+const t = setInterval(() => {
+  n--;
+  el.textContent = n;
+  if (n <= 0) { clearInterval(t); window.location.href = '/'; }
+}, 1000);
+</script>
 </body>
 </html>
