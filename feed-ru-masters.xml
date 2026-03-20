@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-03-20">
+  <shop>
+    <name>REHAB.YOU</name>
+    <company>RehabYou</company>
+    <url>https://rehabyou.ru</url>
+    <currencies><currency id="RUR" rate="1"/></currencies>
+    <categories><category id="1">Массажисты</category></categories>
+    <offers>
+      <offer id="1" available="true">
+        <url>https://rehabyou.site/masters/arina-porfireva/</url>
+        <name>Арина Порфирьева</name>
+        <description>Арина Порфирьева - Мастер клуба массажа Rehab.You. В массаже с 18 лет, осознанный выбор в сторону данной профессии Любит людей, коммуникацию и тот вклад, который может дать в процессе массажа. Личным триггером служат горящие глаза клиентом, после которых хочется покорять новые вершины</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="2" available="true">
+        <url>https://rehabyou.site/masters/elizaveta-smolyaninova/</url>
+        <name>Елизавета Смольянинова</name>
+        <description>Елизавета Смольянинова - Мастер клуба массажа Rehab.You. Приходя на прием к этому специалисту, вы можете быть спокойны за свое тело, Елизавета как никто другой знает про тонкости подготовки мышц и их восстановления. Предпочитает честную обратную связь для большей результативности. Отличительной чертой работы данного мастера является работа с шейно-воротниковой зоной.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/elizaveta-smolyaninova.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="3" available="true">
+        <url>https://rehabyou.site/masters/mark-mazur/</url>
+        <name>Марк Мазур</name>
+        <description>Специалист с медицинским образованием. Массажем начал заниматься 3 года назад. Марк эмпатичен и тактилен. В массаже любит создавать «обволакивающий» эффект — будто тело окутывают мягким и теплым одеялом. Это помогает ему добиться эффективного снятия напряжения, стресса и накопленной усталости у гостя.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/mark-mazur.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="4" available="true">
+        <url>https://rehabyou.site/masters/anton-lugovskoj/</url>
+        <name>Антон Луговской</name>
+        <description>Мастер с высшим медицинским образованием. Отличительной особенностью массажа Антона является скрупулезная проработка мышц всего тела. Его любимым предметом в университете была анатомия человека, именно хорошие знания в этой сфере помогают ему детально работать с каждым гостем.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/anton-lugovskoj.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="5" available="true">
+        <url>https://rehabyou.site/masters/konstantin-lyapunov/</url>
+        <name>Константин Ляпунов</name>
+        <description>Константин относится к числу тех самых мастеров, которые сделали хобби своей профессией. Как мастер, он старается подходить к решению проблемы максимально продуктивно. Накопившийся опыт и навыки помогают ему выстраивать процесс массажа так, чтобы он приносил только пользу и удовольствие гостю. Во время сеанса мастер полностью адаптируется под каждого гостя, стараясь поддерживать дружескую и комфортную атмосферу.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/konstantin-lyapunov.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="6" available="true">
+        <url>https://rehabyou.site/masters/vladislav-daniels/</url>
+        <name>Владислав Даниэльс</name>
+        <description>Владислав считает, что массаж &#8212; способ улучшить состояние физического и морального здоровья за счёт получения удовольствия и расслабления. Как человек — отзывчивый, целеустремлённый и добрый. Если вы настроены на расслабление и получение удовольствия, то Владислав не станет тревожить его разговорами, но, если вы хотите раскрыться и выговориться, то обязательно поддержит беседу. Большой акцент в процессе [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/dsc02094-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="7" available="true">
+        <url>https://rehabyou.site/masters/egor-zajkovskij/</url>
+        <name>Егор Зайковский</name>
+        <description>Егор Зайковский - Ведущий мастер клуба массажа Rehab.You. Кто как не спортсмен знает все тонкости спортивного массажа? Егор — атлет, регулярно участвует в забегах, очень выносливый. Медик по образованию, хорошее знание анатомии. Фишка — тщательная и правильная проработка мышц шеи. Хорошо чувствует клиента, предупреждает о всех болевых манипуляциях</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="8" available="true">
+        <url>https://rehabyou.site/masters/nikolaj-shein/</url>
+        <name>Николай Шеин</name>
+        <description>Подход к массажу: &#171;Мой массаж он всеобъемлющий. Стараюсь чтобы человек ощутил эффект уже после первого сеанса и вести клиента от начала до самого конца, стараюсь выстраивать не только доверительные, но и, в какой то степени, дружеские отношения с клиентом. Обычно мои клиенты мосле массажа говорят: &#187; Как катком прошлись, но так легко стало&#187;&#187; Николай очень [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/07/img_4209-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="9" available="true">
+        <url>https://rehabyou.site/masters/alla-nesena/</url>
+        <name>Алла Несена</name>
+        <description>Подход к массажу : &#187; Массаж и кинезиология &#8212; это огромное поле для творчества. Реализация сочетания фундаментальных серьезных знаний, творчество, контакт телесный, атмосфера нужная мне – все звезды сошлись на массаже!&#187; Отличительной фишкой мастера является работа с шейно-воротниковой зоной, Вы можете доверить тело данному специалисту, который прекрасно знает свое дело. С детства посвящает время спорту. [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/07/img_4207-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="10" available="true">
+        <url>https://rehabyou.site/masters/kirill-timofeev/</url>
+        <name>Кирилл Тимофеев</name>
+        <description>Кирилл более двух лет помогает людям расслабиться и улучшить самочувствие с помощью массажа. Он уделяет особое внимание индивидуальному подходу и использует разные техники для достижения наилучшего результата. Во время сеанса Кирилл готов поддержать разговор и пошутить или создать атмосферу полного расслабления в тишине.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/02/nbvjattd-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="11" available="true">
+        <url>https://rehabyou.site/masters/sofya-katelkina/</url>
+        <name>Софья Кателкина</name>
+        <description>Массаж Софьи отличается разнообразием, а любимые зоны работы — руки и ноги. Клиенты часто отмечают особую технику поглаживания, которая, по ее мнению, стала фирменной чертой. Мастер не выделяет какую-то одну категорию клиентов — ей интересно работать с разными людьми. Для нее важно, чтобы каждый человек получил максимальную пользу и удовольствие от сеанса массажа.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/01/sofya.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="12" available="true">
+        <url>https://rehabyou.site/masters/pavel-repin/</url>
+        <name>Павел Репин</name>
+        <description>Путь в профессию начался случайно, но быстро стал делом души. Сейчас мастер обучается в Первом МГМУ им. И.М. Сеченова и сочетает медицинский подход с искренней любовью к массажу. Каждый сеанс — баланс силы, точности и релакса. Благодаря 9 годам занятий волейболом и тренировкам в зале массаж получается глубоким и проработанным, но при этом мягким и [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="13" available="true">
+        <url>https://rehabyou.site/masters/stepan-tulynin/</url>
+        <name>Степан Тулынин</name>
+        <description>Массаж стал для Степана способом помогать людям находить баланс между телом и душой. Всё началось спонтанно, но со временем увлечение превратилось в настоящее дело жизни. Через массаж он помогает снять напряжение, восстановиться и почувствовать внутренний покой. Имеет высшее образование и прошёл базовые курсы классического массажа в Ижевске. Продолжает развиваться, мечтая овладеть разными техниками и со [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/11/dsc07203-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="14" available="true">
+        <url>https://rehabyou.site/masters/evgeniya-minina/</url>
+        <name>Евгения Минина</name>
+        <description>Специалист с высшим медицинским образованием и курсами массажа. Любимый вид массажа — расслабляющий. В своей работе Евгения делает акцент на снятии стресса, избавлении от боли и напряжения, предоставляя высший уровень качества и профессионализма. Если вы ищете мастера, который не только компетентно подходит к своему делу, но и ценит человеческое общение, то мастер Евгения идеально вам [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/evgeniya-minina.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="15" available="true">
+        <url>https://rehabyou.site/masters/belozer-natalya/</url>
+        <name>Белозер Наталья</name>
+        <description>В работе Наталья — сочетает медитативное расслабления и точную мышечную проработку. Индивидуальный подход к каждому клиенту, умение чувствовать настроение и потребности благодаря опыту работы в авиации. Акцент на работе с конкретным запросом: снижение напряжения, улучшение подвижности, восстановление мышц. Глубокое понимание важности восстановления после физических и психологических нагрузок.  Постоянное изучение анатомии, физиологии, гормональных процессов и психологии [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2026/01/belozer-natalya.webp</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="16" available="true">
+        <url>https://rehabyou.site/masters/topal-vera/</url>
+        <name>Топал Вера</name>
+        <description>Мастер с профильным образованием и спортивным прошлым. Интерес к массажу и восстановительным методикам сформировался ещё во время профессиональной спортивной карьеры: в период занятий футболом мастер активно изучала работу командных массажистов и врачей, углублялась в техники восстановления и реабилитации. В работе особый акцент делается на проработку стоп, кистей и триггерных точек, снятие мышечного напряжения и улучшение [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2026/01/topal-vera.webp</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="17" available="true">
+        <url>https://rehabyou.site/masters/dmitrij-ivanchinkov/</url>
+        <name>Дмитрий Иванчинков</name>
+        <description>Массаж у Дмитрия &#8212; идеальное сочетание силы, глубины и релаксации. Каждый сеанс подстраивается под индивидуальные потребности клиента, обеспечивая точечную проработку, снятие напряжения и глубокое расслабление. Независимо от того, занимаетесь ли вы теннисом, бегом или функциональными тренировками, массаж помогает быстрее восстанавливаться и поддерживать тело в тонусе. Мастер всегда учитывает ваше текущее настроение и состояние, чтобы обеспечить [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/11/dsc00017-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
