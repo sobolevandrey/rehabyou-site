@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-03-20">
+  <shop>
+    <name>REHAB.YOU</name>
+    <company>RehabYou</company>
+    <url>https://rehabyou.ru</url>
+    <currencies><currency id="RUR" rate="1"/></currencies>
+    <categories><category id="1">Услуги массажа</category></categories>
+    <offers>
+      <offer id="1" available="true">
+        <url>https://rehabyou.site/massage/classic/</url>
+        <name>Классический массаж в центре Москвы</name>
+        <description>Среди разнообразия массажей бывает сложно выбрать то, что подходит именно вам. Но классика на то и классика – она неизменно нравится всем. Классический массаж – основоположник всех видов массажа и подходит каждому человеку. Он расслабляет, тонизирует, снимает боль и наполняет тело энергией.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="2" available="true">
+        <url>https://rehabyou.site/massage/relax/</url>
+        <name>Расслабляющий релакс массаж в центре Москвы</name>
+        <description>Расслабляющий массаж – отличное решение для тех, кто находится в постоянной спешке и с головой погружается в работу. После расслабляющего массажа вы почувствуете, как все блоки и зажимы снимаются, ваше тело становится легче, боль уходит, а настроение поднимается.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/relaks.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="3" available="true">
+        <url>https://rehabyou.site/massage/face/</url>
+        <name>Массаж лица в центре Москвы</name>
+        <description>Лицо – отражение всех пережитых эмоций человека, оно тоже устает, испытывает напряжение и стареет. Чтобы сохранить молодость лица на долгие годы, необходимо постоянно поддерживать его в тонусе. Массаж лица значительно улучшает качество вашей кожи, разглаживает морщины и придает лицу свежий блеск и приветливый вид.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="4" available="true">
+        <url>https://rehabyou.site/massage/anticell/</url>
+        <name>Антицеллюлитный массаж в центре Москвы</name>
+        <description>Антицеллюлитный массаж – это сочетание интенсивных приемов массажа, которые глубоко прорабатывают проблемные зоны, разбивают подкожный жир и выводят из клеток шлаки и токсины. Общее самочувствие после массажа улучшается, а целлюлит тает прямо на глазах. Этому будете рады и вы, и ваше отражение в зеркале.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/acz.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="5" available="true">
+        <url>https://rehabyou.site/massage/sport/</url>
+        <name>Спортивный массаж в центре Москвы</name>
+        <description>Вы не знали, но спортивный массаж подходит не только для того, чтобы восстановиться после спорта и размять забитые мышцы, но и для того, чтобы подготовить тело к спорту. Специальные массажные приемы повышают выносливость тела, прорабатывают суставы и сухожилия и помогают поддерживать тонус в мышцах.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/sport.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="6" available="true">
+        <url>https://rehabyou.site/massage/4hands/</url>
+        <name>Массаж тела в 4 руки в центре Москвы</name>
+        <description>Есть ряд исследований, доказывающих эффективность массажа в четыре руки на оба полушария мозга, но, однозначно точно квадромассаж воздействует на нервную и лимфатическую систему, а самое главное - позволяет перезапустить организм в короткий срок. Решение для тех, кто ищет максимальное расслабление</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/4-ruki.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+      <offer id="7" available="true">
+        <url>https://rehabyou.site/massage/angiopharm/</url>
+        <name>Rehab:You x Angiopharm</name>
+        <description>Rehab:You x Angiopharm (лицо + тело) Погружение в мир массажа от Rehab.You Двухчасовой комплекс, который прорабатывает : Ваше тело: – Ощущение лёгкости, свободы и возвращения в тело – Уходят глубокие мышечно-фасциальные зажимы в спине, шее, грудном отделе – Улучшение осанки: расправленные плечи, свободная грудная клетка – Спокойствие в голове через расслабление тела — тревожность снижается [&hellip;]</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/04/zhp02726-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>6900</price>
+        <vendor>REHAB.YOU</vendor>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
