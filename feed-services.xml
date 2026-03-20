@@ -4,12 +4,8 @@
     <name>REHAB.YOU</name>
     <company>RehabYou</company>
     <url>https://rehabyou.site</url>
-    <currencies>
-      <currency id="RUR" rate="1"/>
-    </currencies>
-    <categories>
-      <category id="1">Услуги массажа</category>
-    </categories>
+    <currencies><currency id="RUR" rate="1"/></currencies>
+    <categories><category id="1">Услуги массажа</category></categories>
     <offers>
       <offer id="1" available="true">
         <url>https://rehabyou.site/massage/4hands/</url>
