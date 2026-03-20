@@ -641,6 +641,19 @@ nav.scrolled .nav-cta:hover { background: var(--orange); border-color: var(--ora
 }
 .location-card:hover { border-color: var(--orange); }
 .location-photo { width: 100%; height: 280px; object-fit: cover; display: block; }
+.location-map {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 .location-body { padding: 40px 44px; }
 .location-metro {
   display: inline-flex; align-items: center; gap: 8px;
