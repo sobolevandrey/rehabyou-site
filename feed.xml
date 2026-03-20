@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-03-20">
+  <shop>
+    <name>REHAB.YOU</name>
+    <company>RehabYou</company>
+    <url>https://rehabyou.site</url>
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Массажисты</category>
+    </categories>
+    <offers>
+      <offer id="1" available="true">
+        <url>https://rehabyou.site/masters/alla-nesena/</url>
+        <name>Алла Несена</name>
+        <description>Алла Несена — мастер массажа. Rehab.You, Москва, Парк Культуры.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/07/img_4207-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="2" available="true">
+        <url>https://rehabyou.site/masters/anton-lugovskoj/</url>
+        <name>Антон Луговской</name>
+        <description>Антон Луговской — мастер массажа в REHAB.YOU, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/anton-lugovskoj.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="3" available="true">
+        <url>https://rehabyou.site/masters/arina-porfireva/</url>
+        <name>Арина Порфирьева</name>
+        <description>Арина Порфирьева — мастер массажа лица и коррекции осанки. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/arina-porfireva-1.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="4" available="true">
+        <url>https://rehabyou.site/masters/belozer-natalya/</url>
+        <name>Наталья Белозер</name>
+        <description>Наталья Белозер — мастер расслабляющего и антицеллюлитного массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2026/01/belozer-natalya.webp</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="5" available="true">
+        <url>https://rehabyou.site/masters/dmitrij-ivanchinkov/</url>
+        <name>Дмитрий Иванчинков</name>
+        <description>Дмитрий Иванчинков — мастер спортивного массажа и реабилитации. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.site/img/Team/%D0%98%D0%B2%D0%B0%D0%BD%D1%87%D0%B8%D0%BD%D0%BA%D0%BE%D0%B2%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%28wide%29.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="6" available="true">
+        <url>https://rehabyou.site/masters/egor-zajkovskij/</url>
+        <name>Егор Зайковский</name>
+        <description>Егор Зайковский — мастер спортивного массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/egor-zajkovskij.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="7" available="true">
+        <url>https://rehabyou.site/masters/elizaveta-smolyaninova/</url>
+        <name>Елизавета Смольянинова</name>
+        <description>Елизавета Смольянинова — мастер массажа в REHAB.YOU, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/elizaveta-smolyaninova.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="8" available="true">
+        <url>https://rehabyou.site/masters/evgeniya-minina/</url>
+        <name>Евгения Минина</name>
+        <description>Евгения Минина — мастер массажа в REHAB.YOU, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/evgeniya-minina.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="9" available="true">
+        <url>https://rehabyou.site/masters/kirill-timofeev/</url>
+        <name>Кирилл Тимофеев</name>
+        <description>Кирилл Тимофеев — мастер антицеллюлитного и спортивного массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.site/img/Team/%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%20%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%28wide%29.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="10" available="true">
+        <url>https://rehabyou.site/masters/konstantin-lyapunov/</url>
+        <name>Константин Ляпунов</name>
+        <description>Константин Ляпунов — мастер массажа в REHAB.YOU, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/konstantin-lyapunov.png</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="11" available="true">
+        <url>https://rehabyou.site/masters/mark-mazur/</url>
+        <name>Марк Мазур</name>
+        <description>Марк Мазур — специалист по лечебному и спортивному массажу. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.site/img/5%20wide.jpeg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="12" available="true">
+        <url>https://rehabyou.site/masters/nikolaj-shein/</url>
+        <name>Николай Шеин</name>
+        <description>Николай Шеин — мастер массажа. Rehab.You, Москва, Парк Культуры.</description>
+        <picture>https://rehabyou.site/img/Team/%D0%A8%D0%B5%D0%B8%D0%BD%20%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9%28wide%29.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="13" available="true">
+        <url>https://rehabyou.site/masters/pavel-repin/</url>
+        <name>Павел Репин</name>
+        <description>Павел Репин — мастер классического и спортивного массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2025/11/dsc00263-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="14" available="true">
+        <url>https://rehabyou.site/masters/sofya-katelkina/</url>
+        <name>Софья Кателкина</name>
+        <description>Софья Кателкина — мастер расслабляющего массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.site/img/Team/%D0%9A%D0%B0%D1%82%D0%B5%D0%BB%D0%BA%D0%B8%D0%BD%D0%B0%20%D0%A1%D0%BE%D1%84%D1%8C%D1%8F.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="15" available="true">
+        <url>https://rehabyou.site/masters/stepan-tulynin/</url>
+        <name>Степан Тулынин</name>
+        <description>Степан Тулынин — мастер классического и спортивного массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.site/img/Team/%D0%A2%D1%83%D0%BB%D1%8B%D0%BD%D0%B8%D0%BD%20%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%28wide%29.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="16" available="true">
+        <url>https://rehabyou.site/masters/topal-vera/</url>
+        <name>Вера Топал</name>
+        <description>Вера Топал — мастер спортивного массажа и триггерных точек. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.site/img/Team/topal-vera%28wide%29.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+      <offer id="17" available="true">
+        <url>https://rehabyou.site/masters/vladislav-daniels/</url>
+        <name>Владислав Даниэльс</name>
+        <description>Владислав Даниэльс — мастер массажа. Rehab.You, Москва.</description>
+        <picture>https://rehabyou.ru/wp-content/uploads/2024/12/dsc02094-scaled.jpg</picture>
+        <categoryId>1</categoryId>
+        <currencyId>RUR</currencyId>
+        <price>3500</price>
+        <vendor>REHAB.YOU</vendor>
+        <param name="Специализация">Массаж</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
