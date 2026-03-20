@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <yml_catalog date="2026-03-20">
   <shop>
-    <n>REHAB.YOU</n>
+    <name>REHAB.YOU</name>
     <company>RehabYou</company>
     <url>https://rehabyou.site</url>
     <currencies>
@@ -13,7 +13,7 @@
     <offers>
       <offer id="1" available="true">
         <url>https://rehabyou.site/massage/4hands/</url>
-        <n>Массаж 4 руки</n>
+        <name>Массаж 4 руки</name>
         <description>Массаж 4 руками в Москве. Два мастера одновременно — максимальное расслабление и восстановление.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2024/12/4-ruki.jpeg</picture>
         <categoryId>1</categoryId>
@@ -23,7 +23,7 @@
       </offer>
       <offer id="2" available="true">
         <url>https://rehabyou.site/massage/angiopharm/</url>
-        <n>Ангиофарм</n>
+        <name>Ангиофарм</name>
         <description>Ангиофарм массаж в Москве. Работа с сосудами, улучшение микроциркуляции, антицеллюлитный эффект.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2025/04/zhp02726-scaled.jpg</picture>
         <categoryId>1</categoryId>
@@ -33,7 +33,7 @@
       </offer>
       <offer id="3" available="true">
         <url>https://rehabyou.site/massage/anticell/</url>
-        <n>Антицеллюлитный массаж</n>
+        <name>Антицеллюлитный массаж</name>
         <description>Антицеллюлитный массаж в Москве. Разбивает жировые депозиты, запускает лимфодренаж.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2024/12/acz.jpeg</picture>
         <categoryId>1</categoryId>
@@ -43,7 +43,7 @@
       </offer>
       <offer id="4" available="true">
         <url>https://rehabyou.site/massage/classic/</url>
-        <n>Классический массаж</n>
+        <name>Классический массаж</name>
         <description>Классический массаж тела в Москве. Снятие напряжения, улучшение кровообращения, глубокое расслабление.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2024/12/klassika.jpeg</picture>
         <categoryId>1</categoryId>
@@ -53,7 +53,7 @@
       </offer>
       <offer id="5" available="true">
         <url>https://rehabyou.site/massage/face/</url>
-        <n>Массаж лица</n>
+        <name>Массаж лица</name>
         <description>Уберём отёки, подтянем овал и вернём сияние за 1 сеанс. Классический и буккальный массаж лица в Москве.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2024/12/massazh-licza.jpeg</picture>
         <categoryId>1</categoryId>
@@ -63,7 +63,7 @@
       </offer>
       <offer id="6" available="true">
         <url>https://rehabyou.site/massage/relax/</url>
-        <n>Расслабляющий массаж</n>
+        <name>Расслабляющий массаж</name>
         <description>Расслабляющий массаж в Москве. Снятие стресса, глубокое расслабление нервной системы.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2024/12/relaks.jpeg</picture>
         <categoryId>1</categoryId>
@@ -73,7 +73,7 @@
       </offer>
       <offer id="7" available="true">
         <url>https://rehabyou.site/massage/sport/</url>
-        <n>Спортивный массаж</n>
+        <name>Спортивный массаж</name>
         <description>Спортивный массаж в Москве. Восстановление после тренировок, снятие DOMS, профилактика травм.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2024/12/sport.jpeg</picture>
         <categoryId>1</categoryId>
@@ -83,7 +83,7 @@
       </offer>
       <offer id="8" available="true">
         <url>https://rehabyou.site/massage/stones/</url>
-        <n>Массаж горячими камнями</n>
+        <name>Массаж горячими камнями</name>
         <description>Массаж горячими камнями в Москве. Глубокое расслабление, прогрев мышц, медитативный эффект.</description>
         <picture>https://rehabyou.ru/wp-content/uploads/2025/03/funkczionalnaya-scaled.jpg</picture>
         <categoryId>1</categoryId>
