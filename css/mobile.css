@@ -319,7 +319,7 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
 
 /* Hero slide 1 - mobile vertical */
 @media (max-width: 768px) {
-  .hero-slide-1 { background-image: url('../img/1%20wide%20(vertical).png'); }
+  .hero-slide-1 { background-image: url('../img/1_wide_v.webp'); }
 }
 
 /* Hero buttons mobile fix */
@@ -336,6 +336,6 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
 
 /* Hero slides 2/3 - mobile vertical */
 @media (max-width: 768px) {
-  .hero-slide-2 { background-image: url('../img/2%20wide%20(vertical).png'); }
-  .hero-slide-3 { background-image: url('../img/3%20wide%20(vertical)%20.png'); }
+  .hero-slide-2 { background-image: url('../img/2_wide_v.webp'); }
+  .hero-slide-3 { background-image: url('../img/3_wide_v.webp'); }
 }
