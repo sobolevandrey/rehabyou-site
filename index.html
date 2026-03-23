@@ -859,6 +859,56 @@
   </div>
 </div>
 
+<!-- NEARBY LOCATIONS SEO -->
+<div style="background:#f7f6f3;padding:56px 72px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Найти клуб рядом</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:#161616;margin-bottom:32px;">Массаж рядом с вашим метро</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <a href="/location/sukharevskaya/" style="display:block;padding:20px 24px;background:#fff;border-radius:8px;text-decoration:none;border:1px solid #e8e5df;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='#e8e5df'">
+        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">м. Сухаревская · 2 мин</div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#161616;">Массаж у Сухаревской</div>
+        <div style="font-size:13px;color:#666;margin-top:4px;">ул. Мещанская, 7</div>
+      </a>
+      <a href="/location/park-kultury/" style="display:block;padding:20px 24px;background:#fff;border-radius:8px;text-decoration:none;border:1px solid #e8e5df;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='#e8e5df'">
+        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">м. Парк Культуры · 5 мин</div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#161616;">Массаж у Парка Культуры</div>
+        <div style="font-size:13px;color:#666;margin-top:4px;">Мансуровский пер., 10</div>
+      </a>
+      <a href="/location/prospekt-mira/" style="display:block;padding:20px 24px;background:#fff;border-radius:8px;text-decoration:none;border:1px solid #e8e5df;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='#e8e5df'">
+        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">м. Проспект Мира · 7 мин</div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#161616;">Массаж у Проспекта Мира</div>
+        <div style="font-size:13px;color:#666;margin-top:4px;">ул. Мещанская, 7</div>
+      </a>
+      <a href="/location/frunzenskaya/" style="display:block;padding:20px 24px;background:#fff;border-radius:8px;text-decoration:none;border:1px solid #e8e5df;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='#e8e5df'">
+        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">м. Фрунзенская · 10 мин</div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#161616;">Массаж у Фрунзенской</div>
+        <div style="font-size:13px;color:#666;margin-top:4px;">Мансуровский пер., 10</div>
+      </a>
+      <a href="/location/kropotkinskaya/" style="display:block;padding:20px 24px;background:#fff;border-radius:8px;text-decoration:none;border:1px solid #e8e5df;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='#e8e5df'">
+        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">м. Кропоткинская · 10 мин</div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#161616;">Массаж у Кропоткинской</div>
+        <div style="font-size:13px;color:#666;margin-top:4px;">Мансуровский пер., 10</div>
+      </a>
+      <a href="/location/tsvetnoj-bulvar/" style="display:block;padding:20px 24px;background:#fff;border-radius:8px;text-decoration:none;border:1px solid #e8e5df;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='#e8e5df'">
+        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">м. Цветной бульвар · 10 мин</div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#161616;">Массаж у Цветного бульвара</div>
+        <div style="font-size:13px;color:#666;margin-top:4px;">ул. Мещанская, 7</div>
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+@media(max-width:900px){
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+}
+@media(max-width:600px){
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  div[style*="padding:56px 72px"]{padding:40px 24px!important;}
+}
+</style>
+
+
 <!-- CTA -->
 <div class="cta-section">
   <div class="cta-eyebrow">Записаться</div>
@@ -869,6 +919,57 @@
     <button class="cta-submit" onclick="openModal()">Перезвоните</button>
   </div>
 </div>
+
+<!-- FOR-PAGES SEO -->
+<div style="background:#161616;padding:56px 72px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Под вашу задачу</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:32px;">Массаж для конкретного результата</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+      <a href="/for/back-pain/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Боли в спине</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Триггерные точки, шея, поясница</div>
+      </a>
+      <a href="/for/stress/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Стресс и тревога</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Антистресс, восстановление нервной системы</div>
+      </a>
+      <a href="/for/sports-recovery/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">После тренировок</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Восстановление, снятие DOMS</div>
+      </a>
+      <a href="/for/neck-shoulders/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Шея и плечи</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Воротниковая зона, головные боли</div>
+      </a>
+      <a href="/for/cellulite/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Антицеллюлитный курс</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Бёдра, ягодицы, живот</div>
+      </a>
+      <a href="/for/face-lifting/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Лифтинг лица</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Овал, отёки, сияние без инъекций</div>
+      </a>
+      <a href="/for/legs/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Усталость ног</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Отёки, тяжесть, лимфодренаж</div>
+      </a>
+      <a href="/for/gift/" style="display:block;padding:18px 20px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s;" onmouseover="this.style.borderColor='#C9A96E'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Массаж в подарок</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);">Сертификат без срока действия</div>
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+@media(max-width:900px){
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+}
+@media(max-width:500px){
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+  div[style*="padding:56px 72px"]{padding:40px 24px!important;}
+}
+</style>
 
 <!-- FAQ -->
 <div class="faq-section" id="faq">
