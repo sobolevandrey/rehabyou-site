@@ -308,3 +308,9 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
   /* Masters strip */
   .masters-strip-track { gap: 8px !important; }
 }
+
+
+/* Hero slide 1 - mobile vertical */
+@media (max-width: 768px) {
+  .hero-slide-1 { background-image: url('../img/1 wide (vertical).png'); }
+}
