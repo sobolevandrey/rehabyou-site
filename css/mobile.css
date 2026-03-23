@@ -238,16 +238,23 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
     bottom: 12px;
     right: 12px;
     left: 12px;
-    max-height: 80px;
-    overflow: hidden;
     border-radius: 12px;
+    overflow: hidden;
   }
   .tg-popup-photo { display: none; }
-  .tg-popup-content { padding: 12px 16px; gap: 4px; }
-  .tg-popup-title { font-size: 13px; }
+  .tg-popup-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px 12px 16px;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
   .tg-popup-text { display: none; }
   .tg-popup-label { font-size: 9px; }
-  .tg-popup-btn { font-size: 11px; padding: 6px 14px; }
+  .tg-popup-title { font-size: 13px; flex: 1; }
+  .tg-popup-btn { font-size: 11px; padding: 8px 14px; white-space: nowrap; flex-shrink: 0; }
   .tg-popup-close { top: 8px; right: 8px; width: 24px; height: 24px; }
 }
 
@@ -313,4 +320,16 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
 /* Hero slide 1 - mobile vertical */
 @media (max-width: 768px) {
   .hero-slide-1 { background-image: url('../img/1%20wide%20(vertical).png'); }
+}
+
+/* Hero buttons mobile fix */
+@media (max-width: 600px) {
+  .hero-v2-btn-outline {
+    background: #fff;
+    color: #000;
+    margin-top: 8px;
+  }
+  .hero-v2-btn-outline:hover {
+    background: #F49933;
+  }
 }
