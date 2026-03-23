@@ -333,3 +333,9 @@ nav.scrolled .nav-hamburger span { background: var(--black); }
     background: #F49933;
   }
 }
+
+/* Hero slides 2/3 - mobile vertical */
+@media (max-width: 768px) {
+  .hero-slide-2 { background-image: url('../img/2%20wide%20(vertical).png'); }
+  .hero-slide-3 { background-image: url('../img/3%20wide%20(vertical)%20.png'); }
+}
